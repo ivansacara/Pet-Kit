@@ -6,3 +6,6 @@
     <h1>{{ $t("home_title") }}</h1>
   </div>
 </template>
+<style lang="scss">
+
+</style>
