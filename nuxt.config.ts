@@ -19,16 +19,15 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: 'ro',
-    vueI18n: './i18n.options.ts',
+    vueI18n: '~/i18n.options.ts',
   },
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: ['@use "@/assets/styles/variables/_variables.scss" as *;'],
+          additionalData: '@use "@/assets/styles/variables/_variables.scss" as *;',
         },
       },
     },
   },
-
 });
