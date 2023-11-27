@@ -1,5 +1,11 @@
 <template>
-  <div>
-    <NuxtPage />
+  <div class="wrapper">
+    <Header />
+    <main>
+      <NuxtPage />
+    </main>
+    <Footer />
   </div>
 </template>
+<script setup lang="ts">
+</script>

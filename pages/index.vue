@@ -1,12 +1,12 @@
-<script setup lang="ts">
-</script>
 <template>
-  <div>
-    MAIN PAGE ff
-    В приложении Petkit вы сможете завести аккаунт своему питомцу (если их несколько, то можно создать несколько профилей). К отдельному профилю можно привязать свой гаджет и внести свои настройки/график и т.д.
-    <h1>{{ $t("home_title") }}</h1>
-  </div>
+  <Slider />
+  <Categories />
+  <Application  />
+  <About />
 </template>
+<script setup>
+import Categories from "~/components/Categories.vue";
+</script>
 <style lang="scss">
 
 </style>
