@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>SLIDER</h1>
+    <h1>CATEGORY</h1>
   </div>
 </template>
 <script setup>

@@ -3,5 +3,5 @@
     <h1>ABOUT</h1>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 </script>
