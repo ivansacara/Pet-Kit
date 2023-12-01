@@ -8,7 +8,7 @@
 			</div>
 			<div class="header-logo">
 				<a href="/">
-					<img src="/public/icons/logo.svg" alt="">
+					<img src="../public/icons/logo.svg" alt="">
 				</a>
 			</div>
 			<div class="header-languages">
@@ -23,5 +23,34 @@
 </script>
 
 <style lang="scss">
+	.header-container{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px;
+	}
 
+	.header-burger{
+		width: 22px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		>svg{
+			cursor: pointer;
+		}
+	}
+
+	.header-logo{
+		width: 100px;
+		
+		>a{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	
 </style>
