@@ -2,9 +2,8 @@
 
 @font-face {
   font-family: 'PT Root UI';
-  src:
-          url('../font/PT-Root-UI_Regular.woff2') format('woff2'),
-          url('../font/PT-Root-UI_Regular.woff') format('woff');
+  src: url('../font/PT-Root-UI_Regular.woff2') format('woff2'),
+       url('../font/PT-Root-UI_Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -36,15 +35,18 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
+
 .container{
   max-width: 1408px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+  
   @media (min-width: 768px) {
     padding: 0 40px;
   }
 }
+
 main {
   flex: 1 1 auto;
 }
