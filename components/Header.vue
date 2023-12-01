@@ -12,19 +12,16 @@
 				</a>
 			</div>
 			<div class="header-languages">
-				<ul>
-					<li id="ru">ru</li>
-					<!-- <li id="ro">ro</li> -->
-				</ul>
+				<Langs />
 			</div>
 		</div>
 	</header>
 </template>
 
 <script setup>
-
+	import Langs from "~/components/Langs.vue"
 </script>
 
 <style lang="scss">
-	
+
 </style>

@@ -4,7 +4,8 @@
   <Application  />
   <About />
 </template>
-<script setup>
+<script setup lang="js">
+
 </script>
 <style lang="scss">
 
