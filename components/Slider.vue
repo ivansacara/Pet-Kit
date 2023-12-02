@@ -7,7 +7,7 @@
 		:centered-slides="true"
 		:auto-height="true"
 		:autoplay="{
-			delay: 8000,
+			delay: 5000,
 			disableOnInteraction: true,
 		}">
 		<SwiperSlide v-for="(slide, index) in images" :key="index">

@@ -14,14 +14,16 @@
 	margin: 0;
 	border: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
 	font-family: 'PT Root UI', sans-serif;
-	font-size: $font_base;
+	font-size: $font-base;
 	line-height: 1.2;
 	font-weight: 400;
-	color: $text_color;
+	color: $text-color;
+	position: relative;
 	margin: 0;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -29,14 +31,15 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-tap-highlight-color: transparent;
 	
-	@media (min-width: 768px) {
-		font-size: $font_lg;
+	@media (min-width: $lg) {
+		font-size: $font-lg;
 	}
 }
 
 img{
 	max-width: 100%;
 	height: auto;
+	vertical-align: middle;
 }
 
 svg{
@@ -48,8 +51,23 @@ a{
 	display: block;
 	width: 100%;
 	height: auto;
-	text-decoration: none;
 	color: currentColor;
+	text-decoration: none;
+	background: transparent;
+}
+
+a, button{
+	transition: 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+li{
+	text-decoration: none;
+	list-style-type: none;
+}
+
+button{
+	border: none;
 	background: transparent;
 }
 
@@ -66,8 +84,12 @@ a{
 	margin: 0 auto;
 	padding: 0 15px;
 	
-	@media (min-width: 768px) {
+	@media (min-width: $md) {
 		padding: 0 40px;
+	}
+
+	@media screen and (min-width: 1448px){
+		padding: 0;
 	}
 }
 

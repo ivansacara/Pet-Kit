@@ -14,10 +14,9 @@
 		&__link {
 			color: currentColor;
 			text-decoration: none;
-			transition: 0.2s ease-in-out;
 
 			&:hover {
-				color: $hover;
+				color: $text-hover;
 			}
 
 			&.router-link-active {
