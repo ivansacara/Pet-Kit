@@ -8,7 +8,7 @@
 					<span></span>
 				</div>
 				<div class="header-logo">
-					<nuxt-link to="/">
+					<nuxt-link to='/'>
 						<img src="/icons/logo.svg" alt="">
 					</nuxt-link>
 				</div>
@@ -71,13 +71,13 @@
 			},
 
 			hideMenu() {
-				this.isActive = false;
+				this.isActive = false
 				document.body.style.overflow = 'auto'
 			},
 			
 			menuItemClick(path) {
-				this.hideMenu();
-				this.$router.push(path);
+				this.hideMenu()
+				this.$router.push(path)
 			},
 		},
 	};

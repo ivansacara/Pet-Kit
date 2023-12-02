@@ -12,10 +12,12 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'ro',
+        iso: 'ro-MD',
         file: 'ro.json',
       },
       {
         code: 'ru',
+        iso: 'ru-MD',
         file: 'ru.json',
       },
     ],
@@ -35,7 +37,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/styles/variables/_variables.scss" as *;',
+          additionalData: '@use "@/assets/styles/variables/_variables.scss" as *',
         },
       },
     },
