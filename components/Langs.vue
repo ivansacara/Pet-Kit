@@ -28,5 +28,6 @@
 </style>
 
 <script setup lang="ts">
+const switchLocalePath = useSwitchLocalePath()
 	
 </script>
