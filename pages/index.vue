@@ -1,6 +1,6 @@
 <template>
   <Slider />
- <Categories />
+<!--  <Categories />-->
   <Application  />
   <About />
 </template>
