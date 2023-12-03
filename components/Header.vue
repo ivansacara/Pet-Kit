@@ -44,43 +44,34 @@
 	</header>
 </template>
 
-<script>
-	import Langs from "~/components/Langs.vue"
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const localePath = useLocalePath()
+const isActive = ref(false)
+const menuItems = [
+	{ label: "Доставка и оплата", path: "/delivery" },
+	{ label: "FAQ", path: "/faq" },
+	{ label: "О нас", path: "/#about" },
+	{ label: "Контакты", path: "/#contacts" },
+	{ label: "Возврат и обмен", path: "/returnandchange" },
+]
 
-	export default {
-		name: "Header",
-		
-		data() {
-			return {
-				isActive: false,
-				menuItems: [
-					{ label: "Доставка и оплата", path: "/delivery" },
-					{ label: "FAQ", path: "/faq" },
-					{ label: "О нас", path: "/#about" },
-					{ label: "Контакты", path: "/#contacts" },
-					{ label: "Возврат и обмен", path: "/returnandchange" },
-				],
-			};
-		},
+const toggleMenu = () => {
+	isActive.value = !isActive.value
+	if (!isActive.value) document.body.style.overflow = 'auto'
+	else document.body.style.overflow = 'hidden'
+}
 
-		methods: {
-			toggleMenu() {
-				this.isActive = !this.isActive;
-				if(!this.isActive) document.body.style.overflow = 'auto'
-				else document.body.style.overflow = 'hidden'
-			},
+const hideMenu = () => {
+	isActive.value = false
+	document.body.style.overflow = 'auto'
+}
 
-			hideMenu() {
-				this.isActive = false
-				document.body.style.overflow = 'auto'
-			},
-			
-			menuItemClick(path) {
-				this.hideMenu()
-				this.$router.push(path)
-			},
-		},
-	};
+const menuItemClick = (path) => {
+	hideMenu()
+	useRouter().push(path)
+}
 </script>
 
 <style lang="scss">

@@ -28,7 +28,7 @@
 						</p>
 					</div>
 					<div class="app-img">
-						<img src="../public/img/components/application/phone-bg.png" alt="">
+						<img src="/img/components/application/phone-bg.png" alt="">
 					</div>
 				</div>
 			</div>
