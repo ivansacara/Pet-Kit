@@ -4,7 +4,7 @@
 			<div class="footer-wrapper">
 				<div>
 					<div class="footer-logo">
-						<nuxt-link to="/">
+						<nuxt-link :to="localePath('/')">
 							<img src="/icons/logo.svg" alt="">
 						</nuxt-link>
 					</div>
@@ -98,7 +98,11 @@
 <style lang="scss">
 	.footer-main{
 		border-top: 1px solid $black;
-		padding: 15px 0 20px;
+		padding: 40px 0 20px;
+
+		@media screen and (min-width: $md){
+			padding-top: 30px;
+		}
 	}
 
 	.footer-wrapper{
@@ -116,8 +120,6 @@
 				min-width: 920px;
 			}
 		}
-
-		
 	}
 
 	.footer-logo{
@@ -220,6 +222,10 @@
 		li{
 			&:not(:last-of-type){
 				margin-bottom: 10px;
+			}
+
+			a:hover{
+				color: $text-hover;
 			}
 		}
 	}

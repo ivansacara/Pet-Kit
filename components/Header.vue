@@ -8,7 +8,7 @@
 					<span></span>
 				</div>
 				<div class="header-logo">
-					<nuxt-link to='/'>
+					<nuxt-link :to="localePath('/')">
 						<img src="/icons/logo.svg" alt="">
 					</nuxt-link>
 				</div>
@@ -31,7 +31,7 @@
 				<Langs @click.native="hideMenu"/>
 				<ul class="nav-items-menu">
 					<li>
-						<nuxt-link @click.native="hideMenu()" to="/">Главная</nuxt-link>
+						<nuxt-link @click.native="hideMenu()" :to="localePath('/')">Главная</nuxt-link>
 					</li>
 					<li v-for="(item, index) in menuItems" :key="index">
 						<nuxt-link @click.native="menuItemClick(item.path)">
