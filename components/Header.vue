@@ -15,8 +15,11 @@
 				<nav class="header-nav">
 					<ul class="nav-items">
 						<li v-for="(item, index) in menuItems" :key="index">
-							<nuxt-link @click.native="$router.push(item.path)"> 
-								{{ item.label }} 
+							<nuxt-link
+									class="cn-navigation__link"
+									:to="localePath(item.path)"
+									@click="hideMenu()"
+							>	{{ item.label }}
 							</nuxt-link>
 						</li>
 					</ul>
@@ -26,29 +29,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="header-menu" :class="{ 'open-menu': isActive }" ref="menu">
-			<div class="header-menu-content">
-				<Langs @click.native="hideMenu"/>
-				<ul class="nav-items-menu">
-					<li>
-						<nuxt-link @click.native="hideMenu()" :to="localePath('/')">Главная</nuxt-link>
-					</li>
-					<li v-for="(item, index) in menuItems" :key="index">
-						<nuxt-link @click.native="menuItemClick(item.path)">
-							{{ item.label }}
-						</nuxt-link>
-					</li>
-				</ul>
-			</div>
-		</div>
 	</header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 const localePath = useLocalePath()
 const isActive = ref(false)
+
+
 const menuItems = [
 	{ label: "Доставка и оплата", path: "/delivery" },
 	{ label: "FAQ", path: "/faq" },
@@ -66,11 +55,6 @@ const toggleMenu = () => {
 const hideMenu = () => {
 	isActive.value = false
 	document.body.style.overflow = 'auto'
-}
-
-const menuItemClick = (path) => {
-	hideMenu()
-	useRouter().push(path)
 }
 </script>
 

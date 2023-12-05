@@ -11,10 +11,10 @@
 					<div class="footer-content">
 						<div class="social-links">
 							<div>
-								<nuxt-link to="https://vk.com/public211051403">
+								<nuxt-link target="_blank" to="https://vk.com/public211051403">
 									<img src="/icons/vk.svg" alt="">
 								</nuxt-link>
-								<nuxt-link to="https://t.me/+n3NwTwd8tzhlNDNi">
+								<nuxt-link target="_blank" to="https://t.me/+n3NwTwd8tzhlNDNi">
 									<img src="/icons/telegram.svg" alt="">
 								</nuxt-link>
 							</div>
@@ -48,12 +48,12 @@
 						</div>
 						<div class="footer-app">
 							<div>
-								<nuxt-link to="http://file5-us.petkit.com/app/petkit-android-oversea/petkit-android-oversea-latest.apk">
+								<nuxt-link target="_blank" to="http://file5-us.petkit.com/app/petkit-android-oversea/petkit-android-oversea-latest.apk">
 									<img src="/icons/footer-google.jpg" alt="">
 								</nuxt-link>
 							</div>
 							<div>
-								<nuxt-link to="https://apps.apple.com/us/app/petkit/id994053492?ls=1">
+								<nuxt-link target="_blank" to="https://apps.apple.com/us/app/petkit/id994053492?ls=1">
 									<img src="/icons/footer-apple.jpg" alt="">
 								</nuxt-link>
 							</div>
@@ -75,24 +75,15 @@
 	</footer>
 </template>
 
-<script>
-	import Langs from "~/components/Langs.vue"
-
-	export default {
-		name: "Header",
-		
-		data() {
-			return {
-				footerItems: [
-					{ label: "Доставка и оплата", path: "/delivery" },
-					{ label: "Контакты", path: "/#contacts" },
-					{ label: "FAQ", path: "/faq" },
-					{ label: "О нас", path: "/#about" },
-					{ label: "Возврат и обмен", path: "/returnandchange" },
-				],
-			};
-		},
-	}
+<script setup>
+	const localePath = useLocalePath()
+	const footerItems = [
+		{ label: "Доставка и оплата", path: "/delivery" },
+		{ label: "FAQ", path: "/faq" },
+		{ label: "О нас", path: "/#about" },
+		{ label: "Контакты", path: "/#contacts" },
+		{ label: "Возврат и обмен", path: "/returnandchange" },
+	]
 </script>
 
 <style lang="scss">

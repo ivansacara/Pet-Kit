@@ -14,7 +14,6 @@ const categories = await $client.getEntries({
     content_type: 'category',
     locale: t("locale"),
 })
-console.log(categories.items)
 </script>
 
 <style lang="scss">

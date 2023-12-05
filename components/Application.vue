@@ -61,7 +61,7 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column-reverse;
-		background: url('/public/img/components/application/free-icon-paw.png') center no-repeat;
+		background: url('/img/components/application/free-icon-paw.png') center no-repeat;
 
 		@media screen and (min-width: $lg){
 			display: grid;

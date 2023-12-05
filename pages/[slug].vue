@@ -4,21 +4,27 @@
   </nuxt-link>
 </template>
 <script setup>
-import {useNuxtApp} from "nuxt/app";
-const {$client}=useNuxtApp()
+const { $client } = useNuxtApp();
 const route = useRoute();
 const { t } = useI18n();
 
+onMounted(async () => {
+  let title = categories.items[0].fields.name;
+  useHead({
+    title: title,
+    meta: [{ name: "description", content: t("meta.categoryDesc") }],
+  });
+});
+
 const categories = await $client.getEntries({
-    content_type: 'category',
-    "fields.slug": route.params.slug,
-    locale: t("locale"),
-})
+  content_type: 'category',
+  "fields.slug": route.params.slug,
+  locale: t("locale"),
+});
 const products = await $client.getEntries({
-    content_type: 'product',
-    'fields.categories.sys.id[in]': categories.items[0].sys.id,
-    locale: t("locale"),
-})
-console.log(products);
+  content_type: 'product',
+  'fields.categories.sys.id[in]': categories.items[0].sys.id,
+  locale: t("locale"),
+});
 </script>
 
