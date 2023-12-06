@@ -4,10 +4,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/global.scss'],
   modules: ['nuxt-swiper', '@nuxtjs/i18n'],
+  dayjs: {
+    locales: ["ru", "ro"],
+    defaultLocale: "ro",
+    plugins: [],
+  },
   i18n: {
     /* module options */
     lazy: true,
     langDir: 'locales',
+    defaultLocale: 'ro',
     strategy: 'prefix_except_default',
     locales: [
       {
@@ -21,8 +27,19 @@ export default defineNuxtConfig({
         file: 'ru.json',
       },
     ],
-    defaultLocale: 'ro',
     vueI18n: '~/i18n.options.ts',
+  },
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000",
+      contentfulSpace: "",
+      contentfulAccessToken: "",
+      gtmId: "",
+    },
+    private: {
+      telegramToken: "",
+      telegramChatId: "",
+    },
   },
   env: {
     CTF_SPACE_ID: "33x2fmup01q1",
