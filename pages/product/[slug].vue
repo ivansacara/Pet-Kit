@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Product-description :product="product"/>
+<!--    <Product-description :product="product"/>-->
   </div>
 </template>
 <script setup>
@@ -13,5 +13,6 @@
 //     "fields.slug": route.params.slug,
 //     locale: t("locale"),
 // })
+
 
 </script>
