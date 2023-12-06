@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000",
+      siteUrl: "http://localhost:3000",
       contentfulSpace: "",
       contentfulAccessToken: "",
       gtmId: "",
@@ -39,15 +39,6 @@ export default defineNuxtConfig({
     private: {
       telegramToken: "",
       telegramChatId: "",
-    },
-  },
-  env: {
-    CTF_SPACE_ID: "33x2fmup01q1",
-    CTF_CDA_ACCESS_TOKEN: "bwmGPE-nzjr7L5NZwTEcBMXcMAN_Lg8_hMfFt8VaBOA",
-
-    LANGS: {
-      ru: "ru-MD",
-      ro: "ro-MD",
     },
   },
   nitro: {
