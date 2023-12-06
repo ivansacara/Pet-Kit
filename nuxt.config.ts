@@ -33,6 +33,9 @@ export default defineNuxtConfig({
       ro: "ro-MD",
     },
   },
+  nitro: {
+    preset: 'vercel-edge',
+  },
   vite: {
     css: {
       preprocessorOptions: {
