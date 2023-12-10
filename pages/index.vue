@@ -5,7 +5,6 @@
   <About />
 </template>
 <script setup lang="js">
-
 const { t } = useI18n();
 const { $client } = useNuxtApp();
 
@@ -14,9 +13,10 @@ useHead({
 });
 
 const blogCategoriesContentType = "category";
-const categoryInformation = ref(null); // Using ref to hold the response
-console.log(categoryInformation)
-// Asynchronous function to fetch data
+const categoryInformation = ref({
+    items: [] // Initialize as an empty array
+});// Initialize as an empty object
+
 const fetchData = async () => {
     try {
         const response = await $client.getEntries({
@@ -28,15 +28,33 @@ const fetchData = async () => {
             throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
         }
 
-        categoryInformation.value = response;
+        // Assuming response.items is the array of categories you want
+        categoryInformation.value = {
+            items: response.items.map(item => ({
+                sys: { id: item.id }, // Adjust according to your actual data structure
+                fields: {
+                    id: item.sys.id,
+                    name: item.fields.name,
+                    image: item.fields.image?.fields.file?.url,
+                }
+            })),
+        };
+
+        // categoryInformation.value = {
+        //     items: response.items.map(item => ({
+        //         // Map each item to the structure you need
+        //
+        //         id: item.sys.id,
+        //         name: item.fields.name,
+        //         image: item.fields.image?.fields.file?.url
+        //         // Add other necessary fields here
+        //     })),
+        // };
     } catch (error) {
-        // Handle error
         console.error(error);
-        // Redirect or show error message
     }
 };
 
-// Immediately invoked
 fetchData();
 </script>
 <style lang="scss">
