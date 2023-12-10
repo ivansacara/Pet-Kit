@@ -6,14 +6,8 @@
   </div>
 </template>
 <script setup>
+const props = defineProps(['categories']);
 
-import {useNuxtApp} from "nuxt/app";
-const {$client}=useNuxtApp()
-const { t } = useI18n();
-const categories = await $client.getEntries({
-    content_type: 'category',
-    locale: t("locale"),
-})
 </script>
 
 <style lang="scss">

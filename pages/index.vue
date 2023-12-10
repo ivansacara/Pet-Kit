@@ -1,6 +1,6 @@
 <template>
   <Slider />
-  <Categories />
+  <Categories :categories="categories"/>
   <Application  />
   <About />
 </template>
@@ -11,6 +11,14 @@ useHead({
     title: 'PetKit',
     meta: [{ name: "description", content: t("meta.mainDesc") }],
 });
+
+import {useNuxtApp} from "nuxt/app";
+const {$client}=useNuxtApp()
+
+const categories = await $client.getEntries({
+    content_type: 'category',
+    locale: t("locale"),
+})
 </script>
 <style lang="scss">
 
