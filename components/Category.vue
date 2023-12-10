@@ -1,13 +1,13 @@
 <template>
-  <div class="category">
-      {{ category.fields.name }}
-      <img :src="category.fields.image.fields.file.url" alt="">
-  </div>
+<!--  <div class="category">-->
+<!--      {{ category.fields.name }}-->
+<!--      <img :src="category.fields.image.fields.file.url" alt="">-->
+<!--  </div>-->
 </template>
 <script setup>
-const props = defineProps({
-    category: [Object],
-});
+// const props = defineProps({
+//     category: [Object],
+// });
 </script>
 
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link :to="`product/${product.fields.slug}`" v-for="product in products.items" :key="products.sys.id">
-    <Product :product="product"/>
-  </nuxt-link>
+<!--  <nuxt-link :to="`product/${product.fields.slug}`" v-for="product in products.items" :key="products.sys.id">-->
+<!--    <Product :product="product"/>-->
+<!--  </nuxt-link>-->
 </template>
 <script setup>
 // const { $client } = useNuxtApp();
