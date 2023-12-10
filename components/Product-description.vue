@@ -1,35 +1,23 @@
 <template>
   <div>
-<!--    <h1>{{ productName }}</h1>-->
-<!--    <p>{{ productDescription }}</p>-->
-<!--    <img v-if="productImages.length > 0" :src="productImages[0]" alt="Product Image" />-->
-<!--    <p>{{ productPrice }}</p>-->
+    <!-- Display product information here -->
+<!--    <h1>{{ product.items }}</h1>-->
+<!--    <img :src="product.image" alt="Product Image">-->
+<!--    <p>Product ID: {{ product.id }}</p>-->
+    <!-- Add more product details as needed -->
   </div>
 </template>
 
-<script setup>
-// import { ref, onMounted, defineProps } from 'vue';
-//
-// const props = defineProps(['product']);
-//
-// const productName = ref('');
-// const productDescription = ref('');
-// const productImages = ref([]);
-// const productPrice = ref('');
-//
-// onMounted(() => {
-//     if (props.product) {
-//         const { items } = props.product;
-//
-//         if (items && items.length > 0) {
-//             const productItem = items[0].fields;
-//             productName.value = productItem.name;
-//             productDescription.value = productItem.description;
-//             productImages.value = productItem.images || [];
-//             productPrice.value = productItem.price;
-//
-//             console.log('PRODUCT-DETAILS:', productItem);
-//         }
-//     }
-// });
+<script setup lang="js">
+import { defineProps } from 'vue';
+
+// Define the props the component accepts
+const props = defineProps({
+    product: {
+        type: Object,
+        required: true
+    }
+});
+
+// Now you can use props.product in your template
 </script>

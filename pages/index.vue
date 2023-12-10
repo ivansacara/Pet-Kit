@@ -14,8 +14,8 @@ useHead({
 
 const blogCategoriesContentType = "category";
 const categoryInformation = ref({
-    items: [] // Initialize as an empty array
-});// Initialize as an empty object
+    items: []
+});
 
 const fetchData = async () => {
     try {
@@ -36,20 +36,10 @@ const fetchData = async () => {
                     id: item.sys.id,
                     name: item.fields.name,
                     image: item.fields.image?.fields.file?.url,
+                    slug: item.fields.slug
                 }
             })),
         };
-
-        // categoryInformation.value = {
-        //     items: response.items.map(item => ({
-        //         // Map each item to the structure you need
-        //
-        //         id: item.sys.id,
-        //         name: item.fields.name,
-        //         image: item.fields.image?.fields.file?.url
-        //         // Add other necessary fields here
-        //     })),
-        // };
     } catch (error) {
         console.error(error);
     }
