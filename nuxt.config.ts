@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'locales',
     defaultLocale: 'ro',
+    fallbackLocale: 'ro',
     strategy: 'prefix_except_default',
     locales: [
       {
@@ -27,7 +28,6 @@ export default defineNuxtConfig({
         file: 'ru.json',
       },
     ],
-    vueI18n: '~/i18n.options.ts',
   },
   runtimeConfig: {
     public: {
@@ -35,10 +35,6 @@ export default defineNuxtConfig({
       contentfulSpace: "",
       contentfulAccessToken: "",
       gtmId: "",
-    },
-    private: {
-      telegramToken: "",
-      telegramChatId: "",
     },
   },
   nitro: {

@@ -1,10 +1,11 @@
 <template>
   <div>
-    <!-- Display product information here -->
-<!--    <h1>{{ product.items }}</h1>-->
-<!--    <img :src="product.image" alt="Product Image">-->
-<!--    <p>Product ID: {{ product.id }}</p>-->
-    <!-- Add more product details as needed -->
+    <div v-for="productDesc in product" :key="productDesc.sys.id">
+      {{productDesc.fields.name}}
+      {{productDesc.fields.description}}
+      {{productDesc.fields.price}}
+      <img :src="productDesc.fields.image" alt="">
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link v-for="product in products" :key="product.sys.id" :to="`product/${product.fields.slug}`">
+  <nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
     <Product :product="product"/>
   </nuxt-link>
 </template>
@@ -12,7 +12,6 @@ const { t } = useI18n();
 
 const categories = ref([]);
 const products = ref([]);
-
 const fetchCategories = async () => {
     try {
         const response = await $client.getEntries({
@@ -46,10 +45,10 @@ onMounted(async () => {
     const firstCategory = await fetchCategories();
     if (firstCategory) {
         await fetchProducts(firstCategory.sys.id);
-        useHead({
-            title: firstCategory.fields.name,
-            meta: [{ name: "description", content: t("meta.categoryDesc") }],
-        });
+        // useHead({
+        //     title: firstCategory.fields.name,
+        //     // meta: [{ name: "description", content: t("meta.categoryDesc") }],
+        // });
     }
 });
 </script>

@@ -1,16 +1,14 @@
 <template>
-  <div v-for="category in props.categories.items" :key="category.fields.id">
-    <nuxt-link :to="category.fields.slug">
-      <Category :category="category.fields"/>
-    </nuxt-link>
+  <div v-for="category in props.categories.items" :key="category.sys.id">
+    <NuxtLink v-if="category.sys.locale.includes('ru')" :to="`${category.sys.locale}/${category.fields.slug}`">
+      <Category :category="category.fields" />
+    </NuxtLink>
+    <NuxtLink v-else :to="`${category.fields.slug}`">
+      <Category :category="category.fields" />
+    </NuxtLink>
   </div>
 </template>
 <script setup>
-// <div v-for="category in props.categories.items" :key="category.fields.id">
-//     <nuxt-link :to="category.fields.slug">
-//     <Category :category="category.fields"/>
-//     </nuxt-link>
-// </div>
 const props = defineProps({
     categories: Object,
 });

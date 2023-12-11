@@ -9,5 +9,4 @@
 const props =  defineProps({
     product: [Object],
 });
-console.log('PRODUCT-COMPONENT')
 </script>
