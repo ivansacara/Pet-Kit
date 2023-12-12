@@ -1,26 +1,20 @@
 <template>
 	<div class="container">
-		<div class="categories">
-			<nuxt-link class="category-link" :to="category.fields.slug" v-for="category in categories.items" :key="category.sys.id">
-				<Category :category="category" />
-			</nuxt-link>
-			<nuxt-link class="category-link" :to="category.fields.slug" v-for="category in categories.items" :key="category.sys.id">
-				<Category :category="category" />
-			</nuxt-link>
+		<div class="categories" v-for="category in props.categories.items" :key="category.sys.id">
+			<NuxtLink class="category-link" v-if="category.sys.locale.includes('ru')" :to="`${category.sys.locale}/${category.fields.slug}`">
+				<Category :category="category.fields" />
+			</NuxtLink>
+			<NuxtLink class="category-link" v-else :to="`${category.fields.slug}`">
+				<Category :category="category.fields" />
+			</NuxtLink>
 		</div>
 	</div>
 </template>
 
 <script setup>
-	import { useNuxtApp } from "nuxt/app";
-	
-	const { $client } = useNuxtApp()
-	const { t } = useI18n();
-
-	const categories = await $client.getEntries({
-		content_type: 'category',
-		locale: t("locale"),
-	})
+	const props = defineProps({
+		categories: Object,
+	});
 </script>
 
 <style lang="scss">

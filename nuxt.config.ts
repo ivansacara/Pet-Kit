@@ -2,12 +2,19 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['@/assets/styles/global.scss'],
+  css: ['~/assets/styles/global.scss'],
   modules: ['nuxt-swiper', '@nuxtjs/i18n'],
+  dayjs: {
+    locales: ["ru", "ro"],
+    defaultLocale: "ro",
+    plugins: [],
+  },
   i18n: {
     /* module options */
     lazy: true,
     langDir: 'locales',
+    defaultLocale: 'ro',
+    fallbackLocale: 'ro',
     strategy: 'prefix_except_default',
     locales: [
       {
@@ -21,17 +28,17 @@ export default defineNuxtConfig({
         file: 'ru.json',
       },
     ],
-    defaultLocale: 'ro',
-    vueI18n: '~/i18n.options.ts',
   },
-  env: {
-    CTF_SPACE_ID: "33x2fmup01q1",
-    CTF_CDA_ACCESS_TOKEN: "bwmGPE-nzjr7L5NZwTEcBMXcMAN_Lg8_hMfFt8VaBOA",
-
-    LANGS: {
-      ru: "ru-MD",
-      ro: "ro-MD",
+  runtimeConfig: {
+    public: {
+      siteUrl: "http://localhost:3000",
+      contentfulSpace: "",
+      contentfulAccessToken: "",
+      gtmId: "",
     },
+  },
+  nitro: {
+    preset: 'vercel-edge',
   },
   vite: {
     css: {

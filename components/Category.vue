@@ -17,9 +17,14 @@
 </template>
 
 <script setup>
-	const props = defineProps({
-		category: [Object],
-	});
+
+// <div className="category">
+//     <h1>{{props.category.name}}</h1>
+//     <img :src="props.category.image" alt="">
+// </div>
+const props = defineProps({
+    category: Object,
+});
 </script>
 
 <style lang="scss">

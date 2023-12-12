@@ -5,9 +5,7 @@
 	</div>
 </template>
 <script setup>
-	const props =  defineProps({
-		product: [Object],
-	});
-
-	console.log('PRODUCT-COMPONENT')
+const props =  defineProps({
+    product: [Object],
+});
 </script>
