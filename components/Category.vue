@@ -3,25 +3,20 @@
 		<div class="img-ratio">
 			<div class="img-ratio__inner">
 				<picture>
-					<source :srcset="category.fields.image.fields.file.url" type="image/webp">
-					<img class="category-img" :src="category.fields.image.fields.file.url" alt="">
+					<source :srcset="props.category.image" type="image/webp">
+					<img class="category-img" :src="props.category.image" alt="">
 				</picture>
 			</div>
 		</div>
 		<div class="category-name">
 			<span>
-				{{ category.fields.name }}
+				{{ props.category.name }}
 			</span>
 		</div>
 	</div>
 </template>
 
 <script setup>
-
-// <div className="category">
-//     <h1>{{props.category.name}}</h1>
-//     <img :src="props.category.image" alt="">
-// </div>
 const props = defineProps({
     category: Object,
 });
