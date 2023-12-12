@@ -1,10 +1,17 @@
 <template>
 	<div class="container">
-		<div class="categories" v-for="category in props.categories.items" :key="category.sys.id">
-			<NuxtLink class="category-link" v-if="category.sys.locale.includes('ru')" :to="`${category.sys.locale}/${category.fields.slug}`">
+		<div class="categories" >
+			<NuxtLink class="category-link"
+                v-for="category in props.categories.items"
+                :key="category.sys.id"
+                v-if="category.sys.locale.includes('ru')"
+                :to="`${category.sys.locale}/${category.fields.slug}`">
 				<Category :category="category.fields" />
 			</NuxtLink>
-			<NuxtLink class="category-link" v-else :to="`${category.fields.slug}`">
+			<NuxtLink class="category-link"
+                v-for="category in props.categories.items"
+                :key="category.sys.id" v-else
+                :to="`${category.fields.slug}`">
 				<Category :category="category.fields" />
 			</NuxtLink>
 		</div>
