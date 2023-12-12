@@ -1,8 +1,7 @@
 <template>
-	<Breadcrumbs />
-	
 	<section class="return-section">
 		<div class="container">
+			<Breadcrumbs :pageTitle="t('meta.returnTitle')" />
 			<div class="return-wrapper">
 				<h1 class="return-title">
 					<strong>Возврат и обмен</strong>
@@ -44,12 +43,12 @@
 	</section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 	const { t } = useI18n();
 
 	useHead({
-		title: 'Return',
-		meta: [{ name: "description", content: t("meta.returnDesc") }],
+		title: t("meta.returnTitle"),
+		meta: [{ name: "description", content: t("meta.returnContent") }],
 	});
 </script>
 

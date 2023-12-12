@@ -1,19 +1,57 @@
 <template>
-	<Breadcrumbs />
-	
 	<section class="faq-section">
 		<div class="container">
+			<Breadcrumbs :pageTitle="t('meta.faqTitle')" />
 			<div class="faq-wrapper">
 				<h1 class="faq-title">
 					<strong>Часто задаваемые вопросы</strong>
 				</h1>
-				<Accordion />
+				<div v-for="faqInfo in faqsInfo.item" :key="faqInfo.sys.id">
+					<Accordion :faqInfo="faqInfo"/>
+				</div>
+
 			</div>
 		</div>
 	</section>
 </template>
 
-<script setup lang="ts">
+<script setup>
+const { t } = useI18n();
+const { $client } = useNuxtApp();
+useHead({
+	title: t("meta.faqTitle"),
+	meta: [{ name: "description", content: t("meta.faqContent") }],
+});
+
+const faqsInfo = ref({
+	item: Object
+});
+
+const fetchData = async () => {
+	try {
+		const response = await $client.getEntries({
+			content_type: 'faq',
+			locale: t("locale"),
+		});
+		response.items.map(item => {
+			console.log(item)
+		})
+				// Assuming response.items is the array of categories you want
+		faqsInfo.value = {
+			item: response.items.map(item => ({
+				sys: { id: item.sys.id },
+				fields: {
+					question: item.fields.question,
+					response: item.fields.response,
+				}
+			})),
+		};
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+fetchData();
 </script>
 
 <style lang="scss">

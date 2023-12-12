@@ -1,8 +1,8 @@
 <template>
-	<Breadcrumbs />
-	
 	<section class="delivery-section">
 		<div class="container">
+			<Breadcrumbs :pageTitle="t('meta.deliveryTitle')" />
+
 			<div class="delivery-wrapper">
 				<h1 class="delivery-title">
 					<strong>Доставка и оплата:</strong>
@@ -46,8 +46,8 @@ import type { Breadcrumbs } from '#build/components';
 	const { t } = useI18n();
 
 	useHead({
-		title: 'Delivery',
-		meta: [{ name: "description", content: t("meta.deliveryDesc") }],
+		title: t("meta.deliveryTitle"),
+		meta: [{ name: "description", content: t("meta.deliveryContent") }],
 	});
 </script>
 
