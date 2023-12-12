@@ -24,6 +24,7 @@ body {
 	font-weight: 400;
 	color: $text-color;
 	position: relative;
+	overflow: auto;
 	margin: 0;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -69,6 +70,7 @@ li{
 button{
 	border: none;
 	background: transparent;
+	outline: none;
 }
 
 .wrapper {

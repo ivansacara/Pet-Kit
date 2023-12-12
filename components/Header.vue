@@ -1,10 +1,10 @@
 <template>
-	<header class="header-main">
+	<header class="header-main" :class="{ 'mobile': isActive }">
 		<div class="container">
 			<div class="header-container">
 				<div class="header-burger" 
-					@click="toggleMenu"
-					:class="{ 'active': isActive }">
+					:class="{ 'active': isActive }"
+					@click="toggleMenu">
 					<span></span>
 				</div>
 				<div class="header-logo">
@@ -12,14 +12,15 @@
 						<img src="/icons/logo.svg" alt="">
 					</nuxt-link>
 				</div>
-				<nav class="header-nav">
+				<nav class="header-nav" 
+					:class="{ 'open': isActive }">
 					<ul class="nav-items">
 						<li v-for="(item, index) in menuItems" :key="index">
 							<nuxt-link
-									class="cn-navigation__link"
-									:to="localePath(item.path)"
-									@click="hideMenu()"
-							>	{{ item.label }}
+								class="cn-navigation__link"
+								:to="localePath(item.path)"
+								@click="toggleMenu()">
+								{{ item.label }}
 							</nuxt-link>
 						</li>
 					</ul>
@@ -27,44 +28,64 @@
 				<div class="header-languages">
 					<Langs />
 				</div>
+
+				<div class="bg" @click="toggleMenu()"></div>
 			</div>
 		</div>
 	</header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const localePath = useLocalePath()
-const isActive = ref(false)
+	import { ref } from 'vue'
+	
+	const localePath = useLocalePath()
+	const isActive = ref(false)
 
+	const menuItems = [
+		{ label: "Доставка и оплата", path: "/delivery" },
+		{ label: "FAQ", path: "/faq" },
+		{ label: "О нас", path: "/#about" },
+		{ label: "Контакты", path: "/#contacts" },
+		{ label: "Возврат и обмен", path: "/returnandchange" },
+	]
 
-const menuItems = [
-	{ label: "Доставка и оплата", path: "/delivery" },
-	{ label: "FAQ", path: "/faq" },
-	{ label: "О нас", path: "/#about" },
-	{ label: "Контакты", path: "/#contacts" },
-	{ label: "Возврат и обмен", path: "/returnandchange" },
-]
-
-const toggleMenu = () => {
-	isActive.value = !isActive.value
-	if (!isActive.value) document.body.style.overflow = 'auto'
-	else document.body.style.overflow = 'hidden'
-}
-
-const hideMenu = () => {
-	isActive.value = false
-	document.body.style.overflow = 'auto'
-}
+	const toggleMenu = () => {
+		isActive.value = !isActive.value
+		document.body.classList.toggle("isOpen");
+	}
 </script>
 
 <style lang="scss">
+	@media screen and (max-width: $md){
+		body.isOpen{
+			overflow: hidden;
+		}
+	}
+
+	.header-main{
+		position: fixed;
+		height: 58px;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: $bg;
+		
+		@media screen and (min-width: $lg){
+			height: 74px;
+		}
+	}
+
 	.header-container{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding-top: 15px;
 		padding-bottom: 15px;
+
+		@media screen and (min-width: $md){
+			margin-left: -10px;
+		}
 	}
 
 	.header-burger {
@@ -152,8 +173,8 @@ const hideMenu = () => {
 		.nav-items{
 			display: flex;
 
-			>li{
-				>a:hover{
+			li{
+				a:hover{
 					color: $text-hover;
 				}
 
@@ -168,47 +189,60 @@ const hideMenu = () => {
 		}
 	}
 
-	.header-menu{
-		position: absolute;
-		inset: 0;
-		z-index: -100;
-		transition: all 0.5s ease;
+	.bg{
+		display: none;
+	}
 
-		&.open-menu{
-			z-index: 1000;
-			background: rgba(0, 0, 0, 0.4);
-
-			.header-menu-content{
-				transform: translate(0);
+	@media screen and (max-width: $md){
+		.header-main.mobile{
+			.bg{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				z-index: 500;
+				display: block;
+				background: rgb(0, 0, 0, 0.4);
 			}
-		}
+			
+			.header-nav{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				max-width: 320px;
+				height: 100vh;
+				//transition: all 0.5s ease;
+				display: block;
+				z-index: -1000;
 
-		.header-menu-content{
-			background: $bg;
-			max-width: 320px;
-			padding: 55px 15px 15px;
-			height: 100vh;
-			transform: translateX(-320px);
-			transition: all 0.4s ease;
-			border-radius: 0 13px 13px 0;
+				&.open{
+					z-index: 505;
 
-			@media screen and (max-width: $mob){
-				border-radius: 0;
+					.nav-items{
+						transform: translate(0);
+					}
+				}
 			}
 
-			.nav-items-menu{
-				margin-top: 15px;
+			.nav-items{
+				background: $bg;
+				padding: 60px 15px 15px;
+				height: 100vh;
+				//transition: all 0.4s ease;
+				border-radius: 0 13px 13px 0;
+				transform: translateX(-320px);
+				width: 100%;
+				display: flex;
+				flex-direction: column;
 
-				>li{
-					>a:hover{
-						color: $text-hover;
-					}
+				@media screen and (max-width: 320px){
+					border-radius: 0;
+				}
 
-					&:not(:last-of-type){
-						margin-bottom: 15px;
-						
-						
-					}
+				li:not(:last-child){
+					margin-bottom: 12px;
 				}
 			}
 		}

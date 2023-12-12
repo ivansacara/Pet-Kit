@@ -77,6 +77,7 @@
 
 <script setup>
 	const localePath = useLocalePath()
+	
 	const footerItems = [
 		{ label: "Доставка и оплата", path: "/delivery" },
 		{ label: "FAQ", path: "/faq" },
