@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@splidejs/vue-splide": "^0.6.12",
     "contentful": "^10.6.12",
     "nuxt-swiper": "^1.2.2",
     "sass-loader": "^13.3.2"
