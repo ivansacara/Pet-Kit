@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="container">
+    <Breadcrumbs :pageTitle="product.item[0]?.fields?.name"/>
     <Product-description :product="product.item"/>
   </div>
 </template>
@@ -48,7 +49,7 @@ onMounted(async () => {
     if (firstItem) {
         useHead({
             title: firstItem.fields.name,
-            meta: [{ name: "description", content: t("meta.categoryDesc") }],
+            meta: [{ name: "description", content: firstItem.fields.description }],
         });
     }
 });

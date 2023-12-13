@@ -10,6 +10,7 @@ const { $client } = useNuxtApp();
 const route = useRoute();
 useHead({
     title: 'PetKit',
+    meta: [{ name: "description", content: t("meta.mainContent") }],
 });
 
 const categoryInformation = ref({
@@ -45,6 +46,4 @@ const fetchData = async () => {
 
 fetchData();
 </script>
-<style lang="scss">
 
-</style>

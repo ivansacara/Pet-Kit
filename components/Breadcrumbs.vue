@@ -1,5 +1,4 @@
 <template>
-	<div class="container">
 		<div class="breadcrumb-wrapper">
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item home">
@@ -9,15 +8,17 @@
 					</nuxt-link>
 				</li>
 				<li class="breadcrumb-item">
-					<span class="breadcrumb-page">Доставка</span>
+					<span class="breadcrumb-page">{{ pageTitle }}</span>
 				</li>
 			</ul>
 		</div>
-	</div>
 </template>
 
-<script setup>
+<script setup >
 	const localePath = useLocalePath()
+	const props =  defineProps({
+		pageTitle: String,
+	});
 </script>
 
 <style lang="scss">
