@@ -2,6 +2,7 @@
   <Slider />
   <Categories :categories="categoryInformation"/>
   <Application  />
+  <RecentlyViewed />
   <About />
 </template>
 <script setup lang="js">
