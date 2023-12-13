@@ -27,11 +27,7 @@ const isOpen = ref(false);
 const togglePanel = () => {
 	isOpen.value = !isOpen.value;
 };
-	// const activeIndex = ref(false);
-	//
-	// const togglePanel = () => {
-	// 	activeIndex.value = (activeIndex.value === index) ? null : index;
-	// };
+
 </script>
 
 <style lang="scss">

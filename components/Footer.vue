@@ -5,17 +5,17 @@
 				<div>
 					<div class="footer-logo">
 						<nuxt-link :to="localePath('/')">
-							<img src="/icons/logo.svg" alt="">
+							<img src="/icons/logo.svg" alt="logo">
 						</nuxt-link>
 					</div>
 					<div class="footer-content">
 						<div class="social-links">
 							<div>
 								<nuxt-link target="_blank" to="https://vk.com/public211051403">
-									<img src="/icons/vk.svg" alt="">
+									<img src="/icons/vk.svg" alt="vk">
 								</nuxt-link>
 								<nuxt-link target="_blank" to="https://t.me/+n3NwTwd8tzhlNDNi">
-									<img src="/icons/telegram.svg" alt="">
+									<img src="/icons/telegram.svg" alt="telegram">
 								</nuxt-link>
 							</div>
 							<nuxt-link to="mailto:info@petkit.ru.com">
@@ -24,50 +24,69 @@
 						</div>
 						<div class="footer-descr">
 							<p>
-								Режим работы интернет-магазина: Пн-Вск:  10:00  - 18:00 <br>
-								Режим работы офиса: Пн-Пт с 10:00-18:00 127015 г.Москва, ул.Новодмитровская д.1 стр 2, 3 этаж офис PETKIT
+								{{t('contactInfo.workTimeMarket')}} <br>
+								{{t('contactInfo.workTimeOffice')}}<br>
+								{{t('contactInfo.address')}}<br>
 							</p>
 							<p>
-								ООО АЗИАНБРЭНД<br>
-								ИНН:7719423946
+								{{t('contactInfo.brand')}}<br>
+								{{t('contactInfo.number')}}
 							</p>
 						</div>
 						<div class="footer-pays">
 							<div>
-								<img src="/icons/google-new.png" alt="">
+								<img src="/icons/google-new.png" alt="google">
 							</div>
 							<div>
-								<img src="/icons/visa-new.png" alt="">
+								<img src="/icons/visa-new.png" alt="visa">
 							</div>
 							<div>
-								<img src="/icons/ceb-new.png" alt="">
+								<img src="/icons/ceb-new.png" alt="ceb">
 							</div>
 							<div>
-								<img src="/icons/apple-new.png" alt="">
+								<img src="/icons/apple-new.png" alt="apple">
 							</div>
 						</div>
 						<div class="footer-app">
 							<div>
 								<nuxt-link target="_blank" to="http://file5-us.petkit.com/app/petkit-android-oversea/petkit-android-oversea-latest.apk">
-									<img src="/icons/footer-google.jpg" alt="">
+									<img src="/icons/footer-google.jpg" alt="google-play">
 								</nuxt-link>
 							</div>
 							<div>
 								<nuxt-link target="_blank" to="https://apps.apple.com/us/app/petkit/id994053492?ls=1">
-									<img src="/icons/footer-apple.jpg" alt="">
+									<img src="/icons/footer-apple.jpg" alt="apple-store">
 								</nuxt-link>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div>
-					<p class="footer-title">О компании</p>
+					<div class="footer-title">{{t('aboutCompany')}}</div>
 					<ul class="footer-items-menu">
-						<li v-for="(item, index) in footerItems" :key="index">
-							<nuxt-link @click.native="$router.push(item.path)">
-								{{ item.label }}
+						<li>
+							<nuxt-link
+									class="cn-navigation__link"
+									:to="localePath('/delivery')">
+								{{t('links.delivery')}}
 							</nuxt-link>
 						</li>
+						<li >
+							<nuxt-link
+									class="cn-navigation__link"
+									:to="localePath('/faq')">
+								{{ t('links.faq') }}
+							</nuxt-link>
+						</li>
+						<li>
+							<nuxt-link
+									class="cn-navigation__link"
+									:to="localePath('/Return')">
+								{{ t('links.return') }}
+							</nuxt-link>
+						</li>
+						<li><a class="cn-navigation__link" @click.prevent="scrollToElement('about')">{{ t('links.about') }}</a></li>
+						<li><a class="cn-navigation__link" @click.prevent="scrollToElement('contacts')">{{t('links.contacts')}}</a></li>
 					</ul>
 				</div>
 			</div>
@@ -76,15 +95,19 @@
 </template>
 
 <script setup>
+	const { t } = useI18n();
 	const localePath = useLocalePath()
-	
-	const footerItems = [
-		{ label: "Доставка и оплата", path: "/delivery" },
-		{ label: "FAQ", path: "/faq" },
-		{ label: "О нас", path: "/#about" },
-		{ label: "Контакты", path: "/#contacts" },
-		{ label: "Возврат и обмен", path: "/returnandchange" },
-	]
+
+	const scrollToElement = (id) => {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+				inline: "nearest"
+			});
+		}
+	};
 </script>
 
 <style lang="scss">
