@@ -8,10 +8,11 @@
 				</svg>
 			</button>
 
-				<p class="accordion-body">
+			<div class="accordion-body">
+				<p>
 					{{ props.faqInfo.fields.response }}
 				</p>
-
+			</div>
 		</div>
 </template>
 
@@ -43,7 +44,7 @@ const togglePanel = () => {
 			.accordion-body{
 				display: block;
 				max-height: 1000px;
-				transition: max-height 2.2s ease;
+				transition: max-height 1.6s ease;
 			}
 
 			.accordion-header{
@@ -72,6 +73,7 @@ const togglePanel = () => {
 		span{
 			font-size: 18px;
 			line-height: 23px;
+			font-family: 'PT Root UI';
 			color: $black;
 			text-align: left;
 			font-style: normal;
@@ -79,6 +81,7 @@ const togglePanel = () => {
 
 			@media screen and (min-width: $md){
 				font-size: 25px;
+				line-height: 32px;
 			}
 		}
 
@@ -103,10 +106,10 @@ const togglePanel = () => {
 		max-height: 0;
 		overflow: hidden;
 		transition: max-height .6s ease;
-		padding: 0 15px;
+		padding: 0 36px 0 16px;
 
 		p{
-			margin: 15px 0;
+			margin: 36px 0;
 			font-size: 16px;
 			line-height: 19px;
 			color: $black;
@@ -114,10 +117,6 @@ const togglePanel = () => {
 
 		@media screen and (min-width: $md){
 			padding: 0 70px 0 76px;
-
-			p{
-				margin: 20px 0;
-			}
 		}
 	}
 </style>
