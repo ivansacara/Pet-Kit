@@ -90,7 +90,7 @@
 		margin-bottom: 16px;
 
 		h2{
-			font-size: $lg;
+			font-size: $text-lg;
 			font-weight: 400;
 			position: relative;
 			z-index: 5;
@@ -136,7 +136,7 @@
 			padding-top: calc(100% / 1);
 			overflow: hidden;
 
-			&__inner{
+			.img-ratio__inner{
 				width: 100%;
 				height: 100%;
 				position: absolute;

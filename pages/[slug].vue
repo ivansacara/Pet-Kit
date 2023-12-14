@@ -77,7 +77,7 @@ onMounted(async () => {
 
 <style lang="scss">
 	.prod-title{
-		font-size: $lg;
+		font-size: $text-lg;
 		font-weight: 400;
 		padding: 30px 0 0;
 		margin-bottom: 16px;

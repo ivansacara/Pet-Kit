@@ -63,7 +63,7 @@
 		position: relative;
 		padding-top: calc(100% / 1);
 
-		&__inner{
+		.img-ratio__inner{
 			width: 100%;
 			height: 100%;
 			position: absolute;
