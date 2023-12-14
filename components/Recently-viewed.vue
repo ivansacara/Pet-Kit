@@ -1,75 +1,77 @@
 <template>
-		<div class="recent-wrapper">
-			<div class="viewed-products">
-				<div class="viewed-head"> 
-					<h2>Ранее просмотренные</h2>
-
-					<!-- <div class="products-controls">
-						<button class="arrow-left" @click="swiper.slidePrev()">
-							<span class="special-products__slider-arrow-icon icon-arrow-left">prev</span>
-						</button>
-						<button class="arrow-right" @click="swiper.slideNext()">
-							<span class="special-products__slider-arrow-icon icon-arrow-right">next</span>
-						</button>
-					</div> -->
+		<div class="container">
+			<div class="recent-wrapper">
+				<div class="viewed-products">
+					<div class="viewed-head"> 
+						<h2>Ранее просмотренные</h2>
+					</div>
+					<Swiper 
+						:navigation="true" 
+						:modules="[SwiperEffectCreative, SwiperNavigation]"
+						:space-between="30"
+						:breakpoints="{
+							640: {
+								slidesPerView: 2,
+							},
+							1024: {
+								slidesPerView: 3,
+							}
+						}"
+						class="recent-slider">
+						
+						<SwiperSlide>
+							<nuxt-link to="" class="viewed-product">
+								<div class="viewed-photo">
+									<div class="img-ratio">
+										<div class="img-ratio__inner">
+											<img src="../public/img/components/slider/slide_1.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="viewed-title">
+									Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
+								</div>
+								<div class="viewed-price">
+									15 988 руб
+								</div>
+							</nuxt-link>
+						</SwiperSlide>
+						<SwiperSlide>
+							<nuxt-link to="" class="viewed-product">
+								<div class="viewed-photo">
+									<div class="img-ratio">
+										<div class="img-ratio__inner">
+											<img src="../public/img/components/slider/slide_1.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="viewed-title">
+									Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
+								</div>
+								<div class="viewed-price">
+									15 988 руб
+								</div>
+							</nuxt-link>
+						</SwiperSlide>
+						<SwiperSlide>
+							<nuxt-link to="" class="viewed-product">
+								<div class="viewed-photo">
+									<div class="img-ratio">
+										<div class="img-ratio__inner">
+											<img src="../public/img/components/slider/slide_1.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="viewed-title">
+									Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
+								</div>
+								<div class="viewed-price">
+									15 988 руб
+								</div>
+							</nuxt-link>
+						</SwiperSlide>
+					</Swiper>
 				</div>
-				<Swiper 
-					:navigation="true" 
-					:modules="[SwiperEffectCreative]" 
-					class="recent-slider">
-					
-					<SwiperSlide>
-						<nuxt-link to="" class="viewed-product">
-							<div class="viewed-photo">
-								<div class="img-ratio">
-									<div class="img-ratio__inner">
-										<img src="../public/img/components/slider/slide_1.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="viewed-title">
-								Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
-							</div>
-							<div class="viewed-price">
-								15 988 руб
-							</div>
-						</nuxt-link>
-					</SwiperSlide>
-					<SwiperSlide>
-						<nuxt-link to="" class="viewed-product">
-							<div class="viewed-photo">
-								<div class="img-ratio">
-									<div class="img-ratio__inner">
-										<img src="../public/img/components/slider/slide_1.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="viewed-title">
-								Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
-							</div>
-							<div class="viewed-price">
-								15 988 руб
-							</div>
-						</nuxt-link>
-					</SwiperSlide>
-					<SwiperSlide>
-						<nuxt-link to="" class="viewed-product">
-							<div class="viewed-photo">
-								<div class="img-ratio">
-									<div class="img-ratio__inner">
-										<img src="../public/img/components/slider/slide_1.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="viewed-title">
-								Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
-							</div>
-							<div class="viewed-price">
-								15 988 руб
-							</div>
-						</nuxt-link>
-					</SwiperSlide>
-				</Swiper>
 			</div>
 		</div>
 </template>
@@ -79,9 +81,6 @@
 <style lang="scss">
 	.recent-wrapper{
 		padding: 40px 0;
-		max-width: 1408px;
-		width: 100%;
-		margin: 0 auto;
 	}
 
 	.viewed-head{
@@ -89,11 +88,6 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 16px;
-		padding: 0 15px;
-
-		@media screen and (min-width: $md){
-			padding: 0;
-		}
 
 		h2{
 			font-size: 18px;
@@ -109,14 +103,6 @@
 
 	.viewed-products{
 		position: relative;
-
-		@media screen and (min-width: $md){
-			padding: 0 40px;
-		}
-
-		@media screen and (min-width: 1448px){
-			padding: 0;
-		}
 	}
 
 	.viewed-product{
@@ -129,8 +115,14 @@
 		grid-template-columns: 80px 1fr;
 		grid-column-gap: 16px;
 
-		@media screen and (min-width: $md){
+		font-size: 16px;
+
+		@media screen and (min-width: $sm){
 			grid-template-columns: 15% 1fr;
+		}
+
+		@media screen and (min-width: $md){
+			grid-template-columns: 30% 1fr;
 		}
 	}
 
@@ -173,18 +165,13 @@
 	}
 
 	.recent-slider{
-		padding-left: 40px;
-		padding-right: 80px;
-		padding-top: 60px;
-    	margin-top: -60px;
-
-		@media screen and (min-width: $md){
-			padding-left: 0;
+		@media screen and (min-width: $sm){
+			padding-top: 60px;
+			margin-top: -60px;
 		}
 
 		.swiper-slide{
-			margin-right: 30px;
-			max-width: -webkit-fill-available;
+			max-width: max-content;
 		}
 
 		.swiper-button-prev,
@@ -192,7 +179,7 @@
 			display: none;
 			position: absolute;
 
-			@media screen and (min-width: $md){
+			@media screen and (min-width: $sm){
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
