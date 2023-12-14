@@ -189,7 +189,7 @@
 				height: auto;
 				padding: 0.3rem 1rem;
 				color: #fff;
-				background-color: #808CF5;
+				background-color: $btn-bg;
 				border-radius: 10px;
 				font-size: 1rem;
 				outline: none;

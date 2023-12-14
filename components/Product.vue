@@ -51,6 +51,7 @@
 		display: block;
 		font-weight: 600;
 		white-space: nowrap;
+		margin-bottom: 8px;
 
 		@media screen and (min-width: $md){
 			font-size: 28px;
@@ -89,5 +90,13 @@
 		max-width: 100%;
 		font-weight: 400;
 		font-size: $text-base;
+		line-height: 1;
+		color: white;
+		text-align: center;
+		border-radius: 10px;
+		white-space: nowrap;
+		user-select: none;
+		background-color: $btn-bg;
+		padding: 0 16px;
 	}
 </style>
