@@ -56,7 +56,7 @@ const props = defineProps({
 					display: -webkit-box;
 					-webkit-line-clamp: 2;
 					-webkit-box-orient: vertical;
-					font-size: 20px;
+					font-size: $text-xl;
 					line-height: 25px;
 					font-weight: normal;
 				}

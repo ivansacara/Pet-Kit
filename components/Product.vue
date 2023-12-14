@@ -7,24 +7,54 @@
 				</div>
 			</div>
 		</div>
-		<h1>{{ product.fields.name }}</h1>
+		
+		<p class="prod-name">{{ product.fields.name }}</p>
+		<span class="prod-price">20 136 руб</span>
+
+		<button class="prod-btn" type="button">
+			<span>Подробнее</span>
+		</button>
 	</div>
 </template>
 <script setup>
-const props =  defineProps({
-    product: [Object],
-});
+	const props =  defineProps({
+		product: [Object],
+	});
 </script>
 <style lang="scss">
 	.prod-item{
 		display: flex;
 		flex-direction: column;
+		padding: 0.5rem 0.3rem;
+		border: 1px solid #f7f7f7;
+		border-radius: 10px;
+		overflow: hidden;
+
+		@media screen and (min-width: $md){
+			padding: 10px;
+		}
 	}
 
 	.prod-photo{
 		margin: -0.5rem -0.3rem 1rem -0.3rem;
 		min-width: 0;
     	position: relative;
+	}
+
+	.prod-name{
+		margin-bottom: 1rem;
+		word-break: break-word;
+	}
+
+	.prod-price{
+		font-size: $text-xl;
+		display: block;
+		font-weight: 600;
+		white-space: nowrap;
+
+		@media screen and (min-width: $md){
+			font-size: 28px;
+		}
 	}
 
 	.img-ratio{
@@ -48,5 +78,16 @@ const props =  defineProps({
 				object-position: 50% 50%;
 			}
 		}
+	}
+
+	.prod-btn{
+		display: inline-flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		max-width: 100%;
+		font-weight: 400;
+		font-size: $text-base;
 	}
 </style>

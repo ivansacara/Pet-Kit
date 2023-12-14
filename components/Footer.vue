@@ -229,7 +229,7 @@
 
 	.footer-title{
 		font-weight: 700;
-		font-size: 20px;
+		font-size: $text-xl;
 		margin-bottom: 15px;
 	}
 

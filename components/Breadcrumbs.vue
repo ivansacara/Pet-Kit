@@ -34,9 +34,10 @@
 		color: $text-breadcrumb;
 		position: relative;
 		font-size: $text-base;
+		font-weight: 400;
 
 		&:not(:last-child){
-			margin-right: 26px;
+			margin-right: 31px;
 
 			&:after{
 				content: '-';
@@ -46,7 +47,7 @@
 				font-family: auto;
 				position: absolute;
 				top: 12px;
-				right: -16px
+				right: -20px
 			}
 		}
 	}

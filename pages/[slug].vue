@@ -9,6 +9,9 @@
 			<nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
 				<Product :product="product"/>
 			</nuxt-link>
+			<nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
+				<Product :product="product"/>
+			</nuxt-link>
 		</div>
 	</div>
   </div>
@@ -74,10 +77,14 @@ onMounted(async () => {
 
 <style lang="scss">
 	.prod-title{
-		font-size: 18px;
+		font-size: $lg;
 		font-weight: 400;
 		padding: 30px 0 0;
 		margin-bottom: 16px;
+
+		@media screen and (min-width: $md){
+			font-size: $text-2xl;
+		}
 	}
 
 	.catalog{
@@ -90,5 +97,11 @@ onMounted(async () => {
 		grid-template-rows: auto;
 		grid-row-gap: 32px;
 		grid-column-gap: 16px;
+		align-items: stretch;
+
+		@media screen and (min-width: $md){
+			grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+			gap: 32px;
+		}
 	}
 </style>

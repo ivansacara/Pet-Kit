@@ -30,7 +30,7 @@ const { t } = useI18n();
 	}
 
 	.app-title{
-		font-size: 20px;
+		font-size: $text-xl;
 		font-weight: normal;
 		line-height: 23px;
 		color: $black;

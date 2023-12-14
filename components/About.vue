@@ -28,7 +28,7 @@ const { t } = useI18n();
 	.about-title{
 		font-weight: normal;
 		margin: 0 0 20px 0;
-		font-size: 20px;
+		font-size: $text-xl;
 		line-height: 23px;
 		color: $black;
 

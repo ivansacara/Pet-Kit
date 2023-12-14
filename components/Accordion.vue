@@ -67,7 +67,7 @@ const togglePanel = () => {
 		}
 
 		span{
-			font-size: 18px;
+			font-size: $lg;
 			line-height: 23px;
 			font-family: 'PT Root UI';
 			color: $black;

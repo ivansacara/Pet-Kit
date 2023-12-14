@@ -90,13 +90,13 @@
 		margin-bottom: 16px;
 
 		h2{
-			font-size: 18px;
+			font-size: $lg;
 			font-weight: 400;
 			position: relative;
 			z-index: 5;
 
 			@media screen and (min-width: $md){
-				font-size: 24px;
+				font-size: $text-2xl;
 			}
 		}
 	}
@@ -208,7 +208,7 @@
 			&:after{
 				content: "➜";
 				transform: rotate(180deg);
-				font-size: 24px;
+				font-size: $text-2xl;
 				font-weight: 100;
 			}
 		}
@@ -220,7 +220,7 @@
 
 			&:after{
 				content: "➜";
-				font-size: 24px;
+				font-size: $text-2xl;
 				font-weight: 100;
 			}
 		}
