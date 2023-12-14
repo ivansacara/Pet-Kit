@@ -4,21 +4,21 @@
 				<div class="viewed-head"> 
 					<h2>Ранее просмотренные</h2>
 
-					<div class="products-controls">
-						<div class="arrow-left">
-							<span class="special-products__slider-arrow-icon icon-arrow-left"></span>
-						</div>
-						<div class="arrow-right">
-							<span class="special-products__slider-arrow-icon icon-arrow-right"></span>
-						</div>
-					</div>
+					<!-- <div class="products-controls">
+						<button class="arrow-left" @click="swiper.slidePrev()">
+							<span class="special-products__slider-arrow-icon icon-arrow-left">prev</span>
+						</button>
+						<button class="arrow-right" @click="swiper.slideNext()">
+							<span class="special-products__slider-arrow-icon icon-arrow-right">next</span>
+						</button>
+					</div> -->
 				</div>
-				<swiper 
+				<Swiper 
 					:navigation="true" 
-					:modules="modules" 
+					:modules="[SwiperEffectCreative]" 
 					class="recent-slider">
 					
-					<swiper-slide>
+					<SwiperSlide>
 						<nuxt-link to="" class="viewed-product">
 							<div class="viewed-photo">
 								<div class="img-ratio">
@@ -34,8 +34,8 @@
 								15 988 руб
 							</div>
 						</nuxt-link>
-					</swiper-slide>
-					<swiper-slide>
+					</SwiperSlide>
+					<SwiperSlide>
 						<nuxt-link to="" class="viewed-product">
 							<div class="viewed-photo">
 								<div class="img-ratio">
@@ -51,8 +51,25 @@
 								15 988 руб
 							</div>
 						</nuxt-link>
-					</swiper-slide>
-				</swiper>
+					</SwiperSlide>
+					<SwiperSlide>
+						<nuxt-link to="" class="viewed-product">
+							<div class="viewed-photo">
+								<div class="img-ratio">
+									<div class="img-ratio__inner">
+										<img src="../public/img/components/slider/slide_1.jpg" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="viewed-title">
+								Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
+							</div>
+							<div class="viewed-price">
+								15 988 руб
+							</div>
+						</nuxt-link>
+					</SwiperSlide>
+				</Swiper>
 			</div>
 		</div>
 </template>
@@ -62,6 +79,9 @@
 <style lang="scss">
 	.recent-wrapper{
 		padding: 40px 0;
+		max-width: 1408px;
+		width: 100%;
+		margin: 0 auto;
 	}
 
 	.viewed-head{
@@ -69,9 +89,33 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 16px;
+		padding: 0 15px;
+
+		@media screen and (min-width: $md){
+			padding: 0;
+		}
 
 		h2{
 			font-size: 18px;
+			font-weight: 400;
+			position: relative;
+			z-index: 5;
+
+			@media screen and (min-width: $md){
+				font-size: 24px;
+			}
+		}
+	}
+
+	.viewed-products{
+		position: relative;
+
+		@media screen and (min-width: $md){
+			padding: 0 40px;
+		}
+
+		@media screen and (min-width: 1448px){
+			padding: 0;
 		}
 	}
 
@@ -84,6 +128,10 @@
 		'photo .';
 		grid-template-columns: 80px 1fr;
 		grid-column-gap: 16px;
+
+		@media screen and (min-width: $md){
+			grid-template-columns: 15% 1fr;
+		}
 	}
 
 	.viewed-photo{
@@ -121,6 +169,73 @@
 
 	.viewed-price{
 		grid-area: price;
-    	font-weight: 500;
+    	font-weight: 600;
+	}
+
+	.recent-slider{
+		padding-left: 40px;
+		padding-right: 80px;
+		padding-top: 60px;
+    	margin-top: -60px;
+
+		@media screen and (min-width: $md){
+			padding-left: 0;
+		}
+
+		.swiper-slide{
+			margin-right: 30px;
+			max-width: -webkit-fill-available;
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next{
+			display: none;
+			position: absolute;
+
+			@media screen and (min-width: $md){
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				bottom: auto;
+				min-width: 60px;
+				min-height: 32px;
+				height: auto;
+				padding: 0.3rem 1rem;
+				color: #fff;
+				background-color: #808CF5;
+				border-radius: 10px;
+				font-size: 1rem;
+				outline: none;
+				border: none;
+				margin: 0 0 1rem;
+				cursor: pointer;
+				user-select: none;
+			}
+		}
+
+		.swiper-button-prev{
+			right: 70px;
+			top: 10px;
+			left: auto;
+
+			&:after{
+				content: "➜";
+				transform: rotate(180deg);
+				font-size: 24px;
+				font-weight: 100;
+			}
+		}
+
+		.swiper-button-next{
+			right: 0;
+			top: 10px;
+			left: auto;
+
+			&:after{
+				content: "➜";
+				font-size: 24px;
+				font-weight: 100;
+			}
+		}
 	}
 </style>
