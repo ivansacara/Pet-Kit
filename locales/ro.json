@@ -1,7 +1,144 @@
 {
-  "home_title": "Home",
-  "home_btn": "Go to Home",
-  "about_title": "About",
-  "about_btn": "Go to About",
-  "locale": "ro-MD"
+  "locale": "ro-MD",
+  "aboutCompany": "Despre companie",
+  "links": {
+    "delivery": "Livrare și plată",
+    "faq": "FAQ",
+    "about": "Despre noi",
+    "contacts": "Contacte",
+    "return": "Returnare și schimb"
+  },
+  "meta": {
+    "return": "",
+    "delivery": "",
+    "faq": ""
+  },
+  "application": {
+    "title": "O aplicație pentru toate dispozitivele",
+    "appDescription": [
+      {
+        "text": "În aplicația Petkit, puteți crea un cont pentru animalul dvs. de companie (dacă aveți mai multe, puteți crea mai multe profile). La un profil separat, puteți atașa gadgetul dvs. și introduceți setările/diagrama etc."
+      },
+      {
+        "text": "Cu ajutorul aplicației Petkit, va fi posibilă gestionarea automată a hrănitoarelor, a litierelor automate Pura X, a purificatorului de aer inteligent Air Magicube, a acvariului etc."
+      },
+      {
+        "text": "Veți primi notificări necesare de la gadgeturile dvs., recomandări de utilizare, mementouri (de exemplu, despre hrană sau necesitatea curățării), despre defecțiuni tehnice și modalități de rezolvare a acestora."
+      },
+      {
+        "text": "Aplicația include o rețea socială pentru animalele de companie. Alăturați-vă noilor tehnologii împreună cu prietenul dvs. cu coadă!"
+      }
+    ]
+  },
+  "aboutUs": {
+    "title": "Despre noi",
+    "description": [
+      "PETKIT - producător de gadgeturi inteligente moderne pentru animale de companie. Compania a fost fondată în august 2013 la Shanghai și s-a dezvoltat rapid într-una dintre firmele lider în domeniul produselor pentru animale de companie.",
+      "La noi veți găsi o casă cu control climatic, o litieră care se curăță singură, boluri cu cântar, hrănitoare automate controlabile prin aplicație, purificatoare de aer, fântâni pentru băut și alte gadgeturi moderne pentru câini și pisici.",
+      "În ultimii ani, PETKIT a câștigat premiul pentru Design de Produs la premiile internaționale Red Dot Design Award."
+    ],
+    "goal": "Petkit nu este doar despre produse care uimesc, ci și despre noi tehnologii pentru animalele de companie și oamenii lor. Scopul nostru: să facem îngrijirea animalelor de companie mai captivantă și mai simplă."
+  },
+  "contactInfo": {
+    "workTimeMarket": "Program de lucru al magazinului online: Luni-Duminică: 10:00 - 18:00",
+    "workTimeOffice": "Program de lucru al biroului: Luni-Vineri de la 10:00-18:00 127015",
+    "address": "Moscova, str. Novodmitrovskaya, nr. 1 clădirea 2, etajul 3, biroul PETKIT",
+    "brand": "SRL ASIANBRAND",
+    "number": "CUI:7719423946"
+  },
+  "faq": {
+    "title": "Întrebări frecvente"
+  },
+  "returnInfo": {
+    "title": "Retur și schimb",
+    "description": [
+      {
+        "strong": "Dacă v-ați răzgândit și/sau produsul nu vi se potrivește ca mărime/formă/croială/culoare, puteți returna produsul în magazinul nostru în termen de 14 zile de la primirea comenzii."
+      },
+      {
+        "text": "1. Vă rugăm să nu folosiți achiziția. Nu o murdăriți, nu o deteriorați, nu deschideți ambalajul cu consumabile (filtre, cartușe, absorbant de umiditate, lichid de înlocuire, pachete etc.)."
+      },
+      {
+        "text": "2. Nu aruncați ambalajul și nu tăiați etichetele de fabrică."
+      },
+      {
+        "text": "3. Produsul nu trebuie să prezinte urme de utilizare și trebuie să-și păstreze aspectul original.",
+        "additionalInfo": "Pentru a efectua un retur, trebuie să completați o declarație de returnare (vom trimite aceasta pe e-mailul dumneavoastră). Apoi va fi necesar să coordonați expedierea (livrarea) la adresa noastră cu managerul. Costurile de livrare a returului sunt suportate de client: în Moscova 450₽ prin curier, în regiuni se calculează în funcție de tarifele companiei SDEK. Dacă aveți nevoie de ajutor pentru organizarea livrării, suntem întotdeauna gata să ajutăm. Returul va fi procesat imediat după ce primim produsul (cu condiția respectării punctelor de mai sus). Termenul de returnare a fondurilor este de 1-5 zile. Costul livrării produsului nu este returnat."
+      }
+    ],
+    "automaticLitterInfo": [
+      "Informații despre returnarea și schimbul tăvilor de toaletă automate:",
+      "Pe site-ul nostru sunt indicate toate dimensiunile tăvilor automate „Pura Max” și „Pura X”. Dacă doriți să aflați parametri suplimentari ai produsului, scrieți-ne și vă vom trimite toate informațiile de care aveți nevoie.",
+      "Returnarea unei tăvi automate de toaletă de calitate adecvată este posibilă doar dacă este completă, cu materiale consumabile intacte și ne-deschise, precum și păstrând aspectul produsului fără deteriorări sau alte defecte.",
+      "Dacă ați deschis sigiliile și/sau materialele consumabile, ați folosit produsul, ați deteriorat aspectul sau completarea acestuia, returnarea unui produs de calitate adecvată nu este posibilă.",
+      "Produsul de calitate necorespunzătoare este supus returnării în conformitate cu legislația Federației Ruse."
+    ]
+  },
+  "delivery": {
+    "title": "Livrare și plată:",
+    "description": [
+      {
+        "strong": "Vom livra comanda dumneavoastră în orice oraș sau localitate din Federația Rusă."
+      },
+      {
+        "text": "Livrarea în magazinul nostru online se face prin intermediul companiilor de curierat: SDEK, Logsis și Fulllog."
+      },
+      {
+        "text": "La plasarea comenzii, veți putea alege orice opțiune disponibilă de livrare în orașul dumneavoastră."
+      }
+    ],
+    "moscowInfo": [
+      {
+        "text": "Informații pentru livrarea comenzilor în Moscova:"
+      },
+      {
+        "text": "Vom livra comanda prin TK Logsis/Fulllog chiar a doua zi dacă comanda este plasată până la 16-00. Dacă comanda este plasată după 16-00, livrarea va fi amânată cu o zi."
+      },
+      {
+        "text": "Costul de livrare pentru comenzi sub 6000 de ruble este de 450 de ruble, iar pentru comenzi peste 6000 de ruble este gratuit."
+      }
+    ],
+    "moInfo": [
+      {
+        "text": "MO: Puteți alege serviciul de livrare pentru comenzile din regiune: SDEK sau Logsis. Costul și durata de livrare vor depinde de serviciul de curierat ales. Site-ul vă va oferi opțiuni la plasarea comenzii."
+      }
+    ],
+    "spbInfo": [
+      {
+        "text": "Sankt Petersburg:"
+      },
+      {
+        "text": "Vom livra comanda prin TK Logsis în 1-2 zile dacă comanda este plasată până la 17-00. Dacă comanda este plasată după 17-00, livrarea va dura +1 zi. Costul de livrare este de 450 de ruble. De asemenea, puteți alege TK Sdek (livrare prin curier sau la PVZ)."
+      }
+    ],
+    "otherCitiesInfo": [
+      {
+        "text": "Livrare în alte orașe din Rusia:"
+      },
+      {
+        "text": "Livrare în 3 zile lucrătoare de la SDEK. Veți putea alege tariful și metoda de livrare potrivită (prin curier sau la PVZ)."
+      },
+      {
+        "text": "Lista orașelor în care livrăm:"
+      },
+      {
+        "text": "Moscova, Sankt Petersburg, Nijni Novgorod, Kazan, Soci, Krasnodar, Rostov pe Don, Voronej, Perm, Ekaterinburg, Ufa, Samara, Novosibirsk, Krasnoiarsk etc."
+      }
+    ],
+    "paymentInfo": [
+      {
+        "text": "Plată:"
+      },
+      {
+        "text": "Nu expediem comenzi cu plata la livrare. Plata se efectuează pe site",
+        "link": {
+          "text": "petkit.com.ru",
+          "url": "http://petkit.com.ru"
+        }
+      },
+      {
+        "text": "cu orice card bancar și este procesată ca o achiziție. După plată, veți primi un e-mail cu un bon electronic ca confirmare a achiziției la magazinul Petkit."
+      }
+    ]
+  }
 }

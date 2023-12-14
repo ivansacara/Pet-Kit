@@ -1,10 +1,10 @@
 <template>
 	<section class="faq-section">
 		<div class="container">
-			<Breadcrumbs :pageTitle="t('meta.faqTitle')" />
+			<Breadcrumbs :pageTitle="t('links.faq')" />
 			<div class="faq-wrapper">
 				<h1 class="faq-title">
-					<strong>Часто задаваемые вопросы</strong>
+					<strong>{{t('faq.title')}}</strong>
 				</h1>
 				<div v-for="faqInfo in faqsInfo.item" :key="faqInfo.sys.id">
 					<Accordion :faqInfo="faqInfo"/>
@@ -19,8 +19,8 @@
 const { t } = useI18n();
 const { $client } = useNuxtApp();
 useHead({
-	title: t("meta.faqTitle"),
-	meta: [{ name: "description", content: t("meta.faqContent") }],
+	title: t("links.faq"),
+	meta: [{ name: "description", content: t("meta.faq") }],
 });
 
 const faqsInfo = ref({

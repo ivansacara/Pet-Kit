@@ -9,20 +9,38 @@
 				</div>
 				<div class="header-logo">
 					<nuxt-link :to="localePath('/')">
-						<img src="/icons/logo.svg" alt="">
+						<img src="/icons/logo.svg" alt="logo">
 					</nuxt-link>
 				</div>
 				<nav class="header-nav" 
 					:class="{ 'open': isActive }">
 					<ul class="nav-items">
-						<li v-for="(item, index) in menuItems" :key="index">
+						<li>
 							<nuxt-link
 								class="cn-navigation__link"
-								:to="localePath(item.path)"
+								:to="localePath('/delivery')"
 								@click="toggleMenu()">
-								{{ item.label }}
+								{{t('links.delivery')}}
 							</nuxt-link>
 						</li>
+						<li >
+							<nuxt-link
+									class="cn-navigation__link"
+									:to="localePath('/faq')"
+									@click="toggleMenu()">
+								{{ t('links.faq') }}
+							</nuxt-link>
+						</li>
+						<li>
+							<nuxt-link
+									class="cn-navigation__link"
+									:to="localePath('/Return')"
+									@click="toggleMenu()">
+								{{ t('links.return') }}
+							</nuxt-link>
+						</li>
+						<li><a 	class="cn-navigation__link" @click.prevent="scrollToElement('about')">{{ t('links.about') }}</a></li>
+						<li><a 	class="cn-navigation__link" @click.prevent="scrollToElement('contacts')">{{t('links.contacts')}}</a></li>
 					</ul>
 				</nav>
 				<div class="header-languages">
@@ -37,18 +55,22 @@
 
 <script setup>
 	import { ref } from 'vue'
-	
+	const { t } = useI18n();
 	const localePath = useLocalePath()
 	const isActive = ref(false)
-
-	const menuItems = [
-		{ label: "Доставка и оплата", path: "/delivery" },
-		{ label: "FAQ", path: "/faq" },
-		{ label: "О нас", path: "/#about" },
-		{ label: "Контакты", path: "/#contacts" },
-		{ label: "Возврат и обмен", path: "/returnandchange" },
-	]
-
+	const scrollToElement = (id) => {
+		const element = document.getElementById(id);
+		if (isActive.value === true) {
+			toggleMenu()
+		}
+		if (element) {
+			element.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+				inline: "nearest"
+			});
+		}
+	};
 	const toggleMenu = () => {
 		isActive.value = !isActive.value
 		document.body.classList.toggle("isOpen");
