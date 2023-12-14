@@ -1,9 +1,16 @@
 <template>
   <div class="container">
     <Breadcrumbs :pageTitle="categoryName"/>
-    <nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
-      <Product :product="product"/>
-    </nuxt-link>
+
+	<h1 class="prod-title">Title</h1>
+
+    <div class="catalog">
+		<div class="catalog-list">
+			<nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
+				<Product :product="product"/>
+			</nuxt-link>
+		</div>
+	</div>
   </div>
 </template>
 <script setup>
@@ -65,3 +72,23 @@ onMounted(async () => {
 });
 </script>
 
+<style lang="scss">
+	.prod-title{
+		font-size: 18px;
+		font-weight: 400;
+		padding: 30px 0 0;
+		margin-bottom: 16px;
+	}
+
+	.catalog{
+		padding: 30px 0;
+	}
+
+	.catalog-list{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+		grid-template-rows: auto;
+		grid-row-gap: 32px;
+		grid-column-gap: 16px;
+	}
+</style>
