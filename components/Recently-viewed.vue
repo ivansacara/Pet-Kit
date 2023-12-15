@@ -2,13 +2,14 @@
 		<div class="container">
 			<div class="recent-wrapper">
 				<div class="viewed-products">
-					<div class="viewed-head"> 
+					<div class="viewed-head">
 						<h2>Ранее просмотренные</h2>
 					</div>
-					<Swiper 
-						:navigation="true" 
+					<Swiper
+						:navigation="true"
 						:modules="[SwiperEffectCreative, SwiperNavigation]"
 						:space-between="30"
+						:slides-per-view="1.2"
 						:breakpoints="{
 							640: {
 								slidesPerView: 2,
@@ -18,7 +19,7 @@
 							}
 						}"
 						class="recent-slider">
-						
+
 						<SwiperSlide>
 							<nuxt-link to="" class="viewed-product">
 								<div class="viewed-photo">
@@ -95,6 +96,9 @@
 			position: relative;
 			z-index: 5;
 
+			@media screen and (min-width: $sm){
+				font-size: $text-xl;
+			}
 			@media screen and (min-width: $md){
 				font-size: $text-2xl;
 			}
@@ -165,10 +169,9 @@
 	}
 
 	.recent-slider{
-		@media screen and (min-width: $sm){
-			padding-top: 60px;
-			margin-top: -60px;
-		}
+		padding-top: 60px;
+		margin-top: -60px;
+
 
 		.swiper-slide{
 			max-width: max-content;
@@ -176,58 +179,58 @@
 
 		.swiper-button-prev,
 		.swiper-button-next{
-			display: none;
 			position: absolute;
+			top: 10px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			bottom: auto;
+			min-width: 45px;
+			min-height: 32px;
+			height: auto;
+			padding: 0.3rem 1rem;
+			color: $default;
+			background-color: $btn-bg;
+			border-radius: 10px;
+			font-size: 1rem;
+			outline: none;
+			border: none;
+			margin: 0 0 1rem;
+			cursor: pointer;
+			user-select: none;
+			transition: background-color .3s ease;
 
+			&:after {
+				content: "➜";
+				font-size: $text-2xl;
+				font-weight: 100;
+			}
 			&:hover{
 				background-color: $btn-hover;
 			}
 
 			@media screen and (min-width: $sm){
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				bottom: auto;
 				min-width: 60px;
-				min-height: 32px;
-				height: auto;
-				padding: 0.3rem 1rem;
-				color: $default;
-				background-color: $btn-bg;
-				border-radius: 10px;
-				font-size: 1rem;
-				outline: none;
-				border: none;
-				margin: 0 0 1rem;
-				cursor: pointer;
-				user-select: none;
-				transition: background-color .3s ease;
 			}
 		}
 
 		.swiper-button-prev{
-			right: 70px;
-			top: 10px;
+			right: 50px;
 			left: auto;
 
 			&:after{
-				content: "➜";
 				transform: rotate(180deg);
-				font-size: $text-2xl;
-				font-weight: 100;
+
+			}
+
+			@media screen and (min-width: $sm) {
+				right: 70px;
 			}
 		}
 
 		.swiper-button-next{
 			right: 0;
-			top: 10px;
 			left: auto;
-
-			&:after{
-				content: "➜";
-				font-size: $text-2xl;
-				font-weight: 100;
-			}
 		}
 	}
 </style>
