@@ -91,12 +91,16 @@
 		font-weight: 400;
 		font-size: $text-base;
 		line-height: 1;
-		color: white;
+		color: $default;
 		text-align: center;
 		border-radius: 10px;
 		white-space: nowrap;
 		user-select: none;
 		background-color: $btn-bg;
 		padding: 0 16px;
+
+		&:hover{
+			background: $btn-hover;
+		}
 	}
 </style>

@@ -92,6 +92,7 @@
 		left: 0;
 		right: 0;
 		background: $bg;
+		border-bottom: 1px solid #ededed;
 		
 		@media screen and (min-width: $lg){
 			height: 74px;

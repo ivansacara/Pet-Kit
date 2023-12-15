@@ -9,9 +9,6 @@
 			<nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
 				<Product :product="product"/>
 			</nuxt-link>
-			<nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
-				<Product :product="product"/>
-			</nuxt-link>
 		</div>
 	</div>
   </div>

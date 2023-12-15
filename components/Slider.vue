@@ -11,7 +11,10 @@
 			disableOnInteraction: true,
 		}">
 		<SwiperSlide v-for="(slide, index) in images" :key="index">
-			<img class="swiper-img" :src="slide.imageUrl" alt=""/>
+			<picture>
+				<source :srcset="slide.imageSrcUrl" type="image/webp" media="(max-width: 768px)">
+				<img class="swiper-img" :src="slide.imageUrl" alt=""/>
+			</picture>
 		</SwiperSlide>
 	</Swiper>
 </template>
@@ -19,8 +22,14 @@
 <script setup>
 	const { t } = useI18n();
 	const images = reactive([
-		{ imageUrl: "/img/components/slider/slide_1.jpg" },
-		{ imageUrl: "/img/components/slider/slide_2.jpg" },
+		{ 
+			imageUrl: "/img/components/slider/slide_1.jpg", 
+			imageSrcUrl: "/img/components/slider/slide_1.jpg" 
+		},
+		{ 
+			imageUrl: "/img/components/slider/slide_2.jpg", 
+			imageSrcUrl: "/img/components/slider/slide_2.jpg" 
+		},
 	]);
 </script>
 

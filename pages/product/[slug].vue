@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <Breadcrumbs :pageTitle="product.item[0]?.fields?.name"/>
-    <Product-description :product="product.item"/>
+	<Breadcrumbs :pageTitle="product.item[0]?.fields?.name"/>
+	<div class="prod-descr-wrapper">
+    	<Product-description :product="product.item"/>
+	</div>
   </div>
 </template>
 <script setup>
@@ -57,3 +59,8 @@ onMounted(async () => {
 // Initial fetch on component mount
 fetchProducts();
 </script>
+<style lang="scss">
+	.prod-descr-wrapper{
+		padding: 30px 0;
+	}
+</style>

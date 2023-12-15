@@ -179,6 +179,10 @@
 			display: none;
 			position: absolute;
 
+			&:hover{
+				background-color: $btn-hover;
+			}
+
 			@media screen and (min-width: $sm){
 				display: inline-flex;
 				align-items: center;
@@ -188,7 +192,7 @@
 				min-height: 32px;
 				height: auto;
 				padding: 0.3rem 1rem;
-				color: #fff;
+				color: $default;
 				background-color: $btn-bg;
 				border-radius: 10px;
 				font-size: 1rem;
@@ -197,6 +201,7 @@
 				margin: 0 0 1rem;
 				cursor: pointer;
 				user-select: none;
+				transition: background-color .3s ease;
 			}
 		}
 
