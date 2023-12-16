@@ -29,9 +29,18 @@
 		border: 1px solid #f7f7f7;
 		border-radius: 10px;
 		overflow: hidden;
+		transition: box-shadow 0.3s ease;
 
 		@media screen and (min-width: $md){
 			padding: 10px;
+		}
+
+		@media screen and (min-width: $lg){
+			&:hover{
+				-webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+				-moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+				box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+			}
 		}
 	}
 
