@@ -73,9 +73,9 @@
 	}
 
 	.social-block{
-		max-height: 0;
 		right: -10px;
 		width: 200px;
+		z-index: -1;
 		overflow: hidden;
 		padding: 16px;
 		margin: -16px 0;
@@ -90,26 +90,16 @@
 		}
 
 		&.open-social{
-			max-height: calc(100vh - 209px);
-			
+			z-index: 1000;
 			a{
 				opacity: 1;
 				transition-duration: 60ms;
-				
-				&.bh-telegram{
-					bottom: 0;
-				}
-				
-				&.bh-whatsapp{
-					bottom: 0;
-				}
 			}
 		}
 
 		a{
 			opacity: 0;
 			transition-duration: 30ms;
-			z-index: 1000;
 			transition: all .2s;
 			position: relative;
 			width: 50px;
@@ -124,15 +114,46 @@
 			border-radius: 50%;
    			justify-content: center;
 
+			&:hover{
+				overflow: inherit;
+				
+				&:before{
+					position: absolute;
+					right: 62px;
+					left: unset;
+					top: 10px;
+					padding: 6px 12px;
+					background: #fff;
+					border-radius: 20px;
+					color: #000;
+					cursor: pointer;
+					font-size: 14px;
+					line-height: 20px;
+					letter-spacing: .25px;
+					text-transform: capitalize;
+					filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.16));
+				}
+			}
+
 			&.bh-telegram{
 				background: #4faee6;
-				bottom: -100px;
+
+				&:hover{
+					&:before{
+						content: "Telegram";
+					}
+				}
 			}
 
 			&.bh-whatsapp{
 				margin-top: 12px;
-				bottom: -62px;
 				background: #4dc247;
+
+				&:hover{
+					&:before{
+						content: "whatsapp";
+					}
+				}
 			}
 		}
 	}
