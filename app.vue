@@ -6,6 +6,7 @@
     </main>
     <Footer />
   </div>
+  <ButtonSocial />
 </template>
 <script setup >
 </script>
