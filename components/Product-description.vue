@@ -1,7 +1,7 @@
 <template>
 	<div class="prod-descr" v-for="productDesc in product" :key="productDesc.sys.id">
 		<div class="prod-area">
-			<div class="prod-descr-photo"> 
+			<div class="prod-descr-photo">
 				<Splide :options="mainOptions" class="main-slider">
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
@@ -183,6 +183,8 @@
 			</button>
 		</div>
 	</div>
+
+	<BuyPopup />
 </template>
 
 <script lang="ts">
@@ -244,7 +246,7 @@
 				if ( thumbsSplide ) {
 					main.value?.sync( thumbsSplide );
 				}
-			} );
+			});
 
 			return {
 				main,
