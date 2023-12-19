@@ -393,9 +393,97 @@
 							</div>
 						</nuxt-link> 
 					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src="/img/components/slider/3.webp" alt="">
+							</div>
+						</nuxt-link>
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src="/img/components/slider/10.webp" alt="">
+							</div>
+						</nuxt-link> 
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src="/img/components/slider/3.webp" alt="">
+							</div>
+						</nuxt-link>
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src="/img/components/slider/10.webp" alt="">
+							</div>
+						</nuxt-link> 
+					</SplideSlide>
 				</Splide>
 
 				<Splide :options="thumbsOptions" class="gallery-slider product-list" ref="thumbs">
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src=" /img/components/slider/3.webp" alt="">
+							</div>
+						</nuxt-link>
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src=" /img/components/slider/10.webp" alt="">
+							</div>
+						</nuxt-link> 
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src=" /img/components/slider/3.webp" alt="">
+							</div>
+						</nuxt-link>
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<!-- <picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture> -->
+								<img src=" /img/components/slider/10.webp" alt="">
+							</div>
+						</nuxt-link> 
+					</SplideSlide>
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
@@ -487,12 +575,11 @@
 			};
 
 			const thumbsOptions: Options = {
-				rewind: true,
-				fixedWidth: 104,
-				fixedHeight: 58,
+				rewind: false,
+				fixedWidth: 110,
+				fixedHeight: 110,
 				isNavigation: true,
-				gap: 10,
-				focus: 'center',
+				gap: 12,
 				pagination: false,
 				cover: true,
 				dragMinThreshold: {
@@ -500,7 +587,7 @@
 					touch: 10,
 				},
 				direction: 'ttb',
-				height: '10rem',
+				height: 'auto',
 			};
 
 			onMounted( () => {
@@ -519,7 +606,7 @@
 				thumbsOptions,
 			}
 		},
-	} );
+	});
 </script>
 
 <style lang="scss">
@@ -533,6 +620,7 @@
 
 	.splide__slide {
 		height: auto !important;
+		width: auto;
 	}
 
 	.gallery-slider,
@@ -562,7 +650,72 @@
 		top: 0;
 		bottom: 0;
 		left: 0;
-		width: 20%;
+		width: auto;
+		height: 100%;
+		padding: 40px 0;
+
+		.splide__track{
+			height: 100%;
+		}
+
+		.splide__slide{
+			border: none !important;
+
+			&.is-active{
+				.product-photo{
+					&:before{
+						content: "";
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						border: 2px solid transparent;
+						pointer-events: none;
+						z-index: 1;
+						border-color: #8dc8ff;
+					}
+				}
+			}
+		}
+
+		.splide__arrow {
+			width: 100%;
+			height: 30px;
+			outline: none;
+			border: 0.5px solid #dedede;
+			color: #dedede;
+			border-radius: 3px;
+			background-color: transparent;
+
+			svg{
+				font-size: 16px;
+				fill: #dedede;
+				transition: 0.2s ease-in-out;
+			}
+
+			&.splide__arrow--prev{
+				top: 2px;
+				bottom: auto;
+			}
+
+			&.splide__arrow--next{
+				top: auto;
+				bottom: 2px;
+			}
+
+			&:disabled{
+				display: none;
+			}
+
+			&:hover{
+				border: 0.5px solid #86c5ff;
+
+				svg{
+					fill: #86c5ff;
+				}
+			}
+		}
 	}
 
 	.prod-descr {
