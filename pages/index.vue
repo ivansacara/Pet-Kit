@@ -1,5 +1,5 @@
 <template>
-  <Slider />
+  <Slider :sliderItems="sliderItems"/>
   <Categories :categories="categoryInformation"/>
   <Application  />
   <RecentlyViewed />
@@ -18,16 +18,24 @@ const categoryInformation = ref({
     items: []
 });
 
+const sliderItems = ref ({
+    items: []
+})
+
 const fetchData = async () => {
     try {
-      const response = await $client.getEntries({
+      const categories = await $client.getEntries({
           content_type: 'category',
           'fields.slug': route.params.slug,
           locale: t("locale"),
       });
-      // Assuming response.items is the array of categories you want
+
+      const slides = await $client.getEntries({
+          content_type: 'slider',
+      });
+
       categoryInformation.value = {
-        items: response.items.map(item => ({
+        items: categories.items.map(item => ({
           sys: {
               id: item.sys.id,
               locale: item.sys.locale.split('-')[0]
@@ -40,6 +48,40 @@ const fetchData = async () => {
           }
         })),
       };
+
+        let groupedSlides = slides.items.flatMap(item =>
+            item.fields.slide.reduce((acc, slideItem) => {
+                let key = slideItem.fields.title; // 'mob' или 'desc'
+                if (!acc[key]) {
+                    acc[key] = [];
+                }
+                acc[key].push(slideItem.fields.file.url);
+                return acc;
+            }, {})
+        );
+
+        let slidesArray = [];
+        for (let slideKey in groupedSlides[0]) {
+            let slideNumber = slideKey.split('_')[1]; // Получаем номер слайда из ключа
+            let slideType = slideKey.split('_')[2]; // Получаем тип слайда (mob или desc)
+
+            if (!slidesArray[slideNumber]) {
+                slidesArray[slideNumber] = { mobileUrl: '', desktopUrl: '' };
+            }
+
+            if (slideType === 'mob') {
+                slidesArray[slideNumber].mobileUrl = groupedSlides[0][slideKey][0];
+            } else if (slideType === 'desc') {
+                slidesArray[slideNumber].desktopUrl = groupedSlides[0][slideKey][0];
+            }
+        }
+
+        slidesArray = slidesArray.filter(slide => slide);
+
+        sliderItems.value = {
+            items: slidesArray
+        };
+
     } catch (error) {
         console.error(error);
       }

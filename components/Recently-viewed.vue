@@ -25,7 +25,7 @@
 								<div class="viewed-photo">
 									<div class="img-ratio">
 										<div class="img-ratio__inner">
-											<img src="../public/img/components/slider/slide_1.jpg" alt="">
+											<img src="/img/components/slider/slide_1.jpg" alt="">
 										</div>
 									</div>
 								</div>
@@ -42,7 +42,7 @@
 								<div class="viewed-photo">
 									<div class="img-ratio">
 										<div class="img-ratio__inner">
-											<img src="../public/img/components/slider/slide_1.jpg" alt="">
+											<img src="/img/components/slider/slide_1.jpg" alt="">
 										</div>
 									</div>
 								</div>
@@ -59,7 +59,7 @@
 								<div class="viewed-photo">
 									<div class="img-ratio">
 										<div class="img-ratio__inner">
-											<img src="../public/img/components/slider/slide_1.jpg" alt="">
+											<img src="/img/components/slider/slide_1.jpg" alt="">
 										</div>
 									</div>
 								</div>

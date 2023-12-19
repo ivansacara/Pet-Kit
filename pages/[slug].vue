@@ -2,7 +2,7 @@
   <div class="container">
     <Breadcrumbs :pageTitle="categoryName"/>
 
-	<h1 class="prod-title">Title</h1>
+	<h1 class="prod-title">{{category?.fields?.name}}</h1>
 
     <div class="catalog">
 		<div class="catalog-list">

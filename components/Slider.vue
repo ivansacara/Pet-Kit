@@ -1,5 +1,5 @@
 <template>
-	<Swiper 
+	<Swiper
 		:modules="[SwiperAutoplay, SwiperEffectCreative]"
 		:slides-per-view="1"
 		:loop="true"
@@ -10,10 +10,10 @@
 			delay: 5000,
 			disableOnInteraction: true,
 		}">
-		<SwiperSlide v-for="(slide, index) in images" :key="index">
+		<SwiperSlide v-for="(slide, index) in sliderItems.items" :key="index">
 			<picture>
-				<source :srcset="slide.imageSrcUrl" type="image/webp" media="(max-width: 768px)">
-				<img class="swiper-img" :src="slide.imageUrl" alt=""/>
+				<source :srcset="slide.mobileUrl" type="image/webp" media="(max-width: 768px)">
+				<img class="swiper-img" :src="slide.desktopUrl" alt=""/>
 			</picture>
 		</SwiperSlide>
 	</Swiper>
@@ -21,16 +21,9 @@
 
 <script setup>
 	const { t } = useI18n();
-	const images = reactive([
-		{ 
-			imageUrl: "/img/components/slider/slide_1.jpg", 
-			imageSrcUrl: "/img/components/slider/slide_1.jpg" 
-		},
-		{ 
-			imageUrl: "/img/components/slider/slide_2.jpg", 
-			imageSrcUrl: "/img/components/slider/slide_2.jpg" 
-		},
-	]);
+	const props = defineProps({
+		sliderItems: Object,
+	});
 </script>
 
 <style lang="scss">
