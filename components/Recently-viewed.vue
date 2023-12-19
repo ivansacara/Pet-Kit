@@ -1,5 +1,5 @@
-<template>
-		<div class="container">
+<template >
+		<div class="container" v-if="viewedProducts.length">
 			<div class="recent-wrapper">
 				<div class="viewed-products">
 					<div class="viewed-head">
@@ -20,54 +20,23 @@
 						}"
 						class="recent-slider">
 
-						<SwiperSlide>
-							<nuxt-link to="" class="viewed-product">
+						<SwiperSlide v-for="viewedProduct in viewedProducts" :key="viewedProduct.id">
+							<nuxt-link  :to="viewedProduct.locale.includes('ru') ?
+													`/${viewedProduct.locale}/product/${viewedProduct.slug}` :
+													`product/${viewedProduct.slug}`"
+												 class="viewed-product">
 								<div class="viewed-photo">
 									<div class="img-ratio">
 										<div class="img-ratio__inner">
-											<img src="/img/components/slider/slide_1.jpg" alt="">
+											<img :src="viewedProduct.image" alt="">
 										</div>
 									</div>
 								</div>
 								<div class="viewed-title">
-									Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
+									{{viewedProduct.description}}
 								</div>
 								<div class="viewed-price">
-									15 988 руб
-								</div>
-							</nuxt-link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<nuxt-link to="" class="viewed-product">
-								<div class="viewed-photo">
-									<div class="img-ratio">
-										<div class="img-ratio__inner">
-											<img src="/img/components/slider/slide_1.jpg" alt="">
-										</div>
-									</div>
-								</div>
-								<div class="viewed-title">
-									Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
-								</div>
-								<div class="viewed-price">
-									15 988 руб
-								</div>
-							</nuxt-link>
-						</SwiperSlide>
-						<SwiperSlide>
-							<nuxt-link to="" class="viewed-product">
-								<div class="viewed-photo">
-									<div class="img-ratio">
-										<div class="img-ratio__inner">
-											<img src="/img/components/slider/slide_1.jpg" alt="">
-										</div>
-									</div>
-								</div>
-								<div class="viewed-title">
-									Груминг набор для стрижки кошек и собак 5 в 1 Airclipper
-								</div>
-								<div class="viewed-price">
-									15 988 руб
+									{{viewedProduct.price}} Lei
 								</div>
 							</nuxt-link>
 						</SwiperSlide>
@@ -77,7 +46,16 @@
 		</div>
 </template>
 <script setup>
-	const { t } = useI18n(); 
+	const { t } = useI18n();
+	import { onMounted } from 'vue';
+	const viewedProducts = ref([]);
+
+	onMounted(() => {
+		const storedData = localStorage.getItem('viewedProducts');
+		if (storedData) {
+			viewedProducts.value = JSON.parse(storedData);
+		}
+	});
 </script>
 <style lang="scss">
 	.recent-wrapper{
@@ -158,7 +136,7 @@
 			}
 		}
 	}
-	
+
 	.viewed-title{
 		grid-area: title;
 	}

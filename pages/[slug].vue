@@ -7,7 +7,7 @@
     <div class="catalog">
 		<div class="catalog-list">
 			<nuxt-link v-for="product in products" :to="`product/${product.fields.slug}`" :key="product.sys.id">
-				<Product :product="product"/>
+				<Product :product="product" @click="selectProduct(product)"/>
 			</nuxt-link>
 		</div>
 	</div>
@@ -23,7 +23,45 @@ const { t } = useI18n();
 
 const category = ref([]);
 const products = ref([]);
+const viewedProducts = ref([]);
 let categoryName
+
+const selectProduct = (product) => {
+	console.log(product)
+	// Получаем существующие данные из localStorage
+	const storedData = localStorage.getItem('viewedProducts');
+
+	// Если данные уже существуют, парсим их
+	if (storedData) {
+		viewedProducts.value = JSON.parse(storedData);
+	}
+
+	// Проверяем, есть ли продукт с таким id в массиве
+	const existingProductIndex = viewedProducts.value.findIndex(p => p.id === product.sys.id);
+
+	// Если продукт с таким id не найден, добавляем его
+	if (existingProductIndex === -1) {
+		const newProduct = {
+			image: product.fields.image[0].fields.file.url,
+			price: product.fields.price,
+			description: product.fields.description,
+			slug: product.fields.slug,
+			locale: product.sys.locale.split('-')[0],
+			id: product.sys.id
+		};
+
+		// Добавляем новый продукт в начало массива
+		viewedProducts.value.unshift(newProduct);
+
+		// Убеждаемся, что массив не превышает 10 элементов
+		if (viewedProducts.value.length > 10) {
+			viewedProducts.value = viewedProducts.value.slice(0, 10);
+		}
+
+		// Сохраняем данные в localStorage
+		localStorage.setItem('viewedProducts', JSON.stringify(viewedProducts.value));
+	}
+};
 
 const fetchCategories = async () => {
     try {

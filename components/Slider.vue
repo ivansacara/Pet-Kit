@@ -5,7 +5,6 @@
 		:loop="true"
 		:effect="'slide'"
 		:centered-slides="true"
-		:auto-height="true"
 		:autoplay="{
 			delay: 5000,
 			disableOnInteraction: true,

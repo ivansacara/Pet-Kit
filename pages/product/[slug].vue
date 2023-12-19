@@ -35,7 +35,7 @@ const fetchProducts = async () => {
                         name: firstItem.fields.name,
                         description: firstItem.fields.description,
                         price: firstItem.fields.price,
-                        image: firstItem.fields.image ? firstItem.fields.image.map((image) => image.fields.file?.url) : []
+                        image: firstItem.fields.image
                     }
                 }]
             };

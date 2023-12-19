@@ -9,7 +9,7 @@
 		</div>
 		
 		<p class="prod-name">{{ product.fields.name }}</p>
-		<span class="prod-price">20 136 руб</span>
+		<span class="prod-price">{{product.fields.price}}</span>
 
 		<button class="prod-btn" type="button">
 			<span>Подробнее</span>
