@@ -12,9 +12,7 @@
 				</nuxt-link>
 			</div>
 		</div>
-		<div class="prod-descr-title" :class="{
-			'd': onmouseover
-		}">
+		<div class="prod-descr-title">
 			<h1 class="title-head">{{ productDesc.fields.name }}</h1>
 		</div>
 		<div class="prod-descr-price">
