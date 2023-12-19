@@ -75,13 +75,15 @@
 	.social-block{
 		right: -10px;
 		width: 200px;
-		z-index: -1;
-		overflow: hidden;
 		padding: 16px;
 		margin: -16px 0;
+		opacity: 0;
 		position: absolute;
 		bottom: 96px;
+		width: fit-content;
 		box-sizing: content-box;
+		transition: opacity .2s ease;
+		pointer-events: none;
 		
 		.social-wrap{
 			display: flex;
@@ -90,17 +92,11 @@
 		}
 
 		&.open-social{
-			z-index: 1000;
-			a{
-				opacity: 1;
-				transition-duration: 60ms;
-			}
+			opacity: 1;
+			pointer-events: all;
 		}
 
 		a{
-			opacity: 0;
-			transition-duration: 30ms;
-			transition: all .2s;
 			position: relative;
 			width: 50px;
 			height: 50px;

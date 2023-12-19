@@ -1,20 +1,44 @@
 <template>
 	<div class="prod-descr" v-for="productDesc in product" :key="productDesc.sys.id">
 		<div class="prod-area">
-			<div class="prod-descr-photo">
-				<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
-					<div class="img-ratio__inner">
-						<picture>
-							<source :srcset="productDesc.fields.image" type="image/webp">
-							<img :src="productDesc.fields.image" alt="">
-						</picture>
-					</div>
-				</nuxt-link>
+			<div class="prod-descr-photo"> 
+				<Splide :options="splideOptions">
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture>
+							</div>
+						</nuxt-link>
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture>
+							</div>
+						</nuxt-link> 
+					</SplideSlide>
+					<SplideSlide>
+						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+							<div class="img-ratio__inner">
+								<picture>
+									<source :srcset="productDesc.fields.image" type="image/webp">
+									<img :src="productDesc.fields.image" alt="">
+								</picture>
+							</div>
+						</nuxt-link> 
+					</SplideSlide>
+				</Splide>
+
+				
 			</div>
 		</div>
-		<div class="prod-descr-title" :class="{
-			'd': onmouseover
-		}">
+		<div class="prod-descr-title">
 			<h1 class="title-head">{{ productDesc.fields.name }}</h1>
 		</div>
 		<div class="prod-descr-price">
@@ -33,27 +57,60 @@
 	</div>
 </template>
 
-<script setup lang="js">
-import { defineProps } from 'vue';
+<script setup>
+	import { defineProps, ref } from 'vue';
+	import { Splide, SplideSlide } from '@splidejs/vue-splide';
+	import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
-// Define the props the component accepts
-const props = defineProps({
-    product: {
-        type: Object,
-        required: true
-    }
-});
+	const props = defineProps({
+		product: {
+			type: Object,
+			required: true
+		}
+	});
 
-// Now you can use props.product in your template
+	const splideOptions = ref({
+		type: 'slide',
+		heightRatio: 0.5,
+		arrows: false,
+		autoplay: false,
+		autoHeight: true,
+		mediaQuery: 'min',
+		
+		breakpoints: {
+			1024:{
+				pagination: false,
+				arrows: true,
+			}
+		}
+	});
 </script>
+
 <style lang="scss">
+	.splide__slide{
+		height: 100% !important;
+	}
+
+	.splide__pagination__page{
+		margin: 0 6px;
+		width: 6px;
+		height: 6px;
+		background: #d9d9d9;
+		opacity: 1;
+		
+		&.is-active{
+			transform: scale(1);
+			background: #8dc8ff;
+		}
+	}
+
 	.prod-descr{
 		display: grid;
 		grid-template-areas:
 			"photo"
-			"price"
-			"descr"
 			"title"
+			"descr"
+			"price"
 			"buy";
 		grid-template-columns: auto;
 		grid-template-rows: auto;
@@ -76,6 +133,10 @@ const props = defineProps({
 		position: relative;
 		grid-area: photo;
 		min-width: 0;
+
+		@media screen and (min-width: $lg){
+			padding-left: calc(20% + 2rem);
+		}
 	}
 
 	.prod-descr-photo{
@@ -86,6 +147,7 @@ const props = defineProps({
 
 		@media screen and (min-width: $lg){
 			max-width: none;
+			margin: 0;
 		}
 	}
 
