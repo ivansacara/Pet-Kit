@@ -341,30 +341,30 @@
 </style> -->
 
 <template>
-	<!-- <div class="prod-descr" v-for="productDesc in product" :key="productDesc.sys.id"> -->
-	<div class="prod-descr">
+<!--	<div class="prod-descr" v-for="productDesc in product" :key="productDesc.sys.id"> -->
+	<div class="prod-descr" v-for="productDesc in product" :key="productDesc.sys.id">
 		<div class="prod-area">
 			<div class="prod-descr-photo"> 
 				<Splide :options="mainOptions" class="main-slider">
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
-								<!-- <picture>
+								<picture>
 									<source :srcset="productDesc.fields.image" type="image/webp">
 									<img :src="productDesc.fields.image" alt="">
-								</picture> -->
-								<img src="/img/components/slider/3.webp" alt="">
+								</picture>
+<!--								<img src="/img/components/slider/3.webp" alt="">-->
 							</div>
 						</nuxt-link>
 					</SplideSlide>
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
-								<!-- <picture>
+								<picture>
 									<source :srcset="productDesc.fields.image" type="image/webp">
 									<img :src="productDesc.fields.image" alt="">
-								</picture> -->
-								<img src="/img/components/slider/10.webp" alt="">
+								</picture>
+<!--								<img src="/img/components/slider/10.webp" alt="">-->
 							</div>
 						</nuxt-link> 
 					</SplideSlide>
@@ -374,22 +374,22 @@
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
-								<!-- <picture>
+								<picture>
 									<source :srcset="productDesc.fields.image" type="image/webp">
 									<img :src="productDesc.fields.image" alt="">
-								</picture> -->
-								<img src="/img/components/slider/3.webp" alt="">
+								</picture>
+<!--								<img src="/img/components/slider/3.webp" alt="">-->
 							</div>
 						</nuxt-link>
 					</SplideSlide>
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
-								<!-- <picture>
+								<picture>
 									<source :srcset="productDesc.fields.image" type="image/webp">
 									<img :src="productDesc.fields.image" alt="">
-								</picture> -->
-								<img src="/img/components/slider/10.webp" alt="">
+								</picture>
+<!--								<img src="/img/components/slider/10.webp" alt="">-->
 							</div>
 						</nuxt-link> 
 					</SplideSlide>
@@ -399,22 +399,22 @@
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
-								<!-- <picture>
+								<picture>
 									<source :srcset="productDesc.fields.image" type="image/webp">
 									<img :src="productDesc.fields.image" alt="">
-								</picture> -->
-								<img src=" /img/components/slider/3.webp" alt="">
+								</picture>
+<!--								<img src=" /img/components/slider/3.webp" alt="">-->
 							</div>
 						</nuxt-link>
 					</SplideSlide>
 					<SplideSlide>
 						<nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
 							<div class="img-ratio__inner">
-								<!-- <picture>
+								<picture>
 									<source :srcset="productDesc.fields.image" type="image/webp">
 									<img :src="productDesc.fields.image" alt="">
-								</picture> -->
-								<img src=" /img/components/slider/10.webp" alt="">
+								</picture>
+<!--								<img src=" /img/components/slider/10.webp" alt="">-->
 							</div>
 						</nuxt-link> 
 					</SplideSlide>
@@ -422,16 +422,16 @@
 			</div>
 		</div>
 		<div class="prod-descr-title">
-			<!-- <h1 class="title-head">{{ productDesc.fields.name }}</h1> -->
-			<h1>rtrtrrt</h1>
+			 <h1 class="title-head">{{ productDesc.fields.name }}</h1>
+<!--			<h1>rtrtrrt</h1>-->
 		</div>
 		<div class="prod-descr-price">
-			<!-- <span class="price-cur">{{ productDesc.fields.price }}</span> -->
-			<span>ererr</span>
+			 <span class="price-cur">{{ productDesc.fields.price }}</span>
+<!--			<span>ererr</span>-->
 		</div>
 		<div class="prod-descr-info">
-			<!-- <span>{{ productDesc.fields.description }}</span> -->
-			<span>dscscd</span>
+			 <span>{{ productDesc.fields.description }}</span>
+<!--			<span>dscscd</span>-->
 		</div>
 		<div class="prod-descr-buy">
 			<button class="prod-descr-btn">
@@ -451,6 +451,7 @@
 
 	export default defineComponent( {
 		name: 'ThumbnailsExample',
+		props:['product'],
 
 		components: {
 			Splide,
