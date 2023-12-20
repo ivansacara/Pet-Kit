@@ -74,9 +74,6 @@
 			position: relative;
 			z-index: 5;
 
-			@media screen and (min-width: $sm){
-				font-size: $text-xl;
-			}
 			@media screen and (min-width: $md){
 				font-size: $text-2xl;
 			}
@@ -100,10 +97,6 @@
 		font-size: 16px;
 
 		@media screen and (min-width: $sm){
-			grid-template-columns: 15% 1fr;
-		}
-
-		@media screen and (min-width: $md){
 			grid-template-columns: 30% 1fr;
 		}
 	}
@@ -136,7 +129,7 @@
 			}
 		}
 	}
-
+	
 	.viewed-title{
 		grid-area: title;
 	}
@@ -147,68 +140,71 @@
 	}
 
 	.recent-slider{
-		padding-top: 60px;
-		margin-top: -60px;
+		@media screen and (min-width: $sm){
+			padding-top: 60px;
+			margin-top: -60px;
+		}
 
-
-		.swiper-slide{
-			max-width: max-content;
+		@media screen and (min-width: $md){
+			.swiper-slide{
+				max-width: 310px;
+			}
 		}
 
 		.swiper-button-prev,
 		.swiper-button-next{
+			display: none;
 			position: absolute;
-			top: 10px;
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			bottom: auto;
-			min-width: 45px;
-			min-height: 32px;
-			height: auto;
-			padding: 0.3rem 1rem;
-			color: $default;
-			background-color: $btn-bg;
-			border-radius: 10px;
-			font-size: 1rem;
-			outline: none;
-			border: none;
-			margin: 0 0 1rem;
-			cursor: pointer;
-			user-select: none;
-			transition: background-color .3s ease;
 
-			&:after {
-				content: "➜";
-				font-size: $text-2xl;
-				font-weight: 100;
-			}
 			&:hover{
 				background-color: $btn-hover;
 			}
 
 			@media screen and (min-width: $sm){
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				bottom: auto;
 				min-width: 60px;
+				min-height: 32px;
+				height: auto;
+				padding: 0.3rem 1rem;
+				color: $default;
+				background-color: $btn-bg;
+				border-radius: 10px;
+				font-size: 1rem;
+				outline: none;
+				border: none;
+				margin: 0 0 1rem;
+				cursor: pointer;
+				user-select: none;
+				transition: background-color .3s ease;
 			}
 		}
 
 		.swiper-button-prev{
-			right: 50px;
+			right: 70px;
+			top: 10px;
 			left: auto;
 
 			&:after{
+				content: "➜";
 				transform: rotate(180deg);
-
-			}
-
-			@media screen and (min-width: $sm) {
-				right: 70px;
+				font-size: $text-2xl;
+				font-weight: 100;
 			}
 		}
 
 		.swiper-button-next{
 			right: 0;
+			top: 10px;
 			left: auto;
+
+			&:after{
+				content: "➜";
+				font-size: $text-2xl;
+				font-weight: 100;
+			}
 		}
 	}
 </style>
