@@ -1,6 +1,6 @@
 <template>
-  <Slider :sliderItems="sliderItems"/>
-  <Categories :categories="categoryInformation"/>
+<!--  <Slider :sliderItems="sliderItems"/>-->
+<!--  <Categories :categories="categoryInformation"/>-->
   <Application  />
   <RecentlyViewed />
   <About />
