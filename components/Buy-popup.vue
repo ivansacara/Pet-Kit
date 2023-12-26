@@ -1,5 +1,5 @@
 <template>
-	<div v-if="showPopup" class="popup-wrapper">
+	<div class="popup-wrapper">
 		<div class="popup-body">
 			<div class="popup-content">
 				<p class="popup-title">Заполните форму: </p>
