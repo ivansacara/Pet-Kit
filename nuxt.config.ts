@@ -4,11 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/global.scss'],
   modules: ['nuxt-swiper', '@nuxtjs/i18n'],
-  // dayjs: {
-  //   locales: ["ru", "ro"],
-  //   defaultLocale: "ro",
-  //   plugins: [],
-  // },
   i18n: {
     /* module options */
     lazy: true,
@@ -32,8 +27,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: "http://localhost:3000",
-      contentfulSpace: "",
-      contentfulAccessToken: "",
+      contentfulSpace: process.env.CONTENTFUL_SPACE_ID,
+      contentfulAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       gtmId: "",
     },
   },
