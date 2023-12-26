@@ -25,6 +25,7 @@ const { data: categoriesData } = await useAsyncData("categories", () =>
     })
 );
 console.log(categoriesData)
+
 // Processing categories data
 const categoryInformation = computed(() => ({
     items: categoriesData.value.items.map(item => ({
