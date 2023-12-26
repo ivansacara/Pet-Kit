@@ -56,6 +56,10 @@ a{
 	background: transparent;
 }
 
+input{
+	outline: none;
+}
+
 a, button{
 	transition: 0.2s ease-in-out;
 	cursor: pointer;

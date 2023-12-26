@@ -23,15 +23,16 @@
 		</div>
 	</div>
 
-	<!--	<BuyPopup />-->
+	<BuyPopup />
 </template>
 <script setup>
-const props = defineProps({
-	product: {
-		type: Object,
-		required: true
-	}
-});
+	const props = defineProps({
+		product: {
+			type: Object,
+			required: true
+		}
+	});
+	
 </script>
 
 <style lang="scss">
