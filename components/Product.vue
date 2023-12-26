@@ -17,9 +17,12 @@
 	</div>
 </template>
 <script setup>
-	const props =  defineProps({
-		product: [Object],
-	});
+const props = defineProps({
+	product: {
+		type: Object,
+		required: true
+	}
+});
 </script>
 <style lang="scss">
 	.prod-item{

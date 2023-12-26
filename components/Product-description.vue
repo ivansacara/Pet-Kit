@@ -1,18 +1,18 @@
 <template>
-	<div class="prod-descr" v-for="productDesc in product" :key="productDesc.sys.id">
+	<div class="prod-descr" >
 		<div class="prod-area">
 			<div class="prod-descr-photo">
-				<ProductSlider :productSlider="productDesc"/>
+				<ProductSlider :productSlider="product.fields.image"/>
 			</div>
 		</div>
 		<div class="prod-descr-title">
-			<h1 class="title-head">{{ productDesc.fields.name }}</h1>
+			<h1 class="title-head">{{ product.fields.name }}</h1>
 		</div>
 		<div class="prod-descr-price">
-			<span class="price-cur">{{ productDesc.fields.price }}</span>
+			<span class="price-cur">{{ product.fields.price }}</span>
 		</div>
 		<div class="prod-descr-info">
-			<span>{{ productDesc.fields.description }}</span>
+			<span>{{ product.fields.description }}</span>
 		</div>
 		<div class="prod-descr-buy">
 			<button class="prod-descr-btn">
@@ -22,8 +22,7 @@
 			</button>
 		</div>
 	</div>
-
-	<BuyPopup />
+<!--	<BuyPopup />-->
 </template>
 <script setup>
 	const props = defineProps({

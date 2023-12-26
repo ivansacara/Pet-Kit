@@ -1,11 +1,11 @@
 <template>
   <Splide :options="mainOptions" class="main-slider">
-    <SplideSlide v-for="image in productSlider.fields.image">
+    <SplideSlide v-for="image in productSlider">
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
-            <source :srcset="image?.fields?.file?.url" type="image/webp">
-            <img :src="image?.fields?.file?.url" alt="">
+            <source :srcset="image?.fields.file.url" type="image/webp">
+            <img :src="image?.fields.file.url" alt="">
           </picture>
         </div>
       </nuxt-link>
@@ -13,12 +13,12 @@
   </Splide>
 
   <Splide :options="sdOptions" ref="main" class="sd-slider">
-    <SplideSlide v-for="image in productSlider.fields.image">
+    <SplideSlide v-for="image in productSlider">
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
-            <source :srcset="image?.fields?.file?.url" type="image/webp">
-            <img :src="image?.fields?.file?.url" alt="">
+            <source :srcset="image?.fields.file.url" type="image/webp">
+            <img :src="image?.fields.file.url" alt="">
           </picture>
         </div>
       </nuxt-link>
@@ -26,12 +26,12 @@
   </Splide>
 
   <Splide :options="thumbsOptions" class="gallery-slider product-list" ref="thumbs">
-    <SplideSlide v-for="image in productSlider.fields.image">
+    <SplideSlide v-for="image in productSlider">
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
-            <source :srcset="image?.fields?.file?.url" type="image/webp">
-            <img :src="image?.fields?.file?.url" alt="">
+            <source :srcset="image?.fields.file.url" type="image/webp">
+            <img :src="image?.fields.file.url" alt="">
           </picture>
         </div>
       </nuxt-link>

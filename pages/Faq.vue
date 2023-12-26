@@ -18,41 +18,36 @@
 <script setup>
 const { t } = useI18n();
 const { $client } = useNuxtApp();
+
 useHead({
 	title: t("links.faq"),
 	meta: [{ name: "description", content: t("meta.faq") }],
 });
 
-const faqsInfo = ref({
-	item: Object
-});
+// Define the content type for your FAQ entries
+const contentType = "faq";
 
-const fetchData = async () => {
-	try {
-		const response = await $client.getEntries({
-			content_type: 'faq',
+// Fetch FAQ data using useAsyncData for SSR compatibility
+const { data: faqsData } = await useAsyncData("faqs", () =>
+		$client.getEntries({
+			content_type: contentType,
 			locale: t("locale"),
-		});
-		response.items.map(item => {
-			console.log(item)
 		})
-				// Assuming response.items is the array of categories you want
-		faqsInfo.value = {
-			item: response.items.map(item => ({
-				sys: { id: item.sys.id },
-				fields: {
-					question: item.fields.question,
-					response: item.fields.response,
-				}
-			})),
-		};
-	} catch (error) {
-		console.error(error);
-	}
-};
+);
 
-fetchData();
+// Process the fetched FAQ data
+const faqsInfo = computed(() => ({
+	item: faqsData.value.items.map(item => ({
+		sys: { id: item.sys.id },
+		fields: {
+			question: item.fields.question,
+			response: item.fields.response,
+		}
+	})),
+}));
+
 </script>
+
 
 <style lang="scss">
 	.faq-wrapper{
