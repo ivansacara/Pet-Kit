@@ -1,5 +1,5 @@
 <template>
-<!--  <Slider :sliderItems="sliderItems"/>-->
+  <Slider :sliderItems="sliderItems"/>
 <!--  <Categories :categories="categoryInformation"/>-->
   <Application  />
   <RecentlyViewed />
