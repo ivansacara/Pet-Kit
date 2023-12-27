@@ -1,6 +1,6 @@
 <template>
   <Slider :sliderItems="sliderItems"/>
-  <Categories :categories="categoryInformation"/>
+  <Categories :categories="categoriesData"/>
   <Application  />
   <RecentlyViewed />
   <About />
@@ -26,23 +26,7 @@ const { data: categoriesData } = await useAsyncData("categories", () =>
     })
 );
 
-// Processing categories data
-const categoryInformation = computed(() => ({
-    items: categoriesData.value.items.map(item => ({
-        sys: {
-            id: item.sys.id,
-            locale: item.sys.locale.split('-')[0]
-        },
-        fields: {
-            id: item.sys.id,
-            name: item.fields.name,
-            image: item.fields.image?.fields.file?.url,
-            slug: item.fields.slug
-        }
-    })),
-}));
-
-console.log(categoryInformation);
+console.log(categoriesData);
 
 // Fetching sliders data
 const sliderType = "slider";
