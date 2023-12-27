@@ -4,8 +4,8 @@
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
-            <source :srcset="image?.fields.file.url" type="image/webp">
-            <img :src="image?.fields.file.url" alt="">
+            <source :srcset="image?.fields.file?.url" type="image/webp">
+            <img :src="image?.fields.file?.url" alt="">
           </picture>
         </div>
       </nuxt-link>
@@ -17,8 +17,8 @@
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
-            <source :srcset="image?.fields.file.url" type="image/webp">
-            <img :src="image?.fields.file.url" alt="">
+            <source :srcset="image?.fields.file?.url" type="image/webp">
+            <img :src="image?.fields.file?.url" alt="">
           </picture>
         </div>
       </nuxt-link>
@@ -30,8 +30,8 @@
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
-            <source :srcset="image?.fields.file.url" type="image/webp">
-            <img :src="image?.fields.file.url" alt="">
+            <source :srcset="image?.fields.file?.url" type="image/webp">
+            <img :src="image?.fields.file?.url" alt="">
           </picture>
         </div>
       </nuxt-link>

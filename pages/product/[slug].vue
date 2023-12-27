@@ -37,6 +37,8 @@ const product = computed(() => {
 	} : null;
 });
 
+console.log(product)
+
 // Update the head element when the product is fetched
 useHead(() => product.value ? {
 	title: product.value.fields.name,

@@ -73,6 +73,7 @@ const { data: products } = await useAsyncData('products', () => {
 	}
 	return [];
 });
+console.log(products)
 
 // Update the head element when the category is fetched
 useHead(() => ({

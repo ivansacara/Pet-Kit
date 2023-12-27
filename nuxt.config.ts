@@ -55,8 +55,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://petkit.md",
-      contentfulSpace: process.env.NUXT_PUBLIC_CONTENTFUL_SPACE,
-      contentfulAccessToken: process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+      contentfulSpace: "",
+      contentfulAccessToken: "",
       gtmId: "",
     },
   },
