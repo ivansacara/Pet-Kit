@@ -19,11 +19,10 @@
 </template>
 
 <script setup>
-	import { useRoute, useAsyncData } from 'nuxt/app';
 	const { t } = useI18n();
 	const { $client } = useNuxtApp();
 	const route = useRoute();
-	console.log($client)
+
 
 	const sliderType = "slider";
 	const { data: slidersData } = await useAsyncData("sliders", () =>
