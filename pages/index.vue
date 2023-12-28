@@ -6,14 +6,17 @@
   <About />
 </template>
 <script setup lang="js">
-import { useHead } from 'nuxt/app';
+// import { useHead } from 'nuxt/app';
 const { t } = useI18n();
-
+const { $client } = useNuxtApp();
 useHead({
     title: 'PetKit',
     meta: [{ name: "description", content: t("meta.mainContent") }],
 });
-
+const runtimeConfig = useRuntimeConfig();
+onMounted(() => {
+    console.log(runtimeConfig.public.NUXT_PUBLIC_CONTENTFUL_SPACE)
+})
 // Fetching categories data
 // const categoryType = "category";
 // const { data: categoriesData } = await useAsyncData("categories", () =>

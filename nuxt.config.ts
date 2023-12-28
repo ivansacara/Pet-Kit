@@ -37,7 +37,6 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'locales',
     defaultLocale: 'ro',
-    fallbackLocale: 'ro',
     strategy: 'prefix_except_default',
     locales: [
       {
@@ -55,8 +54,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://petkit.md",
-      contentfulSpace: "",
-      contentfulAccessToken: "",
+      NUXT_PUBLIC_CONTENTFUL_SPACE: process.env.NUXT_PUBLIC_CONTENTFUL_SPACE,
+      NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
       gtmId: "",
     },
   },
