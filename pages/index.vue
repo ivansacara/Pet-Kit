@@ -9,10 +9,10 @@
 // import { useHead } from 'nuxt/app';
 const { t } = useI18n();
 const { $client } = useNuxtApp();
-useHead({
-    title: 'PetKit',
-    meta: [{ name: "description", content: t("meta.mainContent") }],
-});
+// useHead({
+//     title: 'PetKit',
+//     meta: [{ name: "description", content: t("meta.mainContent") }],
+// });
 // Fetching categories data
 // const categoryType = "category";
 // const { data: categoriesData } = await useAsyncData("categories", () =>

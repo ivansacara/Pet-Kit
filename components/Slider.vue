@@ -23,7 +23,7 @@
 	const { t } = useI18n();
 	const { $client } = useNuxtApp();
 	const route = useRoute();
-
+	console.log($client)
 
 	const sliderType = "slider";
 	const { data: slidersData } = await useAsyncData("sliders", () =>
