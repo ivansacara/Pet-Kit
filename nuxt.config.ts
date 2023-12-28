@@ -61,10 +61,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'vercel-edge',
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
-    },
+    // prerender: {
+    //   crawlLinks: true,
+    //   routes: ["/"],
+    // },
   },
   vite: {
     css: {
