@@ -20,6 +20,7 @@
 const props = defineProps({
     category: Object,
 });
+
 </script>
 
 <style lang="scss">

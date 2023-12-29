@@ -5,9 +5,7 @@
 					class="category-link"
 					v-for="category in categoryInformation.items"
 					:key="category.sys.id"
-					:to="category.sys.locale.includes('ru') ?
-					`/${category.sys.locale}/${category.fields.slug}` :
-					`/${category.fields.slug}`"
+					:to="localePath(`/${category.fields.slug}`)"
 			>
 				<Category :category="category.fields" />
 			</NuxtLink>
@@ -22,6 +20,7 @@
 	const { $client } = useNuxtApp();
 	const route = useRoute();
 	const localePath = useLocalePath()
+
 
 	const props = defineProps({
 		categories: Object,
@@ -39,7 +38,6 @@
 		items: categoriesData.value.items.map(item => ({
 			sys: {
 				id: item.sys.id,
-				locale: item.sys.locale.split('-')[0]
 			},
 			fields: {
 				id: item.sys.id,
