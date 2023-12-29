@@ -38,8 +38,7 @@
     </SplideSlide>
   </Splide>
 </template>
-<script setup lang="ts">
-</script>
+
 <script lang="ts">
 import { onMounted, ref } from 'vue';
 import { defineComponent } from 'vue';
@@ -93,7 +92,7 @@ export default defineComponent( {
       height: 'auto',
     };
 
-    onMounted( () => {
+    onMounted(() => {
       const thumbsSplide = thumbs.value?.splide;
       if ( thumbsSplide ) {
         main.value?.sync( thumbsSplide );

@@ -21,17 +21,29 @@
 				</nuxt-link>
 			</button>
 		</div>
+
+		<button @click="lightboxVisible = !lightboxVisible">
+			Open the lightbox.
+		</button>
 	</div>
-<!--	<BuyPopup />-->
+
+	<FsLightbox :sources="imageSources" :toggler="lightboxVisible" :exitFullscreenOnClose="true"/>
+	
+	<!--<BuyPopup />-->
 </template>
 <script setup>
+	import FsLightbox from "fslightbox-vue/v3";
+
 	const props = defineProps({
 		product: {
 			type: Object,
 			required: true
 		}
 	});
-	
+
+	const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
+
+	const lightboxVisible = ref(false);
 </script>
 
 <style lang="scss">
