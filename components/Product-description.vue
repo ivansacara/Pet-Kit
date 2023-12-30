@@ -20,10 +20,6 @@
 			</button>
 			<ModalsContainer />
 		</div>
-
-		<button @click="lightboxVisible = !lightboxVisible">
-			Open the lightbox.
-		</button>
 	</div>
 
 	<FsLightbox :sources="imageSources" :toggler="lightboxVisible" :exitFullscreenOnClose="true"/>
