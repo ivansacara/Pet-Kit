@@ -30,7 +30,8 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  css: ['~/assets/styles/global.scss'],
+  css: ['~/assets/styles/global.scss',
+    'vue-final-modal/style.css',],
   modules: ['nuxt-swiper', '@nuxtjs/i18n'],
   i18n: {
     /* module options */

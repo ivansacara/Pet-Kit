@@ -14,7 +14,7 @@
 
   <Splide :options="sdOptions" ref="main" class="sd-slider">
     <SplideSlide v-for="image in productSlider">
-      <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
+      <nuxt-link to="" @click="updateLightbox" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
             <source :srcset="image?.fields.file?.url" type="image/webp">
@@ -53,7 +53,11 @@ export default defineComponent( {
     Splide,
     SplideSlide,
   },
-
+    methods: {
+        updateLightbox() {
+            this.$emit('update-lightbox', true);
+        }
+    },
   setup() {
     const main   = ref<InstanceType<typeof Splide>>();
     const thumbs = ref<InstanceType<typeof Splide>>();

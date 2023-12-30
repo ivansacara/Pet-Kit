@@ -3,7 +3,7 @@
 		<div class="popup-body">
 			<div class="popup-content">
 				<p class="popup-title">Заполните форму: </p>
-				
+
 				<form action="" method="post" class="form-popup">
 					<input type="text" name="user_name" id="name" placeholder="Ваше имя">
 					<input type="email" name="user_email" id="email" placeholder="Ваш email">
@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-	
+
 </script>
 
 <style scoped lang="scss">
@@ -121,7 +121,7 @@
 		width: 20px;
 		height: 20px;
 		cursor: pointer;
-		
+
 		&:hover{
 			span{
 				background-color: #616161;

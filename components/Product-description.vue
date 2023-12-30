@@ -2,7 +2,7 @@
 	<div class="prod-descr" >
 		<div class="prod-area">
 			<div class="prod-descr-photo">
-				<ProductSlider :productSlider="product.fields.image"/>
+				<ProductSlider @update-lightbox="updateLightboxVisibility" :productSlider="product.fields.image"/>
 			</div>
 		</div>
 		<div class="prod-descr-title">
@@ -15,11 +15,10 @@
 			<span>{{ product.fields.description }}</span>
 		</div>
 		<div class="prod-descr-buy">
-			<button class="prod-descr-btn">
-				<nuxt-link target="_blank" to="https://t.me/+n3NwTwd8tzhlNDNi">
-					Приобрести
-				</nuxt-link>
+			<button class="prod-descr-btn" @click="() => openModal()">
+				Приобрести
 			</button>
+			<ModalsContainer />
 		</div>
 
 		<button @click="lightboxVisible = !lightboxVisible">
@@ -28,22 +27,41 @@
 	</div>
 
 	<FsLightbox :sources="imageSources" :toggler="lightboxVisible" :exitFullscreenOnClose="true"/>
-	
-	<!--<BuyPopup />-->
+
 </template>
-<script setup>
-	import FsLightbox from "fslightbox-vue/v3";
+<script setup lang="ts">
+import FsLightbox from "fslightbox-vue/v3";
+import { ModalsContainer, useModal } from 'vue-final-modal'
+import FeedbackModal from "~/components/FeedbackModal.vue";
 
-	const props = defineProps({
-		product: {
-			type: Object,
-			required: true
-		}
-	});
+const { open, close } = useModal({
+	component: FeedbackModal,
+	attrs: {
+		onConfirm() {
+			close()
+		},
+	},
+})
 
-	const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
+const props = defineProps({
+	product: {
+		type: Object,
+		required: true
+	}
+});
 
-	const lightboxVisible = ref(false);
+const lightboxVisible = ref(false);
+const updateLightboxVisibility = (visible: boolean) => {
+	lightboxVisible.value = visible;
+};
+const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
+
+
+
+const openModal = () => {
+	console.log('Opening modal');
+	open();
+}
 </script>
 
 <style lang="scss">
@@ -330,5 +348,9 @@
 			background: $btn-hover;
 		}
 	}
+}
+
+.fslightbox-source {
+	background: white;
 }
 </style>
