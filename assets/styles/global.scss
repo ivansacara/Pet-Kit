@@ -30,9 +30,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	-webkit-tap-highlight-color: transparent;
-	
+
 	@media (min-width: $lg) {
 		font-size: $text-lg;
+	}
+
+	&.isOpen{
+		overflow: hidden;
 	}
 }
 

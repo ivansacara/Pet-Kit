@@ -1,53 +1,44 @@
 <template>
-	<header class="header-main" :class="{ 'mobile': isActive }">
+	<header class="header-main">
 		<div class="container">
 			<div class="header-container">
-				<div class="header-burger" 
-					:class="{ 'active': isActive }"
+				<div class="header-burger"
 					@click="toggleMenu">
 					<span></span>
 				</div>
-				<div class="header-logo">
-					<nuxt-link :to="localePath('/')">
-						<img src="/icons/logo.svg" alt="logo">
-					</nuxt-link>
-				</div>
-				<nav class="header-nav" 
-					:class="{ 'open': isActive }">
+				<nuxt-link class="header-logo" :to="localePath('/')">
+					<img src="/icons/logo.svg" alt="logo">
+				</nuxt-link>
+				<nav class="header-nav">
 					<ul class="nav-items">
-						<li>
-							<nuxt-link
-								class="cn-navigation__link"
-								:to="localePath('/delivery')"
-								@click="toggleMenu()">
+						<li class="nav-item">
+							<nuxt-link class="nav-link" :to="localePath('/delivery')" @click="toggleMenu()">
 								{{t('links.delivery')}}
 							</nuxt-link>
 						</li>
-						<li >
-							<nuxt-link
-									class="cn-navigation__link"
-									:to="localePath('/faq')"
-									@click="toggleMenu()">
+						<li class="nav-item">
+							<nuxt-link class="nav-link" :to="localePath('/faq')" @click="toggleMenu()">
 								{{ t('links.faq') }}
 							</nuxt-link>
 						</li>
-						<li>
-							<nuxt-link
-									class="cn-navigation__link"
-									:to="localePath('/Return')"
-									@click="toggleMenu()">
+						<li class="nav-item">
+							<nuxt-link class="nav-link" :to="localePath('/Return')" @click="toggleMenu()">
 								{{ t('links.return') }}
 							</nuxt-link>
 						</li>
-						<li><a 	class="cn-navigation__link" @click.prevent="scrollToElement('about')">{{ t('links.about') }}</a></li>
-						<li><a 	class="cn-navigation__link" @click.prevent="scrollToElement('contacts')">{{t('links.contacts')}}</a></li>
+						<li class="nav-item">
+							<a class="nav-link" @click.prevent="scrollToElement('about')">{{ t('links.about') }}</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" @click.prevent="scrollToElement('contacts')">{{t('links.contacts')}}</a>
+						</li>
 					</ul>
 				</nav>
 				<div class="header-languages">
 					<Langs />
 				</div>
 
-				<div class="bg" @click="toggleMenu()"></div>
+				<div class="overlay" @click="toggleMenu()"></div>
 			</div>
 		</div>
 	</header>
@@ -78,12 +69,6 @@
 </script>
 
 <style lang="scss">
-	@media screen and (max-width: $md){
-		body.isOpen{
-			overflow: hidden;
-		}
-	}
-
 	.header-main{
 		position: fixed;
 		height: 58px;
@@ -146,8 +131,89 @@
 			top: 9px;
 		}
 
-		&.active{
-			*{
+		@media (min-width: $md) {
+			display: none;
+		}
+	}
+
+	.header-logo{
+		width: 100px;
+
+		@media screen and (min-width: $lg){
+			width: 155px;
+		}
+	}
+
+	.header-nav {
+		@media screen and (max-width: $md) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			max-width: 280px;
+			height: 100vh;
+			transition: all 0.5s ease;
+			z-index: 1000;
+			background: $bg;
+			border-radius: 0 13px 13px 0;
+			padding: 60px 15px 15px;
+			transform: translateX(-350px);
+		}
+	}
+
+	.nav-items {
+		display: flex;
+
+		@media screen and (max-width: $md) {
+			flex-direction: column;
+		}
+	}
+
+	.nav-item {
+		display: inline;
+		margin-bottom: 12px;
+
+		@media screen and (min-width: $md) {
+			margin-right: 30px;
+			margin-bottom: 0;
+		}
+
+		@media screen and (min-width: $lg) {
+			margin-right: 45px;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+	}
+
+	.nav-link {
+		display: inline;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 500;
+		background: rgb(0, 0, 0, 0.4);
+		display: none;
+	}
+	.isOpen {
+
+		.overlay {
+			display: block;
+		}
+
+		.header-nav {
+			transform: translate(0);
+		}
+
+		.header-burger{
+			* {
 				transition: all 0.3s ease;
 			}
 
@@ -163,110 +229,6 @@
 			&::after {
 				transform: rotate(45deg);
 				bottom: 8px;
-			}
-		}
-
-		@media (min-width: $md) {
-			display: none;
-		}
-	}
-
-	.header-logo{
-		width: 100px;
-		
-		>a{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-
-		@media screen and (min-width: $lg){
-			width: 155px;
-		}
-	}
-	
-	.header-nav{
-		display: none;
-
-		@media screen and (min-width: $md){
-			display: block;
-		}
-		
-		.nav-items{
-			display: flex;
-
-			li{
-				a:hover{
-					color: $text-hover;
-				}
-
-				&:not(:last-of-type){
-					margin-right: 30px;
-					
-					@media screen and (min-width: $lg){
-						margin-right: 45px;
-					}
-				}
-			}
-		}
-	}
-
-	.bg{
-		display: none;
-	}
-
-	@media screen and (max-width: $md){
-		.header-main.mobile{
-			.bg{
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100vh;
-				z-index: 500;
-				display: block;
-				background: rgb(0, 0, 0, 0.4);
-			}
-			
-			.header-nav{
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				max-width: 320px;
-				height: 100vh;
-				//transition: all 0.5s ease;
-				display: block;
-				z-index: -1000;
-
-				&.open{
-					z-index: 505;
-
-					.nav-items{
-						transform: translate(0);
-					}
-				}
-			}
-
-			.nav-items{
-				background: $bg;
-				padding: 60px 15px 15px;
-				height: 100vh;
-				//transition: all 0.4s ease;
-				border-radius: 0 13px 13px 0;
-				transform: translateX(-320px);
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-
-				@media screen and (max-width: 320px){
-					border-radius: 0;
-				}
-
-				li:not(:last-child){
-					margin-bottom: 12px;
-				}
 			}
 		}
 	}
