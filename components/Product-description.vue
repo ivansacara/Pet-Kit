@@ -2,7 +2,8 @@
 	<div class="prod-descr" >
 		<div class="prod-area">
 			<div class="prod-descr-photo">
-				<ProductSlider @update-lightbox="updateLightboxVisibility" :productSlider="product.fields.image"/>
+				<!-- <ProductSlider @update-lightbox="updateLightboxVisibility" :productSlider="product.fields.image"/> -->
+				<ProductSlider @update-lightbox="lightboxVisible = !lightboxVisible" :productSlider="product.fields.image"/>
 			</div>
 		</div>
 		<div class="prod-descr-title">
@@ -47,9 +48,9 @@ const props = defineProps({
 });
 
 const lightboxVisible = ref(false);
-const updateLightboxVisibility = (visible: boolean) => {
-	lightboxVisible.value = visible;
-};
+// const updateLightboxVisibility = (visible: boolean) => {
+// 	lightboxVisible.value = visible;
+// };
 const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
 
 const openModal = () => {
