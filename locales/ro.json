@@ -13,6 +13,14 @@
     "delivery": "",
     "faq": ""
   },
+  "order": {
+    "title": "Plasați comanda",
+    "name": "Nume",
+    "phone": "Telefon",
+    "message": "Mesaj",
+    "btn": "Trimite",
+    "response": "Vă rugăm să așteptați, veți fi contactat în curând"
+  },
   "application": {
     "title": "O aplicație pentru toate dispozitivele",
     "appDescription": [

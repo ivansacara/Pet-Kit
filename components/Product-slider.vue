@@ -1,6 +1,6 @@
 <template>
   <Splide :options="mainOptions" class="main-slider">
-    <SplideSlide v-for="image in productSlider">
+    <SplideSlide v-for="image in productSlider" :key="image?.fields.file?.url">
       <nuxt-link to=""  @click="updateLightbox" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
@@ -13,7 +13,7 @@
   </Splide>
 
   <Splide :options="sdOptions" ref="main" class="sd-slider">
-    <SplideSlide v-for="image in productSlider">
+    <SplideSlide v-for="image in productSlider" :key="image?.fields.file?.url">
       <nuxt-link to="" @click="updateLightbox" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
@@ -26,7 +26,7 @@
   </Splide>
 
   <Splide :options="thumbsOptions" class="gallery-slider product-list" ref="thumbs">
-    <SplideSlide v-for="image in productSlider">
+    <SplideSlide v-for="image in productSlider" :key="image?.fields.file?.url">
       <nuxt-link to="" class="img-ratio img-ratio_cover product-photo">
         <div class="img-ratio__inner">
           <picture>
@@ -48,6 +48,7 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 export default defineComponent( {
   name: 'ThumbnailsExample',
   props:['productSlider'],
+  emits: ['update-lightbox'],
 
   components: {
     Splide,

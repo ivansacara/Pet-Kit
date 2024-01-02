@@ -1,31 +1,42 @@
 <template>
-	<div class="cn-locales">
-		<NuxtLink class="cn-locales__link" :to="switchLocalePath('ro')">RO</NuxtLink>
-		<NuxtLink class="cn-locales__link" :to="switchLocalePath('ru')">RU</NuxtLink>
+	<div class="locales">
+		<NuxtLink class="locale" :class="{ exact__active_link: activeLanguage === 'ro' }" @click="selectLang('ro')" :to="switchLocalePath('ro')">RO</NuxtLink>
+		<NuxtLink class="locale" :class="{ exact__active_link: activeLanguage === 'ru' }" @click="selectLang('ru')" :to="switchLocalePath('ru')">RU</NuxtLink>
 	</div>
 </template>
 
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+
+const { locale } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
+const activeLanguage = ref(locale.value);
+
+const selectLang = (lang: string) => {
+	localStorage.setItem('LANG', lang);
+	activeLanguage.value = lang;
+};
+
+onMounted(() => {
+	const defaultLocale = localStorage.getItem('LANG') || locale.value;
+	selectLang(defaultLocale);
+});
+</script>
+
 <style scoped lang="scss">
-	.cn-locales {
+	.locale {
 		position: relative;
 		z-index: 12;
 		cursor: pointer;
+		color: currentColor;
+		text-decoration: none;
 
-		&__link {
-			color: currentColor;
-			text-decoration: none;
+		&:hover {
+			color: $text-hover;
+		}
 
-			&:hover {
-				color: $text-hover;
-			}
-
-			&.router-link-active {
-				display: none;
-			}
+		&.exact__active_link {
+			display: none;
 		}
 	}
 </style>
-
-<script setup lang="ts">
-const switchLocalePath = useSwitchLocalePath()
-</script>

@@ -52,10 +52,7 @@ const updateLightboxVisibility = (visible: boolean) => {
 };
 const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
 
-
-
 const openModal = () => {
-	console.log('Opening modal');
 	open();
 }
 </script>
@@ -121,10 +118,9 @@ const openModal = () => {
 					right: 0;
 					bottom: 0;
 					left: 0;
-					border: 2px solid transparent;
+					border: 2px solid #8dc8ff;
 					pointer-events: none;
 					z-index: 1;
-					border-color: #8dc8ff;
 				}
 			}
 		}

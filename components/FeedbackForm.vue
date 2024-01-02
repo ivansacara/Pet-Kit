@@ -1,14 +1,14 @@
 <template>
-	<div class="cs-feedback">
-		<h3 class="cs-feedback__title">{{ $t("feedback.title") }}</h3>
+	<div class="order">
+		<h3 class="order__title">{{ $t("order.title") }}</h3>
 		<client-only>
-			<div v-if="!formIsSended" class="cs-feedback__content">
+			<div v-if="!formIsSended" class="order__content">
 				<input
 					v-model="formData.name.value"
 					type="text"
-					class="cs-feedback__input form-control"
+					class="order__input form-control"
 					:class="{ 'has-error': formData.name.hasError }"
-					:placeholder="$t('feedback.namePlaceholder')"
+					:placeholder="$t('order.name')"
 					required
 					@blur="formData.name.hasError = !formData.name.value"
 				/>
@@ -17,31 +17,36 @@
 					v-maska
 					data-maska="+### ########"
 					type="tel"
-					class="cs-feedback__input form-control"
+					class="order__input form-control"
 					:class="{ 'has-error': formData.phone.hasError }"
-					:placeholder="$t('feedback.phonePlaceholder')"
+					:placeholder="$t('order.phone')"
 					required
 					@blur="formData.phone.hasError = !formData.phone.value"
 				/>
 				<textarea
 					v-model="formData.message.value"
-					class="cs-feedback__textarea form-control"
-					:placeholder="$t('feedback.messagePlaceholder')"
+					class="order__textarea form-control"
+					:placeholder="$t('order.message')"
 				></textarea>
 
-				<button class="cs-feedback__btn btn btn-dark" @click="clickFn()">
-					{{ $t("feedback.btn") }}
+				<button class="order__btn" @click="clickFn()">
+					{{ $t("order.btn") }}
 				</button>
 			</div>
-			<div class="feedback-response" v-else>
-				<p>{{ $t("feedback.response") }}</p>
+			<div class="order-response" v-else>
+				<p>{{ $t("order.response") }}</p>
 			</div>
 		</client-only>
 	</div>
 </template>
 
 <script setup lang="ts">
+	import { useRouter } from "vue-router";
+
+	const { t } = useI18n();
 	const formIsSended = ref(false);
+	const router = useRouter()
+
 	const formData = {
 		name: {
 			value: "",
@@ -55,6 +60,10 @@
 			value: "",
 			hasError: false,
 		},
+		productLink: {
+			value: router.currentRoute.value.path,
+			hasError: false,
+		}
 	};
 
 	async function clickFn() {
@@ -70,7 +79,8 @@
 		const messageBlock = `
 		<b>Имя:</b> ${formData.name.value}
 		<b>Телефон:</b> ${formData.phone.value}
-		<b>Сообщение:</b> ${formData.message.value}`;
+		<b>Сообщение:</b> ${formData.message.value}
+		<b>Продукт:</b> ${formData.productLink.value}`;
 
 		await $fetch("/api/telegram", {
 			method: "POST",
@@ -80,7 +90,7 @@
 </script>
 
 <style lang="scss">
-	.cs-feedback__title{
+	.order__title{
 		font-weight: 600;
 		text-align: center;
 		font-size: 24px;
@@ -89,13 +99,13 @@
 		margin-bottom: 25px;
 	}
 
-	.cs-feedback__content{
+	.order__content{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.cs-feedback {
+	.order {
 		width: 100%;
 
 		&__textarea,
@@ -147,15 +157,15 @@
 			width: fit-content;
 			background: $btn-bg;
 			margin-top: 20px;
-			
+
 			&:hover {
 				background: $btn-hover;
 			}
-			
+
 		}
 	}
 
-	.feedback-response{
+	.order-response{
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%) translateX(-50%);
