@@ -105,3 +105,17 @@ button{
 main {
 	flex: 1 1 auto;
 }
+
+.fslightbox-toolbar-button{
+	width: 35px!important;
+	background: rgba(35,35,35,.65);
+	height: 35px!important;
+
+	&:first-child{
+		margin-right: 5px;
+	}
+}
+
+.fslightbox-toolbar{
+	background: transparent!important;
+}

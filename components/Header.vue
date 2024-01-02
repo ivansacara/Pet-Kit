@@ -150,9 +150,9 @@
 			top: 0;
 			left: 0;
 			width: 100%;
-			max-width: 280px;
+			max-width: 300px;
 			height: 100vh;
-			transition: all 0.5s ease;
+			transition: transform 0.4s ease;
 			z-index: 1000;
 			background: $bg;
 			border-radius: 0 13px 13px 0;
@@ -190,6 +190,10 @@
 
 	.nav-link {
 		display: inline;
+
+		&:hover{
+			color: #888;
+		}
 	}
 
 	.overlay {
@@ -202,10 +206,16 @@
 		background: rgb(0, 0, 0, 0.4);
 		display: none;
 	}
-	.isOpen {
 
+	.isOpen {
 		.overlay {
 			display: block;
+		}
+
+		@media screen and (min-width: $md) {
+			.overlay {
+				display: none;
+			}
 		}
 
 		.header-nav {
