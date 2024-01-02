@@ -9,7 +9,7 @@
 		</div>
 		
 		<p class="prod-name">{{ product.fields.name }}</p>
-		<span class="prod-price">{{product.fields.price}}</span>
+		<span class="prod-price">{{product.fields.price}} {{ t('currency') }}</span>
 
 		<button class="prod-btn" type="button">
 			<span>Подробнее</span>
@@ -17,6 +17,7 @@
 	</div>
 </template>
 <script setup>
+const { t } = useI18n();
 const props = defineProps({
 	product: {
 		type: Object,

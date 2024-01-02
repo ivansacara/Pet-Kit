@@ -9,7 +9,7 @@
 			<h1 class="title-head">{{ product.fields.name }}</h1>
 		</div>
 		<div class="prod-descr-price">
-			<span class="price-cur">{{ product.fields.price }}</span>
+			<span class="price-cur">{{ product.fields.price }} {{ t('currency') }}</span>
 		</div>
 		<div class="prod-descr-info">
 			<span>{{ product.fields.description }}</span>
@@ -29,7 +29,7 @@
 import FsLightbox from "fslightbox-vue/v3";
 import { ModalsContainer, useModal } from 'vue-final-modal'
 import FeedbackModal from "~/components/FeedbackModal.vue";
-
+const { t } = useI18n();
 const { open, close } = useModal({
 	component: FeedbackModal,
 	attrs: {

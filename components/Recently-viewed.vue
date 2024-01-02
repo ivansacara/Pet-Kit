@@ -36,7 +36,7 @@
 									{{viewedProduct.description}}
 								</div>
 								<div class="viewed-price">
-									{{viewedProduct.price}} Lei
+									{{viewedProduct.price}} {{ t('currency') }}
 								</div>
 							</nuxt-link>
 						</SwiperSlide>
