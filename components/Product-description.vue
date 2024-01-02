@@ -2,7 +2,6 @@
 	<div class="prod-descr" >
 		<div class="prod-area">
 			<div class="prod-descr-photo">
-				<!-- <ProductSlider @update-lightbox="updateLightboxVisibility" :productSlider="product.fields.image"/> -->
 				<ProductSlider @update-lightbox="lightboxVisible = !lightboxVisible" :productSlider="product.fields.image"/>
 			</div>
 		</div>
@@ -23,7 +22,7 @@
 		</div>
 	</div>
 
-	<FsLightbox :sources="imageSources" :toggler="lightboxVisible" :exitFullscreenOnClose="true"/>
+	<FsLightbox  :sources="imageSources" onclick="" :toggler="lightboxVisible" :exitFullscreenOnClose="true"/>
 
 </template>
 <script setup lang="ts">
@@ -48,9 +47,6 @@ const props = defineProps({
 });
 
 const lightboxVisible = ref(false);
-// const updateLightboxVisibility = (visible: boolean) => {
-// 	lightboxVisible.value = visible;
-// };
 const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
 
 const openModal = () => {
