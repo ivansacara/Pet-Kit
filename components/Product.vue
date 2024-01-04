@@ -9,11 +9,13 @@
 		</div>
 		
 		<p class="prod-name">{{ product.fields.name }}</p>
-		<span class="prod-price">{{product.fields.price}} {{ t('currency') }}</span>
+		<div class="info-wrap">
+			<span class="prod-price">{{product.fields.price}} {{ t('currency') }}</span>
 
-		<button class="prod-btn" type="button">
-			<span>Подробнее</span>
-		</button>
+			<button class="prod-btn" type="button">
+				<span>Подробнее</span>
+			</button>
+		</div>
 	</div>
 </template>
 <script setup>
@@ -69,6 +71,10 @@ const props = defineProps({
 		@media screen and (min-width: $md){
 			font-size: 28px;
 		}
+	}
+
+	.info-wrap{
+		margin-top: auto
 	}
 
 	.img-ratio{

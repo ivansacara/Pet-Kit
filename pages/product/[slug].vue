@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+	<div class="container">
 		<Breadcrumbs v-if="product" :pageTitle="product.fields.name" />
-	<div class="prod-descr-wrapper"  v-if="product">
-		<ProductDescription :product="product" />
+		<div class="prod-descr-wrapper"  v-if="product">
+			<ProductDescription :product="product" />
+		</div>
 	</div>
-  </div>
 </template>
 <script setup>
 import { useRoute, useAsyncData, useHead } from 'nuxt/app';

@@ -247,28 +247,26 @@ const openModal = () => {
 		margin: 0;
 		font-size: 14px;
 		line-height: 16px;
-		border-top: 1px solid $border;
 		font-weight: bold;
 		color: $black;
+		border-top: 1px solid $border;
 
 		@media screen and (min-width: $md) {
-			border-top: 0;
 			padding: 0;
 			margin: 0 0 24px 0;
 			font-size: 27px;
 			line-height: 32px;
+			border-top: 0;
 		}
 	}
 }
 
 .prod-descr-price {
 	padding: 6px 0 11px 0;
-	border-top: 1px solid $border;
 	grid-area: price;
 
 	@media screen and (min-width: $md) {
 		padding: 0 0 11px 0;
-		border-top: 0;
 	}
 
 	.price-cur {
@@ -308,7 +306,6 @@ const openModal = () => {
 	margin: 0;
 	padding: 23px 0;
 	background: none;
-	border-top: 1px solid $border;
 
 	@media screen and (min-width: $md) {
 		display: grid;
@@ -316,7 +313,6 @@ const openModal = () => {
 		grid-column-gap: 1rem;
 		align-items: center;
 		padding: 0;
-		border-top: 0;
 	}
 
 	.prod-descr-btn {

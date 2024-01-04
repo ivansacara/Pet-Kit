@@ -1,16 +1,16 @@
 <template>
-  <div class="container">
-    <Breadcrumbs :pageTitle="categoryName"/>
+	<div class="container">
+		<Breadcrumbs :pageTitle="categoryName"/>
 
 		<h1 class="prod-title">{{categoryName}}</h1>
-    <div class="catalog">
-		<div class="catalog-list">
-			<nuxt-link v-for="product in products.items" :to="localePath(`/product/${product.fields.slug}`)" :key="product.sys.id">
-				<Product :product="product" @click="selectProduct(product)"/>
-			</nuxt-link>
+		<div class="catalog">
+			<div class="catalog-list">
+				<nuxt-link class="prod-wrap" v-for="product in products.items" :to="localePath(`/product/${product.fields.slug}`)" :key="product.sys.id">
+					<Product :product="product" @click="selectProduct(product)"/>
+				</nuxt-link>
+			</div>
 		</div>
 	</div>
-  </div>
 </template>
 <script setup>
 import { ref, computed } from 'vue';
@@ -93,6 +93,11 @@ const categoryName = computed(() => category.value.items[0]?.fields?.name);
 		@media screen and (min-width: $md){
 			font-size: $text-2xl;
 		}
+	}
+
+	.prod-wrap{
+		display: flex;
+		align-items: stretch;
 	}
 
 	.catalog{

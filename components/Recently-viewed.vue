@@ -132,6 +132,10 @@
 	
 	.viewed-title{
 		grid-area: title;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		margin-bottom: 5px;
 	}
 
 	.viewed-price{
