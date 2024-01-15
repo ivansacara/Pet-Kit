@@ -28,8 +28,6 @@
 </template>
 
 <script setup>
-import type {Breadcrumbs} from '#build/components';
-
 const {t} = useI18n();
 
 useHead({
