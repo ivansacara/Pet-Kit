@@ -52,7 +52,7 @@ const togglePanel = () => {
 	}
 
 	.accordion-header{
-		padding: 16px 30px 16px 16px;
+		padding: 16px 40px 16px 16px;
 		position: relative;
 		border-radius: 30px;
 		width: 100%;
@@ -83,10 +83,10 @@ const togglePanel = () => {
 
 		svg{
 			position: absolute;
-			width: 30px;
-			height: 30px;
+			width: 40px;
+			height: 40px;
 			right: 5px;
-			top: calc(50% - 15px);
+			top: calc(50% - 20px);
 			transition: all .6s ease;
 
 			@media screen and (min-width: $md){
