@@ -1,42 +1,47 @@
 <template>
-	<div class="locales">
-		<NuxtLink class="locale" :class="{ exact__active_link: activeLanguage === 'ro' }" @click="selectLang('ro')" :to="switchLocalePath('ro')">RO</NuxtLink>
-		<NuxtLink class="locale" :class="{ exact__active_link: activeLanguage === 'ru' }" @click="selectLang('ru')" :to="switchLocalePath('ru')">RU</NuxtLink>
-	</div>
+  <div class="locales">
+    <NuxtLink :class="{ exact__active_link: activeLanguage === 'ro' }" :to="switchLocalePath('ro')" class="locale"
+              @click="selectLang('ro')">RO
+    </NuxtLink>
+    <NuxtLink :class="{ exact__active_link: activeLanguage === 'ru' }" :to="switchLocalePath('ru')" class="locale"
+              @click="selectLang('ru')">RU
+    </NuxtLink>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onMounted, ref } from "vue";
 
-const { locale } = useI18n();
+const {locale} = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 const activeLanguage = ref(locale.value);
 
 const selectLang = (lang: string) => {
-	localStorage.setItem('LANG', lang);
-	activeLanguage.value = lang;
+    localStorage.setItem('LANG', lang);
+    activeLanguage.value = lang;
+    localStorage.removeItem('viewedProducts')
 };
 
 onMounted(() => {
-	const defaultLocale = localStorage.getItem('LANG') || locale.value;
-	selectLang(defaultLocale);
+    const defaultLocale = localStorage.getItem('LANG') || locale.value;
+    selectLang(defaultLocale);
 });
 </script>
 
-<style scoped lang="scss">
-	.locale {
-		position: relative;
-		z-index: 12;
-		cursor: pointer;
-		color: currentColor;
-		text-decoration: none;
+<style lang="scss" scoped>
+.locale {
+  position: relative;
+  z-index: 12;
+  cursor: pointer;
+  color: currentColor;
+  text-decoration: none;
 
-		&:hover {
-			color: $text-hover;
-		}
+  &:hover {
+    color: $text-hover;
+  }
 
-		&.exact__active_link {
-			display: none;
-		}
-	}
+  &.exact__active_link {
+    display: none;
+  }
+}
 </style>

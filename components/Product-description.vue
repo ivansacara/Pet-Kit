@@ -9,14 +9,14 @@
       <h1 class="title-head">{{ product.fields.name }}</h1>
     </div>
     <div class="prod-descr-price">
-      <span class="price-cur">{{ product.fields.price }} {{ t('currency') }}</span>
+      <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
     </div>
     <div class="prod-descr-info">
       <span>{{ product.fields.description }}</span>
     </div>
     <div class="prod-descr-buy">
       <button class="prod-descr-btn" @click="() => openModal()">
-        Приобрести
+        {{ t('product.buy') }}
       </button>
       <ModalsContainer/>
     </div>

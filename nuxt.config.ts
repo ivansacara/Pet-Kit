@@ -11,9 +11,6 @@ export default defineNuxtConfig({
                 {name: "description", content: "My amazing site."},
                 {name: "msapplication-TileColor", content: "#86bb46"},
                 {name: "destheme-colorcription", content: "#ffffff"},
-                {property: 'og:url', content: 'petkit.md'},
-                {property: 'og:title', content: 'Petkit'},
-                {property: 'og:image', content: 'favicon.ico'},
                 {property: 'og:type', content: 'website'},
             ],
             // script: [

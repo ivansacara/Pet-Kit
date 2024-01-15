@@ -1,24 +1,25 @@
 <template>
-	<div class="container">
-		<Breadcrumbs :pageTitle="categoryName"/>
+  <div class="container">
+    <Breadcrumbs :pageTitle="categoryName"/>
 
-		<h1 class="prod-title">{{categoryName}}</h1>
-		<div class="catalog">
-			<div class="catalog-list">
-				<nuxt-link class="prod-wrap" v-for="product in products.items" :to="localePath(`/product/${product.fields.slug}`)" :key="product.sys.id">
-					<Product :product="product" @click="selectProduct(product)"/>
-				</nuxt-link>
-			</div>
-		</div>
-	</div>
+    <h1 class="prod-title">{{ categoryName }}</h1>
+    <div class="catalog">
+      <div class="catalog-list">
+        <nuxt-link v-for="product in products.items" :key="product.sys.id"
+                   :to="localePath(`/product/${product.fields.slug}`)" class="prod-wrap">
+          <Product :product="product" @click="selectProduct(product)"/>
+        </nuxt-link>
+      </div>
+    </div>
+  </div>
 </template>
 <script setup>
-import { ref, computed } from 'vue';
-import { useRoute, useAsyncData, useHead } from 'nuxt/app';
+import {ref, computed} from 'vue';
+import {useRoute, useAsyncData, useHead} from 'nuxt/app';
 
-const { $client } = useNuxtApp();
+const {$client} = useNuxtApp();
 const route = useRoute();
-const { t } = useI18n();
+const {t} = useI18n();
 const localePath = useLocalePath()
 
 // Use ref for viewedProducts and initialize from localStorage if available
@@ -49,12 +50,12 @@ const selectProduct = (product) => {
 };
 
 // Fetching category data with SSR
-const { data: category } = await useAsyncData('category', () =>
-		$client.getEntries({
-			content_type: 'category',
-			'fields.slug': route.params.slug,
-			locale: t("locale"),
-		})
+const {data: category} = await useAsyncData('category', () =>
+	$client.getEntries({
+		content_type: 'category',
+		'fields.slug': route.params.slug,
+		locale: t("locale"),
+	})
 );
 
 // Fetching products data with SSR
@@ -66,7 +67,7 @@ const fetchProducts = async (categoryId) => {
 	});
 };
 
-const { data: products } = await useAsyncData('products', () => {
+const {data: products} = await useAsyncData('products', () => {
 	if (category.value.items.length) {
 		const firstCategory = category.value.items[0]
 		return fetchProducts(firstCategory.sys.id);
@@ -75,46 +76,52 @@ const { data: products } = await useAsyncData('products', () => {
 });
 
 // Update the head element when the category is fetched
+
 useHead(() => ({
 	title: category.value.items[0]?.fields.name,
-	meta: [{ name: "description", content: category.value.items[0]?.fields?.description }],
+	meta: [
+		{name: "og:title", content: category.value.items[0]?.fields.name},
+		{name: "og:description", content: category.value.items[0]?.fields?.description},
+		{name: "description", content: category.value.items[0]?.fields?.description},
+		{property: 'og:image', content: 'favicon.ico'}
+	],
 }));
 
 const categoryName = computed(() => category.value.items[0]?.fields?.name);
 </script>
 
 <style lang="scss">
-	.prod-title{
-		font-size: $text-lg;
-		font-weight: 400;
-		padding: 30px 0 0;
-		margin-bottom: 16px;
+.prod-title {
+  font-size: $text-lg;
+  font-weight: 400;
+  padding: 30px 0 0;
+  margin-bottom: 16px;
 
-		@media screen and (min-width: $md){
-			font-size: $text-2xl;
-		}
-	}
+  @media screen and (min-width: $md) {
+    font-size: $text-2xl;
+  }
+}
 
-	.prod-wrap{
-		display: flex;
-		align-items: stretch;
-	}
+.prod-wrap {
+  display: flex;
+  align-items: stretch;
+}
 
-	.catalog{
-		padding: 30px 0;
-	}
+.catalog {
+  padding: 30px 0;
+}
 
-	.catalog-list{
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
-		grid-template-rows: auto;
-		grid-row-gap: 32px;
-		grid-column-gap: 16px;
-		align-items: stretch;
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+  grid-template-rows: auto;
+  grid-row-gap: 32px;
+  grid-column-gap: 16px;
+  align-items: stretch;
 
-		@media screen and (min-width: $md){
-			grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
-			gap: 32px;
-		}
-	}
+  @media screen and (min-width: $md) {
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+    gap: 32px;
+  }
+}
 </style>

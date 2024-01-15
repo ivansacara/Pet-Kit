@@ -1,7 +1,6 @@
 {
   "locale": "ro-MD",
-  "aboutCompany": "Despre companie",
-  "currency": "Lei",
+  "aboutCompany": "Despre noi",
   "links": {
     "delivery": "Livrare și plată",
     "faq": "FAQ",
@@ -13,14 +12,6 @@
     "return": "",
     "delivery": "",
     "faq": ""
-  },
-  "order": {
-    "title": "Plasați comanda",
-    "name": "Nume",
-    "phone": "Telefon",
-    "message": "Mesaj",
-    "btn": "Trimite",
-    "response": "Vă rugăm să așteptați, veți fi contactat în curând"
   },
   "application": {
     "title": "O aplicație pentru toate dispozitivele",
@@ -39,6 +30,9 @@
       }
     ]
   },
+  "recently": {
+    "title": "Anterior vizualizate"
+  },
   "aboutUs": {
     "title": "Despre noi",
     "description": [
@@ -50,13 +44,18 @@
   },
   "contactInfo": {
     "workTimeMarket": "Program de lucru al magazinului online: Luni-Duminică: 10:00 - 18:00",
-    "workTimeOffice": "Program de lucru al biroului: Luni-Vineri de la 10:00-18:00 127015",
-    "address": "Moscova, str. Novodmitrovskaya, nr. 1 clădirea 2, etajul 3, biroul PETKIT",
-    "brand": "SRL ASIANBRAND",
-    "number": "CUI:7719423946"
+    "workTimeOffice": "Program de lucru al biroului: Luni-Vineri de la 10:00-18:00",
+    "address": "Chișinău, bd, Mircea cel Bătrân nr.3",
+    "brand": "SRL Rapid Autotest",
+    "number": "CF:1013600016871"
   },
   "faq": {
     "title": "Întrebări frecvente"
+  },
+  "product": {
+    "buy": "Comanda",
+    "see": "Detalii",
+    "currency": "Lei"
   },
   "returnInfo": {
     "title": "Retur și schimb",
@@ -72,7 +71,7 @@
       },
       {
         "text": "3. Produsul nu trebuie să prezinte urme de utilizare și trebuie să-și păstreze aspectul original.",
-        "additionalInfo": "Pentru a efectua un retur, trebuie să completați o declarație de returnare (vom trimite aceasta pe e-mailul dumneavoastră). Apoi va fi necesar să coordonați expedierea (livrarea) la adresa noastră cu managerul. Costurile de livrare a returului sunt suportate de client: în Moscova 450₽ prin curier, în regiuni se calculează în funcție de tarifele companiei SDEK. Dacă aveți nevoie de ajutor pentru organizarea livrării, suntem întotdeauna gata să ajutăm. Returul va fi procesat imediat după ce primim produsul (cu condiția respectării punctelor de mai sus). Termenul de returnare a fondurilor este de 1-5 zile. Costul livrării produsului nu este returnat."
+        "additionalInfo": "Pentru a efectua un retur, trebuie să completați o declarație de returnare (vom trimite aceasta pe e-mailul dumneavoastră). Apoi va fi necesar să coordonați expedierea (livrarea) la adresa noastră cu managerul. Costurile de livrare a returului sunt suportate de client. Dacă aveți nevoie de ajutor pentru organizarea livrării, suntem întotdeauna gata să ajutăm. Returul va fi procesat imediat după ce primim produsul (cu condiția respectării punctelor de mai sus). Termenul de returnare a fondurilor este de 1-5 zile. Costul livrării produsului nu este returnat."
       }
     ],
     "automaticLitterInfo": [
@@ -80,58 +79,17 @@
       "Pe site-ul nostru sunt indicate toate dimensiunile tăvilor automate „Pura Max” și „Pura X”. Dacă doriți să aflați parametri suplimentari ai produsului, scrieți-ne și vă vom trimite toate informațiile de care aveți nevoie.",
       "Returnarea unei tăvi automate de toaletă de calitate adecvată este posibilă doar dacă este completă, cu materiale consumabile intacte și ne-deschise, precum și păstrând aspectul produsului fără deteriorări sau alte defecte.",
       "Dacă ați deschis sigiliile și/sau materialele consumabile, ați folosit produsul, ați deteriorat aspectul sau completarea acestuia, returnarea unui produs de calitate adecvată nu este posibilă.",
-      "Produsul de calitate necorespunzătoare este supus returnării în conformitate cu legislația Federației Ruse."
+      "Produsul de calitate necorespunzătoare este supus returnării în conformitate cu legislația Republicii Moldova."
     ]
   },
   "delivery": {
     "title": "Livrare și plată:",
     "description": [
       {
-        "strong": "Vom livra comanda dumneavoastră în orice oraș sau localitate din Federația Rusă."
-      },
-      {
-        "text": "Livrarea în magazinul nostru online se face prin intermediul companiilor de curierat: SDEK, Logsis și Fulllog."
+        "strong": "Vom livra comanda dumneavoastră în orice oraș sau localitate din Republica Moldova."
       },
       {
         "text": "La plasarea comenzii, veți putea alege orice opțiune disponibilă de livrare în orașul dumneavoastră."
-      }
-    ],
-    "moscowInfo": [
-      {
-        "text": "Informații pentru livrarea comenzilor în Moscova:"
-      },
-      {
-        "text": "Vom livra comanda prin TK Logsis/Fulllog chiar a doua zi dacă comanda este plasată până la 16-00. Dacă comanda este plasată după 16-00, livrarea va fi amânată cu o zi."
-      },
-      {
-        "text": "Costul de livrare pentru comenzi sub 6000 de ruble este de 450 de ruble, iar pentru comenzi peste 6000 de ruble este gratuit."
-      }
-    ],
-    "moInfo": [
-      {
-        "text": "MO: Puteți alege serviciul de livrare pentru comenzile din regiune: SDEK sau Logsis. Costul și durata de livrare vor depinde de serviciul de curierat ales. Site-ul vă va oferi opțiuni la plasarea comenzii."
-      }
-    ],
-    "spbInfo": [
-      {
-        "text": "Sankt Petersburg:"
-      },
-      {
-        "text": "Vom livra comanda prin TK Logsis în 1-2 zile dacă comanda este plasată până la 17-00. Dacă comanda este plasată după 17-00, livrarea va dura +1 zi. Costul de livrare este de 450 de ruble. De asemenea, puteți alege TK Sdek (livrare prin curier sau la PVZ)."
-      }
-    ],
-    "otherCitiesInfo": [
-      {
-        "text": "Livrare în alte orașe din Rusia:"
-      },
-      {
-        "text": "Livrare în 3 zile lucrătoare de la SDEK. Veți putea alege tariful și metoda de livrare potrivită (prin curier sau la PVZ)."
-      },
-      {
-        "text": "Lista orașelor în care livrăm:"
-      },
-      {
-        "text": "Moscova, Sankt Petersburg, Nijni Novgorod, Kazan, Soci, Krasnodar, Rostov pe Don, Voronej, Perm, Ekaterinburg, Ufa, Samara, Novosibirsk, Krasnoiarsk etc."
       }
     ],
     "paymentInfo": [
