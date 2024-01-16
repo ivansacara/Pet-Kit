@@ -8,10 +8,30 @@ export default defineNuxtConfig({
             viewport: "width=device-width, initial-scale=1.0",
             title: "Petkit",
             meta: [
-                {name: "description", content: "My amazing site."},
-                {name: "msapplication-TileColor", content: "#86bb46"},
-                {name: "destheme-colorcription", content: "#ffffff"},
-                {property: 'og:type', content: 'website'},
+                {charset: 'utf-8'},
+                {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+                {name: 'description', content: "My amazing site."},
+                {name: 'og:type', content: 'website'},
+                // Add more default meta tags as needed
+
+                // Apple Touch Icon
+                {name: 'apple-touch-icon', content: '/apple-touch-icon.png'},
+
+                // Favicon
+                {name: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+                {name: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+
+                // Manifest
+                {rel: 'manifest', href: '/site.webmanifest'},
+
+                // Safari Pinned Tab
+                {rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5'},
+
+                // Microsoft Tile Color
+                {name: 'msapplication-TileColor', content: '#da532c'},
+
+                // Theme Color
+                {name: 'theme-color', content: '#ffffff'},
             ],
             // script: [
             //   {
