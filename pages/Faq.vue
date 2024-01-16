@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+import {useHead} from 'nuxt/app';
+
 const {t} = useI18n();
 const {$client} = useNuxtApp();
 

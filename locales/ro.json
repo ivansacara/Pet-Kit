@@ -108,5 +108,36 @@
         "text": "cu orice card bancar și este procesată ca o achiziție. După plată, veți primi un e-mail cu un bon electronic ca confirmare a achiziției la magazinul Petkit."
       }
     ]
-  }
+  },
+  "about": [
+    {
+      "title": "Cum a început totul",
+      "text": [
+        "În anul 2013, dorința oamenilor pentru tehnologie „purtabilă” a fost motivul pentru care frații Go (cofondatorii PETKIT, ingineri dezvoltatori de hardware) au început să se întrebe: deja simplificăm multe aspecte ale vieții noastre cu ajutorul noilor tehnologii, așa că de ce nu ne folosim abilitățile pentru a automatiza viața animalelor de companie?",
+        "În acea perioadă, conform opiniei fraților Go, animalelor de companie nu li se acorda atenția cuvenită, rămâneau multe probleme nerezolvate. Curând, ei au renunțat la locul lor de muncă principal și au pornit într-o călătorie conștientă pentru a schimba modul de viață al animalelor de companie și experiența interacțiunii oamenilor cu acestea, utilizând noi tehnologii."
+      ],
+      "image": "/img/components/about/start.png"
+    },
+    {
+      "title": "Trecerea la un nou nivel",
+      "text": [
+        "Am animale de companie și știu ce probleme apar în procesul de trai cu ele. De exemplu, mulți proprietari se confruntă cu dificultăți în a-și lăsa animalele de companie acasă singure, fără aer condiționat în timpul verii? Sau cum să hrăniți animalul de companie atunci când plecați într-o călătorie scurtă sau într-o delegație? — spune Go (director general al PETKIT), — pentru a rezolva aceasta, noi nu am inventat doar prima casă pentru animale de companie cu aer condiționat din lume, furajeră inteligentă, fântână inteligentă, dar continuăm să creăm în fiecare an produse complet noi pentru animalele de companie și stăpânii lor\"."
+      ],
+      "image": "/img/components/about/level.png"
+    },
+    {
+      "title": "Inovații și creativitate",
+      "text": [
+        "Considerăm că dorința de inovație și creativitate are o importanță crucială pentru dezvoltarea companiei, așa că la PETKIT încurajăm pe toată lumea să-și manifeste potențialul creativ și imaginația în procesul de creare a fiecărui produs. O echipă puternică de ingineri = un produs puternic. Echipa de ingineri personifică PETKIT, deoarece este departamentul cheie care asigură fiabilitatea produsului nostru pentru consumatori. Revizuirea, testarea și încă o dată testarea — aceasta este rutina zilnică a inginerilor. Ei se asigură că produsul este testat de mii de ori înainte să ajungă pe piață."
+      ],
+      "image": "/img/components/about/innovations.png"
+    },
+    {
+      "title": "Împreună spre viitor!",
+      "text": [
+        "Iubim cel mai mult prietenii noștri cu coadă - le cumpărăm hrană bună, vitamine, jucării, îi ducem la saloane de grooming și îi îmbrăcăm în timpul sezonului rece. A venit momentul să trecem la un nou nivel de grijă împreună cu tehnologiile moderne PETKIT."
+      ],
+      "image": "/img/components/about/future.png"
+    }
+  ]
 }
