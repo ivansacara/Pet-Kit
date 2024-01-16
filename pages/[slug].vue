@@ -80,10 +80,10 @@ const {data: products} = await useAsyncData('products', () => {
 useHead(() => ({
 	title: category.value.items[0]?.fields.name,
 	meta: [
+		{name: "description", content: category.value.items[0]?.fields?.description},
 		{name: "og:title", content: category.value.items[0]?.fields.name},
 		{name: "og:description", content: category.value.items[0]?.fields?.description},
-		{name: "description", content: category.value.items[0]?.fields?.description},
-		{property: 'og:image', content: 'favicon.ico'}
+		{name: 'og:image', content: category.value.items[0]?.fields?.image.fields?.file?.url}
 	],
 }));
 

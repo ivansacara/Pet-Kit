@@ -14,9 +14,9 @@ useHead({
 	title: 'PetKit',
 	meta: [
 		{name: "description", content: t("meta.mainContent")},
-		{property: 'og:title', content: 'Petkit'},
+		{name: 'og:title', content: 'Petkit'},
 		{name: "og:description", content: t("meta.mainContent")},
-		{property: 'og:url', content: 'petkit.md'},
-		{property: 'og:image', content: 'favicon.ico'}],
+		{name: 'og:url', content: 'petkit.md'},
+		{name: 'og:image', content: 'favicon.ico'}],
 });
 </script>

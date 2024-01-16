@@ -22,10 +22,10 @@ const {$client} = useNuxtApp();
 useHead({
 	title: t("links.faq"),
 	meta: [
-		{name: "og:title", content: t("links.faq")},
 		{name: "description", content: t("meta.faq")},
+		{name: "og:title", content: t("links.faq")},
 		{name: "og:description", content: t("meta.faq")},
-		{property: 'og:image', content: 'favicon.ico'}],
+		{name: 'og:image', content: 'favicon.ico'}],
 });
 
 // Define the content type for your FAQ entries

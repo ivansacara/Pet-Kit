@@ -33,10 +33,10 @@ const {t} = useI18n();
 useHead({
 	title: t("links.delivery"),
 	meta: [
-		{name: "og:title", content: t("links.delivery")},
 		{name: "description", content: t("meta.delivery")},
+		{name: "og:title", content: t("links.delivery")},
 		{name: "og:description", content: t("meta.delivery")},
-		{property: 'og:image', content: 'favicon.ico'}
+		{name: 'og:image', content: 'favicon.ico'}
 	],
 });
 </script>
