@@ -87,7 +87,6 @@ useHead(() => ({
 	],
 }));
 
-
 const categoryName = computed(() => category.value.items[0]?.fields?.name);
 </script>
 
