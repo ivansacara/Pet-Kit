@@ -44,7 +44,7 @@ useHead({
 		{name: "description", content: t("meta.return")},
 		{name: "og:title", content: t("links.return")},
 		{name: "og:description", content: t("meta.return")},
-		{name: 'og:image', content: 'favicon.ico'}],
+		{name: 'og:image', content: '/petkit.png'}],
 });
 </script>
 

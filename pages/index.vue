@@ -17,6 +17,8 @@ useHead({
 		{name: 'og:title', content: 'Petkit'},
 		{name: "og:description", content: t("meta.mainContent")},
 		{name: 'og:url', content: 'petkit.md'},
-		{name: 'og:image', content: '/petkit.png'}],
+		{name: 'og:image', content: '/android-chrome-512x512.png'},
+		{name: 'ag:image', content: 'android-chrome-512x512.png'}
+	],
 });
 </script>

@@ -36,7 +36,7 @@ useHead({
 		{name: "description", content: t("meta.delivery")},
 		{name: "og:title", content: t("links.delivery")},
 		{name: "og:description", content: t("meta.delivery")},
-		{name: 'og:image', content: 'favicon.ico'}
+		{name: 'og:image', content: '/petkit.png'}
 	],
 });
 </script>
