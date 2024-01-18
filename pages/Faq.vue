@@ -12,12 +12,16 @@
 
       </div>
     </div>
+
+		<Banner :isFaq = "false" image = "/img/components/content/dog.png"/>
   </section>
 </template>
 
 <script setup>
 const {t} = useI18n();
 const {$client} = useNuxtApp();
+
+
 
 useHead({
 	title: t("links.faq"),

@@ -7,7 +7,7 @@
 					<span></span>
 				</div>
 				<nuxt-link class="header-logo" :to="localePath('/')">
-					<img src="/icons/logo.svg" alt="logo">
+					<img src="/icons/logo.svg" alt="Petkit">
 				</nuxt-link>
 				<nav class="header-nav">
 					<ul class="nav-items">

@@ -24,6 +24,8 @@
         </div>
       </div>
     </div>
+
+		<Banner :isFaq = "true" image = "/img/components/content/dog.png"/>
   </section>
 </template>
 

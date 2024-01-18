@@ -5,7 +5,7 @@
 				<div>
 					<div class="footer-logo">
 						<nuxt-link :to="localePath('/')">
-							<img src="/icons/logo.svg" alt="logo">
+							<img src="/icons/logo.svg" alt="Petkit">
 						</nuxt-link>
 					</div>
 					<div class="footer-content">
