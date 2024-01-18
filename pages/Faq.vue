@@ -13,7 +13,7 @@
       </div>
     </div>
 
-		<Banner :isFaq = "false" image = "/img/components/content/dog.png"/>
+		<Banner :isFaq = "false" image = "/img/components/content/dog.png" :banner-title="''" :banner-descr="''"/>
   </section>
 </template>
 
