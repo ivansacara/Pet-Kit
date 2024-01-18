@@ -60,6 +60,7 @@
 
 <style lang="scss">
 	.banner{
+		margin-bottom: -1px;
 		background: url('/public/img/components/content/banner-bg.png') left 100% / 100% 100% no-repeat;
 
 		@media screen and (min-width: $md){
