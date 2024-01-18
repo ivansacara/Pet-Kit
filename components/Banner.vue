@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import {defineProps, ref} from 'vue';
+import {defineProps} from 'vue';
 
 const {t} = useI18n();
 const props = defineProps({
@@ -67,6 +67,7 @@ const props = defineProps({
 <style lang="scss">
 .banner {
   margin-bottom: -1px;
+  position: relative;
   background: url('/img/components/content/banner-bg.png') left 100% / 100% 100% no-repeat;
 
   @media screen and (min-width: $md) {
