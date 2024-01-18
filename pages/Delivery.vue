@@ -25,7 +25,10 @@
       </div>
     </div>
 
-		<Banner :isFaq = "true" image = "/img/components/content/dog-2.png" :banner-title="''" :banner-descr="''"/>
+    <Banner
+            :banner-descr="t('delivery.banner.text')"
+            :banner-title="t('delivery.banner.title')"
+            image="/img/components/content/dog.png"/>
   </section>
 </template>
 

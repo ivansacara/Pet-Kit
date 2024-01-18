@@ -13,14 +13,16 @@
       </div>
     </div>
 
-		<Banner :isFaq = "false" image = "/img/components/content/dog.png" :banner-title="''" :banner-descr="''"/>
+    <Banner
+            :banner-descr="t('delivery.banner.text')"
+            :banner-title="t('delivery.banner.title')"
+            :isFaq="true" image="/img/components/content/dog-2.png"/>
   </section>
 </template>
 
 <script setup>
 const {t} = useI18n();
 const {$client} = useNuxtApp();
-
 
 
 useHead({

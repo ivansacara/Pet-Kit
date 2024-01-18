@@ -51,7 +51,11 @@
     "number": "CF:1013600016871"
   },
   "faq": {
-    "title": "Întrebări frecvente"
+    "title": "Întrebări frecvente",
+    "banner": {
+      "title": "Nu ați găsit răspunsul la întrebarea dvs.?",
+      "text": "Puteți suna, scrie, să ne contactați, să trimiteți o scrisoare și vă vom răspunde în decursul timpului X."
+    }
   },
   "product": {
     "buy": "Comanda",
@@ -107,6 +111,10 @@
       {
         "text": "cu orice card bancar și este procesată ca o achiziție. După plată, veți primi un e-mail cu un bon electronic ca confirmare a achiziției la magazinul Petkit."
       }
-    ]
+    ],
+    "banner": {
+      "title": "Cum să plătești?",
+      "text": "Noi nu livrăm comenzile cu plată la primire. Plata se efectuează pe site-ul petkit.com.ru cu orice card bancar emis în Federația Rusă și este procesată ca o cumpărare. După efectuarea plății, veți primi un bon electronic pe adresa de e-mail confirmând achiziția în magazinul Petkit."
+    }
   }
 }
