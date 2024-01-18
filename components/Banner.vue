@@ -34,7 +34,7 @@
               </svg>
             </a>
             <a class="banner-link" href="mailto:info@petkit.ru.com" target="_blank">
-              <span> НАПИСАТЬ НА ПОЧТУ </span>
+              <span>{{ t('banner.email') }}</span>
               <svg fill="none" height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 16.5001H3C2.60218 16.5001 2.22064 16.342 1.93934 16.0607C1.65804 15.7794 1.5 15.3979 1.5 15.0001V6.78681C1.51247 6.53889 1.58533 6.29778 1.71226 6.08445C1.83918 5.87112 2.01632 5.69205 2.22825 5.56281L8.22825 1.96281C8.46129 1.82308 8.7279 1.74927 8.99962 1.74927C9.27134 1.74927 9.53796 1.82308 9.771 1.96281L15.771 5.56281C16.2217 5.83506 16.4985 6.32256 16.5 6.84906V15.0001C16.5 15.3979 16.342 15.7794 16.0607 16.0607C15.7794 16.342 15.3978 16.5001 15 16.5001ZM3 7.40106V15.0001H15V7.40106L9 11.4008L3 7.40106ZM9 3.24906L3.987 6.25656L9 9.59856L14.0122 6.25656L9 3.24906Z"
                       fill="#A7A2A2"></path>
@@ -68,12 +68,8 @@ const props = defineProps({
 .banner {
   margin-bottom: -1px;
   position: relative;
-  background: url('/img/components/content/banner-bg.png') left 100% / 100% 100% no-repeat;
-
-  @media screen and (min-width: $md) {
-    background-position: left 100%;
-    background-size: 100% 450px;
-  }
+  //background: url('/img/components/content/banner-bg.jpg') left 100% / 100% 100% no-repeat;
+  background: linear-gradient(to right, #f7b39e, #ea967a);
 
   > .container {
     max-width: 1140px;

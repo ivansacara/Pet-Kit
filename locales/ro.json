@@ -1,6 +1,7 @@
 {
   "locale": "ro-MD",
   "aboutCompany": "Despre noi",
+  "mainPage": "Principală",
   "links": {
     "delivery": "Livrare și plată",
     "faq": "FAQ",
@@ -147,5 +148,8 @@
       ],
       "image": "/img/components/about/future.png"
     }
-  ]
+  ],
+  "banner": {
+    "email": "Scrie pe e-mail"
+  }
 }
