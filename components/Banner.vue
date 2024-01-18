@@ -3,15 +3,10 @@
 		<div class="container">
 			<div class="banner-wrap">
 				<div class="banner-txt">
-
-					<!----------------------------->
-					<!-- Текст сам подключишь =) -->
-					<!----------------------------->
-
-					<h6 class="banner-title">Как оплатить?</h6>
+					<h6 class="banner-title">{{ bannerTitle }}</h6>
 
 					<p class="banner-descr">
-						Мы не отправляем заказы с оплатой при получении. Оплата производится на сайте petkit.com.ru любой банковской картой, выпущенной в РФ и проходит как покупка. После оплаты Вы получите электронный чек на е-mail с подтверждением покупки в магазине Petkit.
+						{{ bannerDescr }}
 					</p>
 
 					<div class="banner-buttons" v-if="isFaq">
@@ -57,6 +52,8 @@
 	const props =  defineProps({
 		isFaq: Boolean,
 		image: String,
+		bannerTitle: String,
+		bannerDescr: String,
 	});
 	
 </script>
