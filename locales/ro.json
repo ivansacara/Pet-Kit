@@ -10,10 +10,11 @@
     "return": "Returnare și schimb"
   },
   "meta": {
-    "return": "",
-    "delivery": "",
-    "faq": "",
-    "about": ""
+    "main": "",
+    "return": "Returnarea și schimbul produselor de la brandul Petkit",
+    "delivery": "Livrăm produsele brandului Petkit în Chișinău și în orice oraș al Republicii Moldova.",
+    "faq": "Întrebări frecvente despre produsele brandului Petkit, despre hrănitoarele automate, fântânile de apă automate și litiera automată.",
+    "about": "Istoria creării mărcii Petkit, gadget-uri pentru animale de companie"
   },
   "application": {
     "title": "O aplicație pentru toate dispozitivele",
@@ -151,5 +152,13 @@
   ],
   "banner": {
     "email": "Scrie pe e-mail"
+  },
+  "order": {
+    "title": "Plasați o comandă",
+    "name": "Numele dvs. *",
+    "phone": "Telefonul dvs. *",
+    "message": "Mesaj",
+    "btn": "Trimite",
+    "response": "Trimis"
   }
 }

@@ -27,7 +27,8 @@
                   class="order__textarea form-control"
         ></textarea>
 
-        <button class="order__btn"
+        <button :disabled="submited"
+                class="order__btn"
                 type="submit">
           {{ $t("order.btn") }}
         </button>
@@ -44,6 +45,7 @@ import { useRouter } from "vue-router";
 
 const {t} = useI18n();
 const formIsSended = ref(false);
+const submited = ref(false)
 const router = useRouter()
 const config = useRuntimeConfig();
 const error = ref(false)
@@ -69,6 +71,7 @@ const token = config.public.TELEGRAM_TOKEN;
 const chat_id = config.public.TELEGRAM_CHAT_ID;
 
 const submitForm = async () => {
+    submited.value = true
     const messageInTelegram = `<b>Новый Запрос:</b>%0A <b>Имя:</b> <i>"${formData.name.value}"</i>%0A <b>Телефон:</b> <i>+${formData.phone.value}</i>%0A <b>Сообшение:</b> <i>"${formData.message.value}"</i>%0A <b>Продукт:</b> <i>"${formData.productLink.value}"</i>`;
 
     if (!formData.name.value || !formData.phone.value) {
@@ -92,6 +95,11 @@ const submitForm = async () => {
 </script>
 
 <style lang="scss">
+button[disabled] {
+  pointer-events: none;
+  background: $text-hover;
+}
+
 .order__title {
   font-weight: 600;
   text-align: center;

@@ -1,7 +1,7 @@
 <template>
   <section class="delivery-section">
     <div class="container">
-      <Breadcrumbs :pageTitle="t('links.delivery')"/>
+      <Breadcrumbs :pageTitle="t('links.delivery')" />
 
       <div class="delivery-wrapper">
         <h1 class="delivery-title">
@@ -9,13 +9,20 @@
         </h1>
         <div class="delivery-descr">
           <div class="spacing">
-            <p><strong>{{ t('delivery.description.0.strong') }}</strong></p>
+            <p>
+              <strong>{{ t('delivery.description.0.strong') }}</strong>
+            </p>
             <p>{{ t('delivery.description.1.text') }}</p>
           </div>
           <div>
             <p>{{ t('delivery.paymentInfo.0.text') }}</p>
-            <p>{{ t('delivery.paymentInfo.1.text') }}
-              <nuxt-link class="link" target="_blank" to="{{ t('delivery.paymentInfo.1.link.url') }}">
+            <p>
+              {{ t('delivery.paymentInfo.1.text') }}
+              <nuxt-link
+                class="link"
+                target="_blank"
+                to="{{ t('delivery.paymentInfo.1.link.url') }}"
+              >
                 {{ t('delivery.paymentInfo.1.link.text') }}
               </nuxt-link>
               {{ t('delivery.paymentInfo.2.text') }}
@@ -26,25 +33,26 @@
     </div>
 
     <Banner
-            :banner-descr="t('delivery.banner.text')"
-            :banner-title="t('delivery.banner.title')"
-            image="/img/components/content/dog.png"/>
+      :banner-descr="t('delivery.banner.text')"
+      :banner-title="t('delivery.banner.title')"
+      image="/img/components/content/dog.png"
+    />
   </section>
 </template>
 
 <script setup>
-import {useHead} from 'nuxt/app';
+import { useHead } from 'nuxt/app';
 
-const {t} = useI18n();
+const { t } = useI18n();
 
 useHead({
-	title: t("links.delivery"),
-	meta: [
-		{name: "description", content: t("meta.delivery")},
-		{name: "og:title", content: t("links.delivery")},
-		{name: "og:description", content: t("meta.delivery")},
-		{name: 'og:image', content: '/petkit.png'}
-	],
+  title: t('links.delivery'),
+  meta: [
+    { name: 'description', content: t('meta.delivery') },
+    { name: 'og:title', content: t('links.delivery') },
+    { name: 'og:description', content: t('meta.delivery') },
+    { name: 'og:image', content: '/petkit.png' },
+  ],
 });
 </script>
 
