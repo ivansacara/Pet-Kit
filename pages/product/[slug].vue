@@ -48,9 +48,9 @@ useHead(() => product.value ? {
 	title: product.value.fields.name,
 	meta: [
 		{name: "description", content: product.value.fields.description},
-		{name: "og:title", content: product.value.fields.name},
-		{name: "og:description", content: product.value.fields.description},
-		{name: "og:image", content: product.value.fields?.image[0]?.fields?.file?.url},
+		{property: "og:title", content: product.value.fields.name},
+		{property: "og:description", content: product.value.fields.description},
+		{property: "og:image", content: product.value.fields?.image[0]?.fields?.file?.url},
 	],
 } : {});
 </script>

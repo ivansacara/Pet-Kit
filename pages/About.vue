@@ -87,9 +87,9 @@ useHead({
 	title: t("links.about"),
 	meta: [
 		{name: "description", content: t("meta.about")},
-		{name: "og:title", content: t("links.about")},
-		{name: "og:description", content: t("meta.about")},
-		{name: 'og:image', content: '/petkit.png'}],
+		{property: "og:title", content: t("links.about")},
+		{property: "og:description", content: t("meta.about")},
+		{property: 'og:image', content: '/petkit.png'}],
 });
 </script>
 

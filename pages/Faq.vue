@@ -31,9 +31,9 @@ useHead({
 	title: t("links.faq"),
 	meta: [
 		{name: "description", content: t("meta.faq")},
-		{name: "og:title", content: t("links.faq")},
-		{name: "og:description", content: t("meta.faq")},
-		{name: 'og:image', content: '/petkit.png'}],
+		{property: "og:title", content: t("links.faq")},
+		{property: "og:description", content: t("meta.faq")},
+		{property: 'og:image', content: '/petkit.png'}],
 });
 
 // Define the content type for your FAQ entries

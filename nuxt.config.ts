@@ -10,7 +10,8 @@ export default defineNuxtConfig({
             meta: [
                 {charset: 'utf-8'},
                 {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-                {name: 'og:type', content: 'website'},
+                {property: 'og:type', content: 'website'},
+                {property: 'og:site_name', content: 'PetKit'},
                 // Add more default meta tags as needed
 
                 // Apple Touch Icon

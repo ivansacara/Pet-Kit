@@ -1,7 +1,7 @@
 <template>
   <section class="delivery-section">
     <div class="container">
-      <Breadcrumbs :pageTitle="t('links.delivery')" />
+      <Breadcrumbs :pageTitle="t('links.delivery')"/>
 
       <div class="delivery-wrapper">
         <h1 class="delivery-title">
@@ -19,9 +19,9 @@
             <p>
               {{ t('delivery.paymentInfo.1.text') }}
               <nuxt-link
-                class="link"
-                target="_blank"
-                to="{{ t('delivery.paymentInfo.1.link.url') }}"
+                      class="link"
+                      target="_blank"
+                      to="{{ t('delivery.paymentInfo.1.link.url') }}"
               >
                 {{ t('delivery.paymentInfo.1.link.text') }}
               </nuxt-link>
@@ -33,26 +33,26 @@
     </div>
 
     <Banner
-      :banner-descr="t('delivery.banner.text')"
-      :banner-title="t('delivery.banner.title')"
-      image="/img/components/content/dog.png"
+            :banner-descr="t('delivery.banner.text')"
+            :banner-title="t('delivery.banner.title')"
+            image="/img/components/content/dog.png"
     />
   </section>
 </template>
 
 <script setup>
-import { useHead } from 'nuxt/app';
+import {useHead} from 'nuxt/app';
 
-const { t } = useI18n();
+const {t} = useI18n();
 
 useHead({
-  title: t('links.delivery'),
-  meta: [
-    { name: 'description', content: t('meta.delivery') },
-    { name: 'og:title', content: t('links.delivery') },
-    { name: 'og:description', content: t('meta.delivery') },
-    { name: 'og:image', content: '/petkit.png' },
-  ],
+	title: t('links.delivery'),
+	meta: [
+		{name: 'description', content: t('meta.delivery')},
+		{property: 'og:title', content: t('links.delivery')},
+		{property: 'og:description', content: t('meta.delivery')},
+		{property: 'og:image', content: '/petkit.png'},
+	],
 });
 </script>
 

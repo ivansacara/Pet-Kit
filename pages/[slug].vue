@@ -81,9 +81,9 @@ useHead(() => ({
 	title: category.value.items[0]?.fields.name,
 	meta: [
 		{name: "description", content: category.value.items[0]?.fields?.description},
-		{name: "og:title", content: category.value.items[0]?.fields.name},
-		{name: "og:description", content: category.value.items[0]?.fields?.description},
-		{name: 'og:image', content: category.value.items[0]?.fields?.image.fields?.file?.url}
+		{property: "og:title", content: category.value.items[0]?.fields.name},
+		{property: "og:description", content: category.value.items[0]?.fields?.description},
+		{property: 'og:image', content: category.value.items[0]?.fields?.image.fields?.file?.url}
 	],
 }));
 

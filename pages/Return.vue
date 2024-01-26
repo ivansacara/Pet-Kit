@@ -42,9 +42,9 @@ useHead({
 	title: t("links.return"),
 	meta: [
 		{name: "description", content: t("meta.return")},
-		{name: "og:title", content: t("links.return")},
-		{name: "og:description", content: t("meta.return")},
-		{name: 'og:image', content: '/petkit.png'}],
+		{property: "og:title", content: t("links.return")},
+		{property: "og:description", content: t("meta.return")},
+		{property: 'og:image', content: '/petkit.png'}],
 });
 </script>
 
