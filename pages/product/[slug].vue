@@ -42,7 +42,6 @@ const product = computed(() => {
 		}
 	} : null;
 });
-console.log(product?.value.fields?.categories[0].name)
 // Update the head element when the product is fetched
 useHead(() => product.value ? {
 	title: product.value.fields.name,

@@ -51,15 +51,15 @@
   </div>
 </template>
 
-<script setup>
-import {defineProps} from 'vue';
+<script lang="ts" setup>
+import { defineProps } from 'vue';
 
 const {t} = useI18n();
 const props = defineProps({
-	isFaq: Boolean,
-	image: String,
-	bannerTitle: String,
-	bannerDescr: String,
+    isFaq: Boolean,
+    image: String,
+    bannerTitle: String,
+    bannerDescr: String,
 });
 
 </script>

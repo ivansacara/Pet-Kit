@@ -50,7 +50,8 @@
     "workTimeOffice": "Program de lucru al biroului: Luni-Vineri de la 10:00-18:00",
     "address": "Chișinău, bd, Mircea cel Bătrân nr.3",
     "brand": "SRL Rapid Autotest",
-    "number": "CF:1013600016871"
+    "number": "CF:1013600016871",
+    "phone": "Tel"
   },
   "faq": {
     "title": "Întrebări frecvente",
@@ -104,14 +105,14 @@
         "text": "Plată:"
       },
       {
-        "text": "Nu expediem comenzi cu plata la livrare. Plata se efectuează pe site",
-        "link": {
-          "text": "petkit.com.ru",
-          "url": "http://petkit.com.ru"
-        }
+        "text": "Numerar la primirea comenzii. Card Bancar la primirea comenzii prin POS-terminal"
       },
       {
-        "text": "cu orice card bancar și este procesată ca o achiziție. După plată, veți primi un e-mail cu un bon electronic ca confirmare a achiziției la magazinul Petkit."
+        "text": "Pentru a efectua comanda la telefon, apelati la numarul.",
+        "link": {
+          "text": "078876969",
+          "url": "+37378876969"
+        }
       }
     ],
     "banner": {

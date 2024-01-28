@@ -9,23 +9,22 @@
         </h1>
         <div class="delivery-descr">
           <div class="spacing">
-            <p>
-              <strong>{{ t('delivery.description.0.strong') }}</strong>
-            </p>
+            <h4>{{ t('delivery.description.0.strong') }}</h4>
             <p>{{ t('delivery.description.1.text') }}</p>
           </div>
           <div>
-            <p>{{ t('delivery.paymentInfo.0.text') }}</p>
+            <h4>{{ t('delivery.paymentInfo.0.text') }}</h4>
             <p>
               {{ t('delivery.paymentInfo.1.text') }}
+            </p>
+            <p>
+              {{ t('delivery.paymentInfo.2.text') }}
               <nuxt-link
                       class="link"
                       target="_blank"
-                      to="{{ t('delivery.paymentInfo.1.link.url') }}"
-              >
-                {{ t('delivery.paymentInfo.1.link.text') }}
+                      to="{{ t('delivery.paymentInfo.2.link.url') }}">
+                {{ t('delivery.paymentInfo.2.link.text') }}
               </nuxt-link>
-              {{ t('delivery.paymentInfo.2.text') }}
             </p>
           </div>
         </div>
@@ -75,7 +74,12 @@ useHead({
   }
 }
 
+
 .delivery-descr {
+  h4 {
+    margin-bottom: 15px;
+  }
+
   p {
     font-size: $text-base;
 
