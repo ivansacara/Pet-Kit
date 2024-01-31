@@ -16,7 +16,7 @@ useHead({
 		{name: "description", content: t("meta.main")},
 		{property: 'og:title', content: 'Petkit'},
 		{property: "og:description", content: t("meta.main")},
-		{property: 'og:url', content: 'petkit.md'},
+		{property: 'og:url', content: 'https://petkit.md'},
 		{property: 'og:image', content: '/petkit.png'},
 	],
 });

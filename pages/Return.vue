@@ -36,7 +36,11 @@
 </template>
 
 <script setup>
+import {useRoute} from "#app";
+import {useHead} from 'nuxt/app';
+
 const {t} = useI18n();
+const route = useRoute();
 
 useHead({
 	title: t("links.return"),
@@ -44,7 +48,8 @@ useHead({
 		{name: "description", content: t("meta.return")},
 		{property: "og:title", content: t("links.return")},
 		{property: "og:description", content: t("meta.return")},
-		{property: 'og:image', content: '/petkit.png'}],
+		{property: 'og:image', content: '/petkit.png'},
+		{property: 'og:url', content: `https://petkit.md${route.path}`}],
 });
 </script>
 

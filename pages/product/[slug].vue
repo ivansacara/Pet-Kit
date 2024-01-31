@@ -3,10 +3,8 @@
     <Breadcrumbs v-if="product" :pageTitle="product.fields.name"
                  :parentPage="product?.fields?.categories[0].name"
                  :parentSlug="product?.fields?.categories[0].slug"/>
-    <div v-if="product" class="prod-descr-wrapper">
-      <ProductDescription :product="product"/>
-    </div>
   </div>
+  <ProductDescription v-if="product" :product="product"/>
 </template>
 <script setup>
 import {useRoute, useAsyncData, useHead} from 'nuxt/app';
@@ -23,6 +21,7 @@ const {data: productData} = await useAsyncData('product', () =>
 		locale: t("locale"),
 	})
 );
+console.log(productData)
 // Process the fetched product data
 const product = computed(() => {
 	const firstItem = productData.value.items.length > 0 ? productData.value.items[0] : null;
@@ -36,11 +35,13 @@ const product = computed(() => {
 				}))
 				: [],
 			name: firstItem.fields.name,
+			shortDescription: firstItem.fields.shortDescription,
 			description: firstItem.fields.description,
 			price: firstItem.fields.price,
 			image: firstItem.fields.image,
 			characteristics: firstItem.fields.characteristics,
-			banner: firstItem.fields.banner
+			banner: firstItem.fields.banner,
+			videoLink: firstItem.fields.videoLink
 		}
 	} : null;
 });
@@ -54,12 +55,13 @@ useHead(() => product.value ? {
 		{property: "og:title", content: product.value.fields.name},
 		{property: "og:description", content: product.value.fields.description},
 		{property: "og:image", content: product.value.fields?.image[0]?.fields?.file?.url},
+		{property: 'og:url', content: `https://petkit.md${route.path}`}
 	],
 } : {});
 </script>
 
 <style lang="scss">
 .prod-descr-wrapper {
-  padding: 30px 0;
+  padding-top: 30px;
 }
 </style>

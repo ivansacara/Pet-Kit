@@ -84,7 +84,7 @@ useHead(() => ({
 		{property: "og:title", content: category.value.items[0]?.fields.name},
 		{property: "og:description", content: category.value.items[0]?.fields?.description},
 		{property: 'og:image', content: category.value.items[0]?.fields?.image.fields?.file?.url},
-		{property: 'og:url', content: route.path}
+		{property: 'og:url', content: `https://petkit.md${route.path}`}
 	],
 }));
 

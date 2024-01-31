@@ -1,28 +1,35 @@
 <template>
-  <div class="prod-descr">
-    <div class="prod-area">
-      <div class="prod-descr-photo">
-        <ProductSlider :productSlider="product.fields.image" @update-lightbox="lightboxVisible = !lightboxVisible"/>
+  <div class="container">
+    <div class="prod-descr">
+      <div class="prod-area">
+        <div class="prod-descr-photo">
+          <ProductSlider :productSlider="product.fields.image" @update-lightbox="lightboxVisible = !lightboxVisible"/>
+        </div>
+      </div>
+      <div class="prod-descr-title">
+        <h1 class="title-head">{{ product.fields.name }}</h1>
+      </div>
+
+      <!--      <div class="prod-descr-info" v-html="description"></div>-->
+      <div class="prod-descr-info">
+        {{ product.fields.shortDescription }}
+      </div>
+      <div class="prod-descr-price">
+        <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
+      </div>
+      <div class="prod-descr-buy">
+        <button class="prod-descr-btn" @click="() => openModal()">
+          {{ t('product.buy') }}
+        </button>
+        <ModalsContainer/>
       </div>
     </div>
-    <div class="prod-descr-title">
-      <h1 class="title-head">{{ product.fields.name }}</h1>
-    </div>
-    <div class="prod-descr-price">
-      <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
-    </div>
-    <div class="prod-descr-info" v-html="description">
-    </div>
-    <div class="prod-descr-buy">
-      <button class="prod-descr-btn" @click="() => openModal()">
-        {{ t('product.buy') }}
-      </button>
-      <ModalsContainer/>
-    </div>
+    <Product-info :characteristics="characteristics" :description="description"/>
   </div>
-  <h2 class="product-characteristics-title">Харрактеристики</h2>
-  <div class="product-characteristics" v-html="characteristics"></div>
-  <ProductBanner :images="product.fields.banner"/>
+  <VideoBanner v-if="product.fields.videoLink"
+               :video-url="product.fields.videoLink"/>
+  <ProductBanner v-if="!product.fields.videoLink"
+                 :images="product.fields.banner"/>
 
   <FsLightbox :exitFullscreenOnClose="true" :sources="imageSources" :toggler="lightboxVisible" onclick=""/>
 
@@ -33,6 +40,7 @@ import FsLightbox from "fslightbox-vue/v3";
 import { ModalsContainer, useModal } from 'vue-final-modal'
 import FeedbackModal from "~/components/FeedbackModal.vue";
 import ProductBanner from "~/components/Product-banner.vue";
+import ProductInfo from "~/components/Product-info.vue";
 
 const {t} = useI18n();
 const {open, close} = useModal({
@@ -170,6 +178,8 @@ const openModal = () => {
 }
 
 .prod-descr {
+  padding-top: 30px;
+  padding-bottom: 45px;
   display: grid;
   grid-template-areas:
 			"photo"
@@ -184,8 +194,8 @@ const openModal = () => {
   @media screen and (min-width: $lg) {
     grid-template-areas:
 				"photo title"
-				"photo price"
 				"photo descr"
+				"photo price"
 				"photo buy"
 				"photo .";
     grid-template-columns: 50% 1fr;
@@ -261,7 +271,7 @@ const openModal = () => {
     @media screen and (min-width: $md) {
       padding: 0;
       margin: 0 0 24px 0;
-      font-size: 27px;
+      font-size: 24px;
       line-height: 32px;
       border-top: 0;
     }
@@ -270,7 +280,7 @@ const openModal = () => {
 
 .prod-descr-price {
   padding: 6px 0 11px 0;
-  grid-area: price;
+  //grid-area: price;
 
   @media screen and (min-width: $md) {
     padding: 0 0 11px 0;
@@ -287,7 +297,7 @@ const openModal = () => {
 
     @media screen and (min-width: $md) {
       margin: 0 12px 30px 0;
-      font-size: 48px;
+      font-size: 38px;
       line-height: 56px;
     }
   }
@@ -345,4 +355,10 @@ const openModal = () => {
 .fslightbox-source {
   background: white;
 }
+
+.product-banner {
+  margin-bottom: -1px;
+  position: relative;
+}
+
 </style>

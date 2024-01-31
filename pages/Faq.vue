@@ -14,17 +14,19 @@
     </div>
 
     <Banner
-            :banner-descr="t('delivery.banner.text')"
-            :banner-title="t('delivery.banner.title')"
+            :banner-descr="t('faq.banner.text')"
+            :banner-title="t('faq.banner.title')"
             :isFaq="true" image="/img/components/content/dog-2.png"/>
   </section>
 </template>
 
 <script setup>
 import {useHead} from 'nuxt/app';
+import {useRoute} from "#app";
 
 const {t} = useI18n();
 const {$client} = useNuxtApp();
+const route = useRoute();
 
 
 useHead({
@@ -33,7 +35,8 @@ useHead({
 		{name: "description", content: t("meta.faq")},
 		{property: "og:title", content: t("links.faq")},
 		{property: "og:description", content: t("meta.faq")},
-		{property: 'og:image', content: '/petkit.png'}],
+		{property: 'og:image', content: '/petkit.png'},
+		{property: 'og:url', content: `https://petkit.md${route.path}`}],
 });
 
 // Define the content type for your FAQ entries
