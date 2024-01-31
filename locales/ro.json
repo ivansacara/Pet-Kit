@@ -10,7 +10,7 @@
     "return": "Returnare și schimb"
   },
   "meta": {
-    "main": "",
+    "main": "Tehnologie Inovatoare pentru Animalele Dvs. de Companie.\nBine ați venit pe site-ul oficial Petkit în Moldova! Magazinul nostru oferă o gamă largă de soluții tehnologice inovatoare pentru îngrijirea animalelor de companie. De la dispozitive de hrănire inteligente și adăpători la accesorii avansate pentru sănătatea și bunăstarea animalelor dvs. de companie, Petkit furnizează doar cele mai bune pentru prietenii dvs. patrupezi.",
     "return": "Returnarea și schimbul produselor de la brandul Petkit",
     "delivery": "Livrăm produsele brandului Petkit în Chișinău și în orice oraș al Republicii Moldova.",
     "faq": "Întrebări frecvente despre produsele brandului Petkit, despre hrănitoarele automate, fântânile de apă automate și litiera automată.",
@@ -57,7 +57,7 @@
     "title": "Întrebări frecvente",
     "banner": {
       "title": "Nu ați găsit răspunsul la întrebarea dvs.?",
-      "text": "Puteți suna, scrie, să ne contactați, să trimiteți o scrisoare și vă vom răspunde în decursul timpului X."
+      "text": "Puteți suna, scrie, contacta, trimite un email și vă vom răspunde în cel mai scurt timp."
     }
   },
   "product": {
@@ -108,7 +108,7 @@
         "text": "Numerar la primirea comenzii. Card Bancar la primirea comenzii prin POS-terminal"
       },
       {
-        "text": "Pentru a efectua comanda la telefon, apelati la numarul.",
+        "text": "Pentru a plasa o comandă prin telefon, trebuie să contactați operatorul call-center la numărul",
         "link": {
           "text": "078876969",
           "url": "+37378876969"
@@ -117,7 +117,7 @@
     ],
     "banner": {
       "title": "Cum să plătești?",
-      "text": "Noi nu livrăm comenzile cu plată la primire. Plata se efectuează pe site-ul petkit.com.ru cu orice card bancar emis în Federația Rusă și este procesată ca o cumpărare. După efectuarea plății, veți primi un bon electronic pe adresa de e-mail confirmând achiziția în magazinul Petkit."
+      "text": "Numerar la primirea comenzii. Card Bancar la primirea comenzii prin POS-terminal."
     }
   },
   "about": [

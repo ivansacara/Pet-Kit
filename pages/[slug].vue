@@ -83,7 +83,8 @@ useHead(() => ({
 		{name: "description", content: category.value.items[0]?.fields?.description},
 		{property: "og:title", content: category.value.items[0]?.fields.name},
 		{property: "og:description", content: category.value.items[0]?.fields?.description},
-		{property: 'og:image', content: category.value.items[0]?.fields?.image.fields?.file?.url}
+		{property: 'og:image', content: category.value.items[0]?.fields?.image.fields?.file?.url},
+		{property: 'og:url', content: route.path}
 	],
 }));
 

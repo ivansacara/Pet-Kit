@@ -11,8 +11,7 @@
     <div class="prod-descr-price">
       <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
     </div>
-    <div class="prod-descr-info">
-      <span>{{ product.fields.description }}</span>
+    <div class="prod-descr-info" v-html="description">
     </div>
     <div class="prod-descr-buy">
       <button class="prod-descr-btn" @click="() => openModal()">
@@ -21,14 +20,19 @@
       <ModalsContainer/>
     </div>
   </div>
+  <h2 class="product-characteristics-title">Харрактеристики</h2>
+  <div class="product-characteristics" v-html="characteristics"></div>
+  <ProductBanner :images="product.fields.banner"/>
 
   <FsLightbox :exitFullscreenOnClose="true" :sources="imageSources" :toggler="lightboxVisible" onclick=""/>
 
 </template>
 <script lang="ts" setup>
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import FsLightbox from "fslightbox-vue/v3";
 import { ModalsContainer, useModal } from 'vue-final-modal'
 import FeedbackModal from "~/components/FeedbackModal.vue";
+import ProductBanner from "~/components/Product-banner.vue";
 
 const {t} = useI18n();
 const {open, close} = useModal({
@@ -47,6 +51,8 @@ const props = defineProps({
     }
 });
 
+const description = documentToHtmlString(props.product.fields.description);
+const characteristics = documentToHtmlString(props.product.fields.characteristics)
 const lightboxVisible = ref(false);
 const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
 

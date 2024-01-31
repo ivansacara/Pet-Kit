@@ -38,10 +38,14 @@ const product = computed(() => {
 			name: firstItem.fields.name,
 			description: firstItem.fields.description,
 			price: firstItem.fields.price,
-			image: firstItem.fields.image
+			image: firstItem.fields.image,
+			characteristics: firstItem.fields.characteristics,
+			banner: firstItem.fields.banner
 		}
 	} : null;
 });
+
+
 // Update the head element when the product is fetched
 useHead(() => product.value ? {
 	title: product.value.fields.name,
