@@ -18,8 +18,8 @@
         <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
       </div>
       <div class="prod-descr-buy">
-        <button class="prod-descr-btn" @click="() => openModal()">
-          {{ t('product.buy') }}
+        <button :disabled="!product.fields.stock" class="prod-descr-btn" @click="() => openModal()">
+          {{ product.fields.stock ? t('product.buy') : t('product.outOfStock') }}
         </button>
         <ModalsContainer/>
       </div>
@@ -349,6 +349,10 @@ const openModal = () => {
     &:hover {
       background: $btn-hover;
     }
+
+    &[disabled] {
+      background: $disabled;
+    }
   }
 }
 
@@ -356,7 +360,7 @@ const openModal = () => {
   background: white;
 }
 
-.product-banner {
+.video-banner-container {
   margin-bottom: -1px;
   position: relative;
 }

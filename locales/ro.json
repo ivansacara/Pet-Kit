@@ -62,6 +62,7 @@
   },
   "product": {
     "buy": "Comanda",
+    "outOfStock": "Nu este în stoc",
     "see": "Detalii",
     "currency": "Lei"
   },
@@ -161,5 +162,9 @@
     "message": "Mesaj",
     "btn": "Trimite",
     "response": "Trimis"
+  },
+  "productInfo": {
+    "desc": "Descriere",
+    "char": "Caract."
   }
 }

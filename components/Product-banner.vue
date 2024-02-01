@@ -12,22 +12,25 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-img {
-  width: 100%;
-  height: auto;
-}
-
-.mob {
-  display: block;
-  @media screen and (min-width: $md) {
-    display: none;
+.product-banner {
+  img {
+    width: 100%;
+    height: auto;
   }
-}
 
-.desc {
-  display: none;
-  @media screen and (min-width: $md) {
+  .mob {
     display: block;
+    @media screen and (min-width: $md) {
+      display: none;
+    }
+  }
+
+  .desc {
+    display: none;
+    @media screen and (min-width: $md) {
+      display: block;
+    }
   }
 }
+
 </style>

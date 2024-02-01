@@ -1,121 +1,122 @@
 @import "variables/_variables";
 
 @font-face {
-	font-family: 'PT Root UI';
-	src: url('../font/pt-root-ui_regular.ttf') format('woff');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'PT Root UI';
+  src: url('../font/pt-root-ui_regular.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
 *,
 *::before,
 *::after {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-	font-family: 'PT Root UI', sans-serif;
-	font-size: $text-base;
-	line-height: 1.2;
-	font-weight: 400;
-	color: $text-color;
-	position: relative;
-	overflow: auto;
-	margin: 0;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	-webkit-tap-highlight-color: transparent;
+  font-family: 'PT Root UI', sans-serif;
+  font-size: $text-base;
+  line-height: 1.2;
+  font-weight: 400;
+  color: $text-color;
+  position: relative;
+  overflow: auto;
+  margin: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 
-	@media (min-width: $lg) {
-		font-size: $text-lg;
-	}
+  @media (min-width: $lg) {
+    font-size: $text-lg;
+  }
 
-	&.isOpen{
-		overflow: hidden;
-	}
+  &.isOpen {
+    overflow: hidden;
+  }
 }
 
-img{
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
-svg{
-	width: 100%;
-	height: auto;
+svg {
+  width: 100%;
+  height: auto;
 }
 
-a{
-	display: block;
-	width: 100%;
-	height: auto;
-	color: currentColor;
-	text-decoration: none;
-	background: transparent;
+a {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: currentColor;
+  text-decoration: none;
+  background: transparent;
 }
 
-input{
-	outline: none;
+input {
+  outline: none;
 }
 
-a, button{
-	transition: 0.2s ease-in-out;
-	cursor: pointer;
+a, button {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-li{
-	text-decoration: none;
-	list-style-type: none;
+li {
+  text-decoration: none;
+  list-style-type: none;
 }
 
-button{
-	border: none;
-	background: transparent;
-	outline: none;
+button {
+  border: none;
+  background: transparent;
+  outline: none;
 }
 
 .wrapper {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.container{
-	max-width: 1408px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 15px;
-	
-	@media (min-width: $md) {
-		padding: 0 40px;
-	}
+.container {
+  max-width: 1408px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
 
-	@media screen and (min-width: 1448px){
-		padding: 0;
-	}
+  @media (min-width: $md) {
+    padding: 0 40px;
+  }
+
+  @media screen and (min-width: 1448px) {
+    padding: 0;
+  }
 }
 
 main {
-	flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.fslightbox-toolbar-button{
-	width: 35px!important;
-	background: rgba(35,35,35,.65);
-	height: 35px!important;
+.fslightbox-toolbar-button {
+  width: 35px !important;
+  background: rgba(35, 35, 35, .65);
+  height: 35px !important;
 
-	&:first-child{
-		margin-right: 5px;
-	}
+  &:first-child {
+    margin-right: 5px;
+  }
 }
 
-.fslightbox-toolbar{
-	background: transparent!important;
+.fslightbox-toolbar {
+  background: transparent !important;
 }

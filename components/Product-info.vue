@@ -1,8 +1,10 @@
 <template>
   <div class="tabs">
     <nav class="tabs__items">
-      <a :class="{'active': data.activeTab === 'tab_01'}" class="tabs__item" @click="activateTab('tab_01')">Описание</a>
-      <a :class="{'active': data.activeTab === 'tab_02'}" class="tabs__item" @click="activateTab('tab_02')">Хар-ки</a>
+      <a :class="{'active': data.activeTab === 'tab_01'}" class="tabs__item"
+         @click="activateTab('tab_01')">{{ t('productInfo.desc') }}</a>
+      <a :class="{'active': data.activeTab === 'tab_02'}" class="tabs__item"
+         @click="activateTab('tab_02')">{{ t('productInfo.char') }}</a>
     </nav>
     <div class="tabs__body">
       <div v-if="data.activeTab === 'tab_01'" class="tabs__block">
@@ -16,6 +18,7 @@
 </template>
 
 <script setup>
+const {t} = useI18n();
 const props = defineProps({
 	characteristics: String,
 	description: String

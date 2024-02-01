@@ -21,7 +21,6 @@ const {data: productData} = await useAsyncData('product', () =>
 		locale: t("locale"),
 	})
 );
-console.log(productData)
 // Process the fetched product data
 const product = computed(() => {
 	const firstItem = productData.value.items.length > 0 ? productData.value.items[0] : null;
@@ -41,7 +40,8 @@ const product = computed(() => {
 			image: firstItem.fields.image,
 			characteristics: firstItem.fields.characteristics,
 			banner: firstItem.fields.banner,
-			videoLink: firstItem.fields.videoLink
+			videoLink: firstItem.fields.videoLink,
+			stock: firstItem.fields.stock
 		}
 	} : null;
 });
@@ -51,9 +51,9 @@ const product = computed(() => {
 useHead(() => product.value ? {
 	title: product.value.fields.name,
 	meta: [
-		{name: "description", content: product.value.fields.description},
+		{name: "description", content: product.value.fields.shortDescription},
 		{property: "og:title", content: product.value.fields.name},
-		{property: "og:description", content: product.value.fields.description},
+		{property: "og:description", content: product.value.fields.shortDescription},
 		{property: "og:image", content: product.value.fields?.image[0]?.fields?.file?.url},
 		{property: 'og:url', content: `https://petkit.md${route.path}`}
 	],

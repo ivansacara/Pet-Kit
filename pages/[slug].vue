@@ -1,8 +1,6 @@
 <template>
   <div class="container">
     <Breadcrumbs :pageTitle="categoryName"/>
-
-    <h1 class="prod-title">{{ categoryName }}</h1>
     <div class="catalog">
       <div class="catalog-list">
         <nuxt-link v-for="product in products.items" :key="product.sys.id"
@@ -32,7 +30,7 @@ const selectProduct = (product) => {
 		const newProduct = {
 			image: product.fields.image[0].fields.file.url,
 			price: product.fields.price,
-			description: product.fields.description,
+			description: product.fields.shortDescription,
 			slug: product.fields.slug,
 			locale: product.sys.locale.split('-')[0],
 			id: product.sys.id

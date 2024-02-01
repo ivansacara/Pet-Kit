@@ -12,8 +12,8 @@
     <div class="info-wrap">
       <span class="prod-price">{{ product.fields.price }} {{ t('product.currency') }}</span>
 
-      <button class="prod-btn" type="button">
-        <span> {{ t('product.see') }}</span>
+      <button :disabled="!product.fields.stock" class="prod-btn" type="button">
+        {{ product.fields.stock ? t('product.buy') : t('product.outOfStock') }}
       </button>
     </div>
   </div>

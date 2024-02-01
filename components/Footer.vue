@@ -1,13 +1,13 @@
 <template>
   <footer id="contacts" class="footer-main">
     <div class="container">
+      <div class="footer-logo">
+        <nuxt-link :to="localePath('/')">
+          <img alt="Petkit" src="/icons/logo.svg">
+        </nuxt-link>
+      </div>
       <div class="footer-wrapper">
         <div>
-          <div class="footer-logo">
-            <nuxt-link :to="localePath('/')">
-              <img alt="Petkit" src="/icons/logo.svg">
-            </nuxt-link>
-          </div>
           <div class="footer-content">
             <div class="social-links">
               <div>

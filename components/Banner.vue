@@ -80,7 +80,7 @@ const props = defineProps({
   padding-top: 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 
   @media screen and (min-width: $md) {
     flex-direction: row;
@@ -127,12 +127,16 @@ const props = defineProps({
 }
 
 .banner-buttons {
-  margin: 21px 0 0 0;
+  margin: 20px auto 10px;
   max-width: 320px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
+
+  @media screen and (min-width: $md) {
+    margin: 20px 0 10px;
+  }
 }
 
 .banner-link {
