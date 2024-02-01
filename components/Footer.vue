@@ -69,7 +69,7 @@
           </div>
         </div>
         <div>
-          <div class="footer-title">{{ t('aboutCompany') }}</div>
+          <h5 class="footer-title">{{ t('aboutCompany') }}</h5>
           <ul class="footer-items-menu">
             <li>
               <nuxt-link

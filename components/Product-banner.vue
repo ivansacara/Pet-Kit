@@ -1,6 +1,7 @@
 <template>
   <div class="product-banner">
-    <img v-for="image in images" :class="image.fields.title" :src="image?.fields?.file?.url" alt="">
+    <img v-for="image in images" :alt="image.fields.description" :class="image.fields.title"
+         :src="image?.fields?.file?.url">
   </div>
 </template>
 

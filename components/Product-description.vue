@@ -10,10 +10,9 @@
         <h1 class="title-head">{{ product.fields.name }}</h1>
       </div>
 
-      <!--      <div class="prod-descr-info" v-html="description"></div>-->
-      <div class="prod-descr-info">
+      <p class="prod-descr-info">
         {{ product.fields.shortDescription }}
-      </div>
+      </p>
       <div class="prod-descr-price">
         <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
       </div>

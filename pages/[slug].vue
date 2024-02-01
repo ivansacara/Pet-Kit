@@ -29,6 +29,7 @@ const selectProduct = (product) => {
 	if (existingProductIndex === -1) {
 		const newProduct = {
 			image: product.fields.image[0].fields.file.url,
+			alt: product.fields.image[0].fields.title,
 			price: product.fields.price,
 			description: product.fields.shortDescription,
 			slug: product.fields.slug,

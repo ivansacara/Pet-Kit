@@ -5,18 +5,6 @@
     </div>
     <VideoBanner
             :video-url="'nyqLVrSvB4I'"/>
-
-    <!--    <VideoBanner :video-url="'https://www.youtube.com/embed/nyqLVrSvB4I?enablejsapi=1&mute=1&loop=1&playlist=nyqLVrSvB4I'"/>-->
-    <!--    <div class="about-video-wrap">-->
-    <!--      <div class="about-video">-->
-    <!--        <iframe-->
-    <!--                height="455"-->
-    <!--                src="https://www.youtube.com/embed/nyqLVrSvB4I?enablejsapi=1&mute=1&loop=1&playlist=nyqLVrSvB4I&controls=0&rel=0&showinfo=0&autoplay=1"-->
-    <!--                title="final company introduction video"-->
-    <!--                width="100%">-->
-    <!--        </iframe>-->
-    <!--      </div>-->
-    <!--    </div>-->
     <div class="container">
       <div class="about-wrapper">
         <div class="about-block">
@@ -32,7 +20,7 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.0.image')" alt="" class="img">
+            <img :src="t('about.0.image')" alt="how_it_all_began_img" class="img">
           </div>
         </div>
 
@@ -46,7 +34,7 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.1.image')" alt="" class="img">
+            <img :src="t('about.1.image')" alt="transition_to_new_level_img" class="img">
           </div>
         </div>
 
@@ -60,7 +48,7 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.2.image')" alt="" class="img">
+            <img :src="t('about.2.image')" alt="innovation_and_creativity_img" class="img">
           </div>
         </div>
 
@@ -74,7 +62,7 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.3.image')" alt="" class="img">
+            <img :src="t('about.3.image')" alt="together_into_the_future_img" class="img">
           </div>
         </div>
       </div>

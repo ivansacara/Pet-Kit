@@ -3,7 +3,7 @@
     <div class="prod-photo">
       <div class="img-ratio">
         <div class="img-ratio__inner">
-          <img :src="product.fields.image[0].fields.file.url" alt="">
+          <img :alt="props.product.fields.image[0].fields.title" :src="product.fields.image[0].fields.file.url">
         </div>
       </div>
     </div>
@@ -26,6 +26,7 @@ const props = defineProps({
 		required: true
 	}
 });
+
 </script>
 <style lang="scss">
 .prod-item {

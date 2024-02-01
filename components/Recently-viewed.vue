@@ -28,7 +28,7 @@
               <div class="viewed-photo">
                 <div class="img-ratio">
                   <div class="img-ratio__inner">
-                    <img :src="viewedProduct.image" alt="">
+                    <img :alt="viewedProduct.alt" :src="viewedProduct.image">
                   </div>
                 </div>
               </div>

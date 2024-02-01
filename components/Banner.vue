@@ -44,7 +44,7 @@
         </div>
 
         <div class="banner-img">
-          <img :src="image" alt="">
+          <img :src="image" alt="banner_img">
         </div>
       </div>
     </div>

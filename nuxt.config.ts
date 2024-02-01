@@ -17,11 +17,11 @@ export default defineNuxtConfig({
 
                 // Apple Touch Icon
                 {name: 'apple-touch-icon', content: '/apple-touch-icon.png'},
-
+                {rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png",},
                 // Favicon
                 {name: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
                 {name: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
-
+                {rel: "shortcut icon", href: "/favicon.ico",},
                 // Manifest
                 {rel: 'manifest', href: '/site.webmanifest'},
 
