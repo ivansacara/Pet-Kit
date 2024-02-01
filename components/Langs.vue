@@ -11,6 +11,7 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
+import { useHead } from "#app";
 
 const {locale} = useI18n();
 const switchLocalePath = useSwitchLocalePath();
@@ -25,6 +26,12 @@ const selectLang = (lang: string) => {
 onMounted(() => {
     const defaultLocale = localStorage.getItem('LANG') || locale.value;
     selectLang(defaultLocale);
+});
+
+useHead({
+    htmlAttrs: {
+        lang: activeLanguage
+    }
 });
 </script>
 

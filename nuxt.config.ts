@@ -1,9 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+import i18n from "@nuxtjs/i18n/dist/runtime/plugins/i18n.mjs";
+
 export default defineNuxtConfig({
     _generate: false,
     app: {
         head: {
+            htmlAttrs: {
+                lang: 'ro'
+            },
             charset: "utf-8",
             viewport: "width=device-width, initial-scale=1.0",
             title: "Petkit",

@@ -32,7 +32,7 @@
               </nuxt-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToElement('contacts')">{{ t('links.contacts') }}</a>
+              <span class="nav-link" @click.prevent="scrollToElement('contacts')">{{ t('links.contacts') }}</span>
             </li>
           </ul>
         </nav>
@@ -198,6 +198,7 @@ const navClick = () => {
 
 .nav-link {
   display: inline;
+  cursor: pointer;
 
   &:hover {
     color: #888;

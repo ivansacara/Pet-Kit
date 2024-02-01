@@ -15,6 +15,7 @@
       </div>
     </div>
     <button
+            id="widget"
             :class="{ 'btn-active': activeBtn }"
             class="widget-btn"
             @click="toggleActive"
