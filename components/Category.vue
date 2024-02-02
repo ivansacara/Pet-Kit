@@ -1,7 +1,7 @@
 <template>
   <div class="category">
-    <div class="img-ratio">
-      <div class="img-ratio__inner">
+    <div class="category-img-ratio">
+      <div class="category-img-ratio__inner">
         <picture>
           <source :srcset="props.category.image" type="image/webp">
           <img :alt="props.category.alt" :src="props.category.image" class="category-img">
@@ -60,13 +60,13 @@ console.log(props.category)
     }
   }
 
-  .img-ratio {
+  .category-img-ratio {
     height: 0;
     width: 100%;
     position: relative;
     padding-top: calc(100% / 2);
 
-    .img-ratio__inner {
+    .category-img-ratio__inner {
       width: 100%;
       height: 100%;
       position: absolute;

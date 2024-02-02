@@ -89,8 +89,11 @@ onMounted(() => {
 }
 
 .viewed-product {
-	border-radius: 6px;
-	border: 1px solid #efefef;
+  border-radius: 6px;
+  border: 1px solid #efefef;
+  -webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
   display: grid;
   grid-template-areas:
 		'photo .'
@@ -110,7 +113,10 @@ onMounted(() => {
 .viewed-photo {
   grid-area: photo;
   min-width: 0;
-
+  background: #efefef;
+  border-radius: 6px;
+  overflow: hidden;
+  
   .img-ratio {
     height: 0;
     position: relative;
@@ -138,10 +144,12 @@ onMounted(() => {
 
 .viewed-title {
   grid-area: title;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
   margin-bottom: 5px;
+  height: calc(13px * 3);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .viewed-price {

@@ -8,9 +8,9 @@
       </div>
     </div>
 
-    <p class="prod-name">{{ product.fields.name }}</p>
     <div class="info-wrap">
-      <span class="prod-price">{{ product.fields.price }} {{ t('product.currency') }}</span>
+      <p class="prod-name">{{ product.fields.name }}</p>
+      <div class="prod-price">{{ product.fields.price }} {{ t('product.currency') }}</div>
 
       <button :disabled="!product.fields.stock" class="prod-btn" type="button">
         {{ product.fields.stock ? t('product.buy') : t('product.outOfStock') }}
@@ -30,32 +30,28 @@ const props = defineProps({
 </script>
 <style lang="scss">
 .prod-item {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem 0.3rem;
   border: 1px solid #efefef;
   border-radius: 10px;
   overflow: hidden;
-	-webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
-	-moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
-	box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-
-  @media screen and (min-width: $md) {
-    padding: 10px;
-  }
 
   @media screen and (min-width: $lg) {
     &:hover {
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
+      -webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+      -moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+      box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+
+      .prod-btn {
+        background: $btn-hover;
+      }
     }
   }
 }
 
 .prod-photo {
-  margin: -0.5rem -0.3rem 1rem -0.3rem;
   min-width: 0;
   position: relative;
 }
@@ -78,13 +74,20 @@ const props = defineProps({
 }
 
 .info-wrap {
-  margin-top: auto
+  margin-top: auto;
+  padding: 0.5rem 0.3rem;
+  @media screen and (min-width: $md) {
+    padding: 10px;
+  }
 }
 
 .img-ratio {
   height: 0;
   position: relative;
   padding-top: calc(100% / 1);
+  background: #efefef;
+  border-radius: 6px;
+  overflow: hidden;
 
   .img-ratio__inner {
     width: 100%;
@@ -100,6 +103,7 @@ const props = defineProps({
       max-width: none;
       max-height: none;
       object-position: 50% 50%;
+
     }
   }
 }
@@ -121,9 +125,5 @@ const props = defineProps({
   user-select: none;
   background-color: $btn-bg;
   padding: 0 16px;
-
-  &:hover {
-    background: $btn-hover;
-  }
 }
 </style>
