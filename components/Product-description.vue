@@ -224,16 +224,16 @@ const openModal = () => {
   }
 }
 
-.img-ratio {
+.main-slide-img-ratio {
   height: 0;
   position: relative;
   padding-top: calc(100% / 1);
 
-  &.img-ratio_cover {
+  &.main-slide-img-ratio_cover {
     overflow: hidden;
   }
 
-  .img-ratio__inner {
+  .main-slide-img-ratio__inner {
     width: 100%;
     height: 100%;
     position: absolute;
