@@ -30,6 +30,8 @@ const props = defineProps({
 </script>
 <style lang="scss">
 .prod-item {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #efefef;
   border-radius: 10px;
   overflow: hidden;
@@ -67,15 +69,17 @@ const props = defineProps({
   font-weight: 600;
   white-space: nowrap;
   margin-bottom: 8px;
-
+  margin-top: auto;
   @media screen and (min-width: $md) {
     font-size: 28px;
   }
 }
 
 .info-wrap {
-  margin-top: auto;
   padding: 0.5rem 0.3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   @media screen and (min-width: $md) {
     padding: 10px;
   }
