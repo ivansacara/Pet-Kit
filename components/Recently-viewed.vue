@@ -4,7 +4,7 @@
       <div class="recent-wrapper">
         <div class="viewed-products">
           <div class="viewed-head">
-            <h2>{{ t('recently.title') }}</h2>
+            <h2 class="section-title">{{ t('recently.title') }}</h2>
           </div>
           <Swiper
                   :breakpoints="{
