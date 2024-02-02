@@ -1,21 +1,24 @@
 <template>
-  <Swiper
-          :autoplay="{
+  <section class="main-banner">
+    <Swiper
+            :autoplay="{
 			delay: 5000,
 			disableOnInteraction: true,
 		}"
-          :centered-slides="true"
-          :effect="'slide'"
-          :loop="true"
-          :modules="[SwiperAutoplay, SwiperEffectCreative]"
-          :slides-per-view="1">
-    <SwiperSlide v-for="(slide, index) in sliderItems.items" :key="index">
-      <picture>
-        <source :srcset="slide.mobileUrl" media="(max-width: 768px)" type="image/webp">
-        <img :src="slide.desktopUrl" alt="petkit_main_banner_img" class="swiper-img"/>
-      </picture>
-    </SwiperSlide>
-  </Swiper>
+            :centered-slides="true"
+            :effect="'slide'"
+            :loop="true"
+            :modules="[SwiperAutoplay, SwiperEffectCreative]"
+            :slides-per-view="1">
+      <SwiperSlide v-for="(slide, index) in sliderItems.items" :key="index">
+        <picture>
+          <source :srcset="slide.mobileUrl" media="(max-width: 768px)" type="image/webp">
+          <img :src="slide.desktopUrl" alt="petkit_main_banner_img" class="swiper-img"/>
+        </picture>
+      </SwiperSlide>
+    </Swiper>
+  </section>
+
 </template>
 
 <script setup>

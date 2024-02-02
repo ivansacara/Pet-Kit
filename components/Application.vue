@@ -2,7 +2,7 @@
   <section class="app-section">
     <div class="container">
       <div class="app-wrapper">
-        <h2 class="app-title">{{ t('application.title') }}</h2>
+        <h2 class="section-title app-title">{{ t('application.title') }}</h2>
         <div class="app-info-block">
           <div class="app-descr">
             <p>{{ t('application.appDescription.0.text') }}</p>
@@ -30,16 +30,7 @@ const {t} = useI18n();
 }
 
 .app-title {
-  font-size: $text-xl;
-  font-weight: normal;
-  line-height: 23px;
-  color: $black;
   margin-bottom: 16px;
-
-  @media screen and (min-width: $md) {
-    font-size: 40px;
-    line-height: 47px;
-  }
 }
 
 .app-info-block {

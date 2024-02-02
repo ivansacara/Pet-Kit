@@ -1,17 +1,21 @@
 <template>
-  <div class="container">
-    <div class="categories">
-      <NuxtLink
-              v-for="category in categoryInformation.items"
-              :key="category.sys.id"
-              :to="localePath(`/${category.fields.slug}`)"
-              class="category-link"
-      >
-        <Category :category="category.fields"/>
-      </NuxtLink>
+  <section class="categories">
+    <div class="container">
+      <h1 class="section-title categories__title">{{ t('categories.title') }}</h1>
+      <div class="categories__inner">
+        <NuxtLink
+                v-for="category in categoryInformation.items"
+                :key="category.sys.id"
+                :to="localePath(`/${category.fields.slug}`)"
+                class="category-link"
+        >
+          <Category :category="category.fields"/>
+        </NuxtLink>
 
+      </div>
     </div>
-  </div>
+  </section>
+
 </template>
 
 <script setup>
@@ -53,11 +57,21 @@ const categoryInformation = computed(() => ({
 
 <style lang="scss">
 .categories {
-  padding: 30px 0 45px;
+  padding-top: 30px;
+  padding-bottom: 45px;
+}
+
+.categories__inner {
+
+  //padding: 30px 0 45px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
   gap: 8px;
+
+  .categories__title {
+    margin-bottom: 30px;
+  }
 
   .category-link {
     background: #EFEFEF;

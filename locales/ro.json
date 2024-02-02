@@ -10,11 +10,15 @@
     "return": "Returnare și schimb"
   },
   "meta": {
-    "main": "Tehnologie Inovatoare pentru Animalele Dvs. de Companie.\nBine ați venit pe site-ul oficial Petkit în Moldova! Magazinul nostru oferă o gamă largă de soluții tehnologice inovatoare pentru îngrijirea animalelor de companie. De la dispozitive de hrănire inteligente și adăpători la accesorii avansate pentru sănătatea și bunăstarea animalelor dvs. de companie, Petkit furnizează doar cele mai bune pentru prietenii dvs. patrupezi.",
+    "mainTitle": "Petkit Moldova - Tehnologii inovatoare pentru animalele dvs. de companie",
+    "main": "Petkit Moldova - Magazinul nostru oferă o gamă largă de soluții tehnologice inovatoare pentru îngrijirea animalelor de companie. De la dispozitive de hrănire inteligente și adăpători la accesorii avansate pentru sănătatea și bunăstarea animalelor dvs. de companie, Petkit furnizează doar cele mai bune pentru prietenii dvs. patrupezi.",
     "return": "Returnarea și schimbul produselor de la brandul Petkit",
     "delivery": "Livrăm produsele brandului Petkit în Chișinău și în orice oraș al Republicii Moldova.",
     "faq": "Întrebări frecvente despre produsele brandului Petkit, despre hrănitoarele automate, fântânile de apă automate și litiera automată.",
     "about": "Istoria creării mărcii Petkit, gadget-uri pentru animale de companie"
+  },
+  "categories": {
+    "title": "Catalogul de produse"
   },
   "application": {
     "title": "O aplicație pentru toate dispozitivele",

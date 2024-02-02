@@ -11,7 +11,7 @@ import {useHead} from 'nuxt/app';
 const {t} = useI18n();
 
 useHead({
-	title: 'PetKit',
+	title: t("meta.mainTitle"),
 	meta: [
 		{name: "description", content: t("meta.main")},
 		{property: 'og:title', content: 'Petkit'},

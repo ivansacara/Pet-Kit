@@ -107,6 +107,18 @@ main {
   flex: 1 1 auto;
 }
 
+.section-title {
+  font-size: $text-xl;
+  font-weight: normal;
+  line-height: 23px;
+  color: $black;
+
+  @media screen and (min-width: $md) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
 .fslightbox-toolbar-button {
   width: 35px !important;
   background: rgba(35, 35, 35, .65);

@@ -2,7 +2,7 @@
   <section id="about" class="about-section">
     <div class="container">
       <div class="about-wrapper">
-        <h2 class="about-title">{{ t('aboutUs.title') }}</h2>
+        <h2 class="section-title about-title">{{ t('aboutUs.title') }}</h2>
         <div class="about-descr">
           <p>{{ t('aboutUs.description.0') }}</p>
           <p>{{ t('aboutUs.description.1') }}</p>
@@ -26,15 +26,9 @@ const {t} = useI18n();
 }
 
 .about-title {
-  font-weight: normal;
-  margin: 0 0 20px 0;
-  font-size: $text-xl;
-  line-height: 23px;
-  color: $black;
+  margin-bottom: 20px;
 
   @media screen and (min-width: $md) {
-    font-size: 40px;
-    line-height: 47px;
     margin-bottom: 60px;
   }
 }

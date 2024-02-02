@@ -8,9 +8,9 @@
         </picture>
       </div>
     </div>
-    <h5 class="category-name">
+    <div class="category-name">
       {{ props.category.name }}
-    </h5>
+    </div>
   </div>
 </template>
 

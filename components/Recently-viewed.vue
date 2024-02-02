@@ -1,12 +1,13 @@
 <template>
-  <div v-if="viewedProducts.length" class="container">
-    <div class="recent-wrapper">
-      <div class="viewed-products">
-        <div class="viewed-head">
-          <h2>{{ t('recently.title') }}</h2>
-        </div>
-        <Swiper
-                :breakpoints="{
+  <section v-if="viewedProducts.length" class="recently-viewed">
+    <div class="container">
+      <div class="recent-wrapper">
+        <div class="viewed-products">
+          <div class="viewed-head">
+            <h2>{{ t('recently.title') }}</h2>
+          </div>
+          <Swiper
+                  :breakpoints="{
 							640: {
 								slidesPerView: 2,
 							},
@@ -14,36 +15,38 @@
 								slidesPerView: 3,
 							}
 						}"
-                :modules="[SwiperEffectCreative, SwiperNavigation]"
-                :navigation="true"
-                :slides-per-view="1.2"
-                :space-between="30"
-                class="recent-slider">
+                  :modules="[SwiperEffectCreative, SwiperNavigation]"
+                  :navigation="true"
+                  :slides-per-view="1.2"
+                  :space-between="30"
+                  class="recent-slider">
 
-          <SwiperSlide v-for="viewedProduct in viewedProducts" :key="viewedProduct.id">
-            <nuxt-link :to="viewedProduct.locale.includes('ru') ?
+            <SwiperSlide v-for="viewedProduct in viewedProducts" :key="viewedProduct.id">
+              <nuxt-link :to="viewedProduct.locale.includes('ru') ?
 													`/${viewedProduct.locale}/product/${viewedProduct.slug}` :
 													`product/${viewedProduct.slug}`"
-                       class="viewed-product">
-              <div class="viewed-photo">
-                <div class="img-ratio">
-                  <div class="img-ratio__inner">
-                    <img :alt="viewedProduct.alt" :src="viewedProduct.image">
+                         class="viewed-product">
+                <div class="viewed-photo">
+                  <div class="img-ratio">
+                    <div class="img-ratio__inner">
+                      <img :alt="viewedProduct.alt" :src="viewedProduct.image">
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="viewed-title">
-                {{ viewedProduct.description }}
-              </div>
-              <div class="viewed-price">
-                {{ viewedProduct.price }} {{ t('product.currency') }}
-              </div>
-            </nuxt-link>
-          </SwiperSlide>
-        </Swiper>
+                <div class="viewed-title">
+                  {{ viewedProduct.description }}
+                </div>
+                <div class="viewed-price">
+                  {{ viewedProduct.price }} {{ t('product.currency') }}
+                </div>
+              </nuxt-link>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
 </template>
 <script setup>
 const {t} = useI18n();
