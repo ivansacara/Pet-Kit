@@ -67,6 +67,7 @@ const props = defineProps({
 <style lang="scss">
 .banner {
   margin-bottom: -1px;
+	overflow: hidden;
   position: relative;
   //background: url('/img/components/content/banner-bg.jpg') left 100% / 100% 100% no-repeat;
   background: linear-gradient(to right, #f7b39e, #ea967a);
@@ -84,7 +85,8 @@ const props = defineProps({
 
   @media screen and (min-width: $md) {
     flex-direction: row;
-    padding: 0;
+		align-items: center;
+    padding: 20px 0;
   }
 }
 
@@ -101,6 +103,10 @@ const props = defineProps({
 
 .banner-img {
   width: 100%;
+	
+	@media screen and (min-width:$sm){
+		margin-bottom: -40px;
+	}
 
   img {
     object-fit: contain;

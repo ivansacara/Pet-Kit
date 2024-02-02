@@ -33,9 +33,12 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   padding: 0.5rem 0.3rem;
-  border: 1px solid #f7f7f7;
+  border: 1px solid #efefef;
   border-radius: 10px;
   overflow: hidden;
+	-webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+	box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 
   @media screen and (min-width: $md) {
@@ -44,9 +47,9 @@ const props = defineProps({
 
   @media screen and (min-width: $lg) {
     &:hover {
-      -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
-      box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
     }
   }
 }

@@ -89,6 +89,8 @@ onMounted(() => {
 }
 
 .viewed-product {
+	border-radius: 6px;
+	border: 1px solid #efefef;
   display: grid;
   grid-template-areas:
 		'photo .'
