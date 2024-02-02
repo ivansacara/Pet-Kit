@@ -62,16 +62,12 @@ const categoryInformation = computed(() => ({
 }
 
 .categories__inner {
-
   //padding: 30px 0 45px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
   gap: 8px;
 
-  .categories__title {
-    margin-bottom: 30px;
-  }
 
   .category-link {
     background: #EFEFEF;
@@ -94,12 +90,17 @@ const categoryInformation = computed(() => ({
   }
 
   @media screen and (min-width: $md) {
-
-    padding-top: 42px;
     grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
     grid-template-rows: auto;
     gap: 32px;
     align-items: self-start;
+  }
+}
+
+.categories__title {
+  margin-bottom: 28px;
+  @media screen and (min-width: $lg) {
+    margin-bottom: 42px;
   }
 }
 </style>
