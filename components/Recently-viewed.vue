@@ -108,6 +108,12 @@ onMounted(() => {
   @media screen and (min-width: $sm) {
     grid-template-columns: 30% 1fr;
   }
+
+  &:hover {
+    -webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+  }
 }
 
 .viewed-photo {
@@ -116,7 +122,7 @@ onMounted(() => {
   background: #efefef;
   border-radius: 6px;
   overflow: hidden;
-  
+
   .img-ratio {
     height: 0;
     position: relative;

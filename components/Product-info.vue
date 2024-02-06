@@ -85,6 +85,47 @@ const activateTab = (tabId) => {
   h3, h2, h4 {
     margin-bottom: 16px;
   }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 20px;
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin-bottom: 20px;
+
+    li {
+      margin-bottom: 5px;
+      list-style-type: decimal;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
+  //ul ul, ol ul {
+  //  list-style-type: circle;
+  //  list-style-position: inside;
+  //  margin-left: 15px;
+  //}
+  //
+  //ol ol, ul ol {
+  //  list-style-type: lower-latin;
+  //  list-style-position: inside;
+  //  margin-left: 15px;
+  //}
 }
 
 .tabs__characteristics {
