@@ -168,7 +168,7 @@
     "response": "Отправленно"
   },
   "productInfo": {
-    "desc": "Descriere",
-    "char": "Caract."
+    "desc": "Описание",
+    "char": "Хар-км"
   }
 }
