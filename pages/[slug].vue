@@ -121,7 +121,7 @@ const categoryName = computed(() => category.value.items[0]?.fields?.name);
   align-items: stretch;
 
   @media screen and (min-width: $md) {
-    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
     gap: 32px;
   }
 }
