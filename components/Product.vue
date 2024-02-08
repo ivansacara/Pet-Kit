@@ -30,6 +30,7 @@ const props = defineProps({
 </script>
 <style lang="scss">
 .prod-item {
+	width: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid #efefef;

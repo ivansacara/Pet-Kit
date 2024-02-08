@@ -1,14 +1,14 @@
 <template>
-		<div class="accordion" :class="{ 'active': isOpen }">
-			<button class="accordion-header" @click="togglePanel">
+		<div class="accordion">
+			<button class="accordion-header" @click="toggleAccordion">
 				<span>{{ props.faqInfo.fields.question }}</span>
-				<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg :class="{ 'rotate': isOpen }" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M16.667 25L25.0003 33.3333L33.3337 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 					<path d="M25 16.6667V33.3334" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 				</svg>
 			</button>
 
-			<div class="accordion-body">
+			<div ref="accordionBody" class="accordion-body">
 				<p>
 					{{ props.faqInfo.fields.response }}
 				</p>
@@ -17,17 +17,21 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 const props = defineProps({
 	faqInfo: {
 		type: Object,
 	}
 });
+
+const accordionBody = ref(null);
 const isOpen = ref(false);
 
-const togglePanel = () => {
+function toggleAccordion() {
+  const currentMaxHeight = accordionBody.value.style.maxHeight;
 	isOpen.value = !isOpen.value;
-};
-
+  accordionBody.value.style.maxHeight = currentMaxHeight ? "" : `${accordionBody.value.scrollHeight}px`;
+}
 </script>
 
 <style lang="scss">
@@ -37,12 +41,6 @@ const togglePanel = () => {
 		margin-bottom: 15px;
 
 		&.active{
-			.accordion-body{
-				display: block;
-				max-height: 1000px;
-				transition: max-height 1.6s ease;
-			}
-
 			.accordion-header{
 				svg{
 					transform: rotate(-180deg);
@@ -87,7 +85,7 @@ const togglePanel = () => {
 			height: 40px;
 			right: 5px;
 			top: calc(50% - 20px);
-			transition: all .6s ease;
+			transition: all .4s ease;
 
 			@media screen and (min-width: $md){
 				width: 50px;
@@ -98,11 +96,15 @@ const togglePanel = () => {
 		}
 	}
 
+	.rotate{
+		transform: rotate(180deg);
+	}
+
 	.accordion-body{
-		max-height: 0;
 		overflow: hidden;
-		transition: max-height .6s ease;
 		padding: 0 36px 0 16px;
+		transition: max-height 0.3s ease;
+		max-height: 0;
 
 		p{
 			margin: 36px 0;

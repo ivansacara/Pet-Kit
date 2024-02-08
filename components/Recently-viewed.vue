@@ -62,8 +62,9 @@ onMounted(() => {
 });
 </script>
 <style lang="scss">
+
 .recent-wrapper {
-  padding: 40px 0;
+  padding: 40px 0 20px;
 }
 
 .viewed-head {
@@ -91,9 +92,9 @@ onMounted(() => {
 .viewed-product {
   border-radius: 6px;
   border: 1px solid #efefef;
-  -webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
-  box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.1);
+  -webkit-box-shadow: 7px 0px 10px -6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 7px 0px 10px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: 7px 0px 10px -6px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-areas:
 		'photo .'
@@ -110,9 +111,9 @@ onMounted(() => {
   }
 
   &:hover {
-    -webkit-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
-    box-shadow: 0px 6px 14px 0px rgb(0, 0, 0, 0.2);
+    -webkit-box-shadow: 7px 0px 12px -2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 7px 0px 12px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 7px 0px 12px -2px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -164,6 +165,11 @@ onMounted(() => {
 }
 
 .recent-slider {
+	@media screen and (min-width: 1250px){
+		overflow: hidden!important;
+		padding-bottom: 20px;
+	}
+
   @media screen and (min-width: $sm) {
     padding-top: 60px;
     margin-top: -60px;
