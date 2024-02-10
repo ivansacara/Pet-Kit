@@ -18,7 +18,6 @@
 const props = defineProps({
 	category: Object,
 });
-console.log(props.category)
 </script>
 
 <style lang="scss">

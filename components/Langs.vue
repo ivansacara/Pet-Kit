@@ -16,7 +16,7 @@ import { useHead } from "#app";
 const {locale} = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 const activeLanguage = ref(locale.value);
-console.log(locale)
+
 const selectLang = (lang: string, event: boolean) => {
     localStorage.setItem('LANG', lang);
     activeLanguage.value = lang;

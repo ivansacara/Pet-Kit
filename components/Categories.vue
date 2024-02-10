@@ -37,7 +37,6 @@ const {data: categoriesData} = await useAsyncData("categories", () =>
 		locale: t("locale"),
 	})
 );
-console.log(categoriesData)
 // Processing categories data
 const categoryInformation = computed(() => ({
 	items: categoriesData.value.items.map(item => ({

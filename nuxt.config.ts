@@ -1,7 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
-import i18n from "@nuxtjs/i18n/dist/runtime/plugins/i18n.mjs";
-
 export default defineNuxtConfig({
     _generate: false,
     app: {
@@ -46,24 +43,36 @@ export default defineNuxtConfig({
                     rel: 'stylesheet',
                     href: 'https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:wght@100&display=swap'
                 }
-            ]
+            ],
             // script: [
-            //   {
-            //     hid: "gtmHead",
-            //     innerHTML: `
+            //     {
+            //         hid: "gtmHead",
+            //         innerHTML: `
             //       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             //       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             //       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             //       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             //       })(window,document,'script','dataLayer','${process.env.NUXT_PUBLIC_GTM_ID}');`,
-            //   },
+            //     },
             // ],
         },
     },
     devtools: {enabled: true},
     css: ['~/assets/styles/global.scss',
         'vue-final-modal/style.css',],
-    modules: ['nuxt-swiper', '@nuxtjs/i18n'],
+    modules: ['nuxt-swiper', '@nuxtjs/i18n', 'nuxt-gtag', '@nuxtjs/sitemap'],
+    gtag: {
+        id: 'G-S36BNZ8BVJ'
+    },
+    sitemap: {
+        autoI18n: true,
+        includeAppSources: true,
+        // hostname: 'https://petkit.md', // Замените на адрес вашего сайта
+        // Дополнительные параметры по вашему усмотрению
+    },
+    site: {
+        url: 'https://petkit.md',
+    },
     i18n: {
         /* module options */
         lazy: true,
