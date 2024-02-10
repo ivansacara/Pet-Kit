@@ -62,16 +62,16 @@ export default defineNuxtConfig({
         'vue-final-modal/style.css',],
     modules: ['nuxt-swiper', '@nuxtjs/i18n', 'nuxt-gtag', '@nuxtjs/sitemap'],
     gtag: {
-        id: 'G-S36BNZ8BVJ'
+        id: process.env.NUXT_PUBLIC_GTM_ID
     },
     sitemap: {
         autoI18n: true,
         includeAppSources: true,
-        hostname: 'https://petkit.md', // Замените на адрес вашего сайта
+        hostname: process.env.NUXT_PUBLIC_SITE_URL, // Замените на адрес вашего сайта
         // Дополнительные параметры по вашему усмотрению
     },
     site: {
-        url: 'https://petkit.md',
+        url: process.env.NUXT_PUBLIC_SITE_URL,
     },
     i18n: {
         /* module options */
@@ -94,7 +94,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://petkit.md",
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
             NUXT_PUBLIC_CONTENTFUL_SPACE: process.env.NUXT_PUBLIC_CONTENTFUL_SPACE,
             NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
             TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
