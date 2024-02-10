@@ -12,6 +12,11 @@
         <nav class="header-nav">
           <ul class="nav-items">
             <li class="nav-item">
+              <nuxt-link :to="localePath('/categories')" class="nav-link nav-link-categories" @click="navClick()">
+                {{ t('links.categories') }}
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
               <nuxt-link :to="localePath('/delivery')" class="nav-link" @click="navClick()">
                 {{ t('links.delivery') }}
               </nuxt-link>
@@ -202,6 +207,12 @@ const navClick = () => {
 
   &:hover {
     color: #888;
+  }
+}
+
+.nav-link-categories {
+  @media screen and (min-width: $md) {
+    display: none;
   }
 }
 
