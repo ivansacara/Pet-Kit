@@ -36,6 +36,7 @@
 </template>
 
 <script setup>
+
 import {useRoute} from "#app";
 import {useHead} from 'nuxt/app';
 

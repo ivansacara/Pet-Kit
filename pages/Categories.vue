@@ -14,9 +14,9 @@ const route = useRoute();
 useHead({
 	title: t("links.categories"),
 	meta: [
-		{name: "description", content: t("meta.main")},
+		{name: "description", content: t("meta.categories")},
 		{property: 'og:title', content: t("links.categories")},
-		{property: "og:description", content: t("meta.main")},
+		{property: "og:description", content: t("meta.categories")},
 		{property: 'og:image', content: '/petkit.png'},
 		{property: 'og:url', content: `https://petkit.md${route.path}`},
 	],
