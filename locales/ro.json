@@ -8,7 +8,8 @@
     "faq": "FAQ",
     "about": "Despre noi",
     "contacts": "Contacte",
-    "return": "Returnare și schimb"
+    "return": "Returnare și schimb",
+    "privacy": "Politica de confidențialitate"
   },
   "meta": {
     "categories": "PETKIT - producător de gadgeturi inteligente moderne pentru animale de companie. La noi veți găsi o casă cu control climatic, o litieră care se curăță singură, boluri cu cântar, hrănitoare automate controlabile prin aplicație, purificatoare de aer, grooming seturi, fântâni pentru băut și alte gadgeturi moderne pentru câini și pisici.",
@@ -17,7 +18,8 @@
     "return": "Returnarea și schimbul produselor de la brandul PETKIT",
     "delivery": "Livrăm produsele brandului Petkit în Chișinău și în orice oraș al Republicii Moldova.",
     "faq": "Întrebări frecvente despre produsele brandului PETKIT, despre hrănitoarele automate, fântânile de apă automate și litiera automată.",
-    "about": "Istoria creării mărcii Petkit, gadget-uri pentru animale de companie"
+    "about": "Istoria creării mărcii Petkit, gadget-uri pentru animale de companie",
+    "privacy": "Descoperiți Politica noastră de Confidențialitate, care detaliază cum gestionăm informațiile dvs. personale. Aflați ce date colectăm, scopurile utilizării acestora, măsurile de protecție a confidențialității, precum și drepturile și opțiunile dvs. de control al informațiilor personale. Acest document vă va ajuta să înțelegeți principiile noastre de transparență și responsabilitate în prelucrarea datelor personale."
   },
   "categories": {
     "title": "Catalogul de produse"
@@ -172,5 +174,42 @@
   "productInfo": {
     "desc": "Descriere",
     "char": "Caract"
+  },
+  "privacy": {
+    "description": [
+      {
+        "text": "În conformitate cu prevederile Legii Nr.133/2011 privind protecția datelor cu caracter personal, furnizorul de servicii prelucrează date cu caracter personal. Datele cu caracter personal sunt prelucrate cu buna-credință și se face în temeiul și în conformitate cu prevederile legale. Prelucrarea datelor cu caracter personal se realizează prin mijloace mixte (automate și manuale), cu respectarea cerințelor legale și în condiții care să asigure securitatea, confidențialitatea și respectarea drepturilor persoanelor vizate."
+      },
+      {
+        "text": "Furnizorul colectează și prelucrează doar datele personale furnizate de consumatori la efectuarea comenzii: nume, prenume, număr de telefon, adresa, adresa poștală."
+      },
+      {
+        "text": "Datele personale sunt utilizate exclusiv în scopul administrării site-ului, pentru a permite accesul la informații special, pentru livrarea comenzilor sau pentru a contacta consumatorul în vederea executării livrării. Prin prezenta informare, utilizatorii și consumatorii iau cunoștință despre faptul că li se vor prelucra și utiliza datele cu caracter personal (nume, prenume, număr de telefon, adresa, adresa poștală). Furnizorul de servicii prelucrează datele cu caracter personal ale utilizatorilor și consumatorilor care sunt furnizate prin navigarea, folosirea și înregistrarea pe site-ul "
+      },
+      {
+        "text": "Furnizorul nu va dezvălui unei terțe părți niciuna dintre datele deținute, fără acordul persoanelor vizate și nu va comercializa, schimba, divulga aceste date cu alte persoane, cu excepțiile prevăzute de legislația în vigoare",
+        "strong": "(la solicitarea instituțiilor publice ale statului, organele de drept, instanțelor de judecată, de asemenea autorizate să prelucreze date cu caracter personal)."
+      },
+      {
+        "text": "Datele cu caracter personal pot fi prelucrate și utilizate de către Furnizor și în scopuri statistice și de promovare ulterioară."
+      },
+      {
+        "text": "Furnizorul de servicii îndeplinește cerințele de securitate a datelor cu caracter personal și asigură protecția datelor consumatorilor și le protejează pentru a nu fi pierdute, distruse, distorsionate/falsificate sau divulgate terțelor persoane."
+      },
+      {
+        "text": "Angajații furnizorului de servicii sunt obligați să respecte confidențialitatea datelor personale ale consumatorilor. Prelucrarea datelor cu caracter personal va fi realizată de persoana împuternicită a Furnizorului."
+      },
+      {
+        "text": "Furnizorul utilizează metode și tehnologii de securitate conform prevederilor legale în vigoare."
+      },
+      {
+        "text": "Furnizorul nu colectează informații referitoare la tranzacții, cum ar fi nr. la card, data expirării, țara de origine."
+      },
+      {
+        "text": "Pentru mai multe detalii și informații orice persoană interesată se poate adresa printr-un email la",
+        "text_2": "sau prin telefon la numărul",
+        "phone": "+37378876969"
+      }
+    ]
   }
 }

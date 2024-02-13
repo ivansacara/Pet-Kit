@@ -82,24 +82,28 @@
             </li>
             <li>
               <nuxt-link
-                      :to="localePath('/faq')"
-                      class="cn-navigation__link">
-                {{ t('links.faq') }}
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
                       :to="localePath('/Return')"
                       class="cn-navigation__link">
                 {{ t('links.return') }}
               </nuxt-link>
             </li>
+            <li>
+              <nuxt-link
+                      :to="localePath('/faq')"
+                      class="cn-navigation__link">
+                {{ t('links.faq') }}
+              </nuxt-link>
+            </li>
             <li class="cn-navigation__link">
-              <nuxt-link :to="localePath('/about')" class="nav-link" @click="toggleMenu()">
+              <nuxt-link :to="localePath('/about')" class="nav-link">
                 {{ t('links.about') }}
               </nuxt-link>
             </li>
-            <li><span class="cn-navigation__link">{{ t('links.contacts') }}</span></li>
+            <li>
+              <nuxt-link :to="localePath('/privacy_policy')" class="nav-link">
+                {{ t('links.privacy') }}
+              </nuxt-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -110,17 +114,6 @@
 <script setup>
 const {t} = useI18n();
 const localePath = useLocalePath()
-
-const scrollToElement = (id) => {
-	const element = document.getElementById(id);
-	if (element) {
-		element.scrollIntoView({
-			behavior: "smooth",
-			block: "start",
-			inline: "nearest"
-		});
-	}
-};
 </script>
 
 <style lang="scss">
