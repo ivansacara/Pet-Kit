@@ -63,8 +63,7 @@ const formData = {
         hasError: false,
     },
     productLink: {
-        value: config.public.NUXT_PUBLIC_SITE_URL + router.currentRoute.value.path,
-        // value: `https://petkit.md${router.currentRoute.value.path}`,
+        value: `https://petkit.md${router.currentRoute.value.path}`,
         hasError: false,
     }
 };
