@@ -74,27 +74,21 @@
           <div class="footer-title">{{ t('aboutCompany') }}</div>
           <ul class="footer-items-menu">
             <li>
-              <nuxt-link
-                      :to="localePath('/delivery')"
-                      class="cn-navigation__link">
+              <nuxt-link :to="localePath('/delivery')">
                 {{ t('links.delivery') }}
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link
-                      :to="localePath('/Return')"
-                      class="cn-navigation__link">
+              <nuxt-link :to="localePath('/Return')">
                 {{ t('links.return') }}
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link
-                      :to="localePath('/faq')"
-                      class="cn-navigation__link">
+              <nuxt-link :to="localePath('/faq')">
                 {{ t('links.faq') }}
               </nuxt-link>
             </li>
-            <li class="cn-navigation__link">
+            <li>
               <nuxt-link :to="localePath('/about')" class="nav-link">
                 {{ t('links.about') }}
               </nuxt-link>

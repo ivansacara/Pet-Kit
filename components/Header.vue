@@ -110,7 +110,7 @@ const navClick = () => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header-main {
   position: fixed;
   height: 58px;
