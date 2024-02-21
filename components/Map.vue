@@ -3,7 +3,7 @@
     <div class="container">
       <div class="map__inner">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.2862735067115!2d28.88407327667547!3d47.05423442595744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97cebd3b95555%3A0x66c52ca6c8b9ab31!2zQnVsZXZhcmR1bCBNaXJjZWEgY2VsIELEg3Ryw65uIDMsIE1ELTIwNDQsIENoaciZaW7Eg3UsINCc0L7Qu9C00L7QstCw!5e0!3m2!1sru!2s!4v1708541568127!5m2!1sru!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d679.7731234362091!2d28.88846858209561!3d47.03841580684346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c891372c5a7%3A0xb0826deb97461b11!2zQWxlZWEgTWlyY2VhIGNlbCBCxIN0csOibiAzLCBDaGnImWluxIN1LCDQnNC-0LvQtNC-0LLQsA!5e0!3m2!1sru!2s!4v1708543945290!5m2!1sru!2s"
           height="450"
           style="border: 0"
           loading="lazy"
@@ -30,6 +30,7 @@
 
     iframe {
       width: 100%;
+      outline: none;
     }
   }
 }
