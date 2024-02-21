@@ -14,14 +14,14 @@
   </section>
 </template>
 <script setup>
-const {t} = useI18n();
+const { t } = useI18n();
 </script>
 <style lang="scss">
 .about-wrapper {
   padding: 30px 0;
 
   @media screen and (min-width: $md) {
-    padding: 30px 0 37px;
+    padding: 30px 0 40px;
   }
 }
 
@@ -37,7 +37,7 @@ const {t} = useI18n();
   border-radius: 20px;
   padding: 12px;
   background: $bg;
-  transition: all .3s;
+  transition: all 0.3s;
   border: 1px solid $black;
   position: relative;
   color: $black;
@@ -47,7 +47,8 @@ const {t} = useI18n();
     margin-bottom: 24px;
   }
 
-  &::before, &::after {
+  &::before,
+  &::after {
     position: absolute;
     content: '';
     width: 40%;

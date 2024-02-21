@@ -1,14 +1,16 @@
 <template>
   <section class="return-section">
     <div class="container">
-      <Breadcrumbs :pageTitle="t('links.return')"/>
+      <Breadcrumbs :pageTitle="t('links.return')" />
       <div class="return-wrapper">
         <h1 class="return-title">
           <strong>{{ t('returnInfo.title') }}</strong>
         </h1>
         <div class="return-descr">
           <div class="spacing">
-            <p><strong>{{ t('returnInfo.description.0.strong') }}</strong></p>
+            <p>
+              <strong>{{ t('returnInfo.description.0.strong') }}</strong>
+            </p>
           </div>
           <div class="spacing">
             <p>{{ t('returnInfo.description.1.text') }}</p>
@@ -22,10 +24,14 @@
           </div>
           <div>
             <p>
-              <span>{{ t('returnInfo.automaticLitterInfo.0') }}</span><br>
-              <span>{{ t('returnInfo.automaticLitterInfo.1') }}</span><br>
-              <span>{{ t('returnInfo.automaticLitterInfo.2') }}</span><br>
-              <span>{{ t('returnInfo.automaticLitterInfo.3') }}</span><br>
+              <span>{{ t('returnInfo.automaticLitterInfo.0') }}</span>
+              <br />
+              <span>{{ t('returnInfo.automaticLitterInfo.1') }}</span>
+              <br />
+              <span>{{ t('returnInfo.automaticLitterInfo.2') }}</span>
+              <br />
+              <span>{{ t('returnInfo.automaticLitterInfo.3') }}</span>
+              <br />
               <span>{{ t('returnInfo.automaticLitterInfo.4') }}</span>
             </p>
           </div>
@@ -36,21 +42,20 @@
 </template>
 
 <script setup>
+import { useRoute } from '#app';
 
-import {useRoute} from "#app";
-import {useHead} from 'nuxt/app';
-
-const {t} = useI18n();
+const { t } = useI18n();
 const route = useRoute();
 
 useHead({
-	title: t("links.return"),
-	meta: [
-		{name: "description", content: t("meta.return")},
-		{property: "og:title", content: t("links.return")},
-		{property: "og:description", content: t("meta.return")},
-		{property: 'og:image', content: '/petkit.png'},
-		{property: 'og:url', content: `https://petkit.md${route.path}`}],
+  title: t('links.return'),
+  meta: [
+    { name: 'description', content: t('meta.return') },
+    { property: 'og:title', content: t('links.return') },
+    { property: 'og:description', content: t('meta.return') },
+    { property: 'og:image', content: '/petkit.png' },
+    { property: 'og:url', content: `https://petkit.md${route.path}` },
+  ],
 });
 </script>
 

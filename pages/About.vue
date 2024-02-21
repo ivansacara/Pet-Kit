@@ -1,10 +1,9 @@
 <template>
   <section class="about-section">
     <div class="container">
-      <Breadcrumbs :pageTitle="t('links.about')"/>
+      <Breadcrumbs :pageTitle="t('links.about')" />
     </div>
-    <VideoBanner
-            :video-url="'nyqLVrSvB4I'"/>
+    <VideoBanner :video-url="'nyqLVrSvB4I'" />
     <div class="container">
       <div class="about-wrapper">
         <div class="about-block">
@@ -20,7 +19,11 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.0.image')" alt="how_it_all_began_img" class="img">
+            <img
+              :src="t('about.0.image')"
+              alt="how_it_all_began_img"
+              class="img"
+            />
           </div>
         </div>
 
@@ -34,7 +37,11 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.1.image')" alt="transition_to_new_level_img" class="img">
+            <img
+              :src="t('about.1.image')"
+              alt="transition_to_new_level_img"
+              class="img"
+            />
           </div>
         </div>
 
@@ -48,7 +55,11 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.2.image')" alt="innovation_and_creativity_img" class="img">
+            <img
+              :src="t('about.2.image')"
+              alt="innovation_and_creativity_img"
+              class="img"
+            />
           </div>
         </div>
 
@@ -62,7 +73,11 @@
             </p>
           </div>
           <div class="about-image">
-            <img :src="t('about.3.image')" alt="together_into_the_future_img" class="img">
+            <img
+              :src="t('about.3.image')"
+              alt="together_into_the_future_img"
+              class="img"
+            />
           </div>
         </div>
       </div>
@@ -71,26 +86,24 @@
 </template>
 
 <script setup>
-import {useHead} from 'nuxt/app';
-import {useRoute} from "#app";
+import { useRoute } from '#app';
 
 const route = useRoute();
-const {t} = useI18n();
+const { t } = useI18n();
 
 useHead({
-	title: t("links.about"),
-	meta: [
-		{name: "description", content: t("meta.about")},
-		{property: "og:title", content: t("links.about")},
-		{property: "og:description", content: t("meta.about")},
-		{property: 'og:image', content: '/petkit.png'},
-		{property: 'og:url', content: `https://petkit.md${route.path}`}
-	],
+  title: t('links.about'),
+  meta: [
+    { name: 'description', content: t('meta.about') },
+    { property: 'og:title', content: t('links.about') },
+    { property: 'og:description', content: t('meta.about') },
+    { property: 'og:image', content: '/petkit.png' },
+    { property: 'og:url', content: `https://petkit.md${route.path}` },
+  ],
 });
 </script>
 
 <style lang="scss">
-
 //.about-video-wrap {
 //  position: relative;
 //  padding-top: 180px;

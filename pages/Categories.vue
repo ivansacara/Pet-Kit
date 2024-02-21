@@ -1,11 +1,10 @@
 <template>
   <div class="container">
-    <Breadcrumbs :pageTitle="t('links.categories')"/>
+    <Breadcrumbs :pageTitle="t('links.categories')" />
   </div>
-  <Categories/>
+  <Categories />
 </template>
 <script lang="js" setup>
-import {useHead} from 'nuxt/app';
 import {useRoute} from "#app";
 
 const {t} = useI18n();

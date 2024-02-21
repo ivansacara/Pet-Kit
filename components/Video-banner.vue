@@ -2,10 +2,11 @@
   <div class="video-banner-container">
     <div class="video-banner-wrapper">
       <iframe
-              :src="`https://www.youtube.com/embed/${videoUrl}?enablejsapi=1&mute=1&loop=1&playlist=${videoUrl}&controls=0&rel=0&showinfo=0&autoplay=1`"
-              height="455"
-              title="final company introduction video"
-              width="100%">
+        :src="`https://www.youtube.com/embed/${videoUrl}?enablejsapi=1&mute=1&loop=1&playlist=${videoUrl}&controls=0&rel=0&showinfo=0&autoplay=1`"
+        height="455"
+        title="final company introduction video"
+        width="100%"
+      >
       </iframe>
     </div>
   </div>
@@ -13,10 +14,10 @@
 
 <script setup>
 const props = defineProps({
-	videoUrl: String
+  videoUrl: String,
 });
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .video-banner-container {
   position: relative;
   padding-top: 180px;
