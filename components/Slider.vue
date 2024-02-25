@@ -1,23 +1,23 @@
 <template>
-  <section class="main-banner">
-    <Swiper
-            :autoplay="{
+	<section class="main-banner">
+		<Swiper
+				:autoplay="{
 			delay: 5000,
 			disableOnInteraction: true,
 		}"
-            :centered-slides="true"
-            :effect="'slide'"
-            :loop="true"
-            :modules="[SwiperAutoplay, SwiperEffectCreative]"
-            :slides-per-view="1">
-      <SwiperSlide v-for="(slide, index) in sliderItems.items" :key="index">
-        <picture>
-          <source :srcset="slide.mobileUrl" media="(max-width: 768px)" type="image/webp">
-          <img :src="slide.desktopUrl" alt="petkit_main_banner_img" class="swiper-img"/>
-        </picture>
-      </SwiperSlide>
-    </Swiper>
-  </section>
+				:centered-slides="true"
+				:effect="'slide'"
+				:loop="true"
+				:modules="[SwiperAutoplay, SwiperEffectCreative]"
+				:slides-per-view="1">
+			<SwiperSlide v-for="(slide, index) in sliderItems.items" :key="index">
+				<picture>
+					<source :srcset="slide.mobileUrl" media="(max-width: 768px)" type="image/webp">
+					<img :src="slide.desktopUrl" alt="petkit_main_banner_img" class="swiper-img"/>
+				</picture>
+			</SwiperSlide>
+		</Swiper>
+	</section>
 
 </template>
 
@@ -29,22 +29,23 @@ const route = useRoute();
 
 const sliderType = "slider";
 const {data: slidersData} = await useAsyncData("sliders", () =>
-	$client.getEntries({
-		content_type: sliderType,
-	})
+		$client.getEntries({
+			content_type: sliderType,
+			locale: t("locale"),
+		})
 );
 
 // Processing sliders data
 const sliderItems = computed(() => {
 	let groupedSlides = slidersData.value.items.flatMap(item =>
-		item.fields.slide.reduce((acc, slideItem) => {
-			let key = slideItem.fields.title; // 'mob' or 'desc'
-			if (!acc[key]) {
-				acc[key] = [];
-			}
-			acc[key].push(slideItem.fields.file.url, slideItem.fields.description);
-			return acc;
-		}, {})
+			item.fields.slide.reduce((acc, slideItem) => {
+				let key = slideItem.fields.title; // 'mob' or 'desc'
+				if (!acc[key]) {
+					acc[key] = [];
+				}
+				acc[key].push(slideItem.fields.file.url, slideItem.fields.description);
+				return acc;
+			}, {})
 	);
 
 	let slidesArray = [];
@@ -71,8 +72,8 @@ const sliderItems = computed(() => {
 
 <style lang="scss">
 .swiper-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
 </style>
