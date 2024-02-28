@@ -128,7 +128,7 @@ const openModal = () => {
 	.title-head {
 		padding: 23px 0;
 		margin: 0;
-		font-size: 14px;
+		font-size: 18px;
 		line-height: 16px;
 		font-weight: bold;
 		color: $black;
@@ -209,12 +209,9 @@ const openModal = () => {
 	margin: 0;
 	background: none;
 
+
 	@media screen and (min-width: $md) {
-		display: grid;
-		grid-template-columns: 1fr minmax(220px, max-content);
-		grid-column-gap: 1rem;
-		align-items: center;
-		padding: 0;
+		max-width: 438px;
 	}
 
 	.prod-descr-btn {

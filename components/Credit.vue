@@ -47,8 +47,12 @@ console.log(months);
 	padding: 16px;
 	border-radius: 10px;
 	box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.09);
-	max-width: 320px;
+
 	width: 100%;
+
+	@media screen and (min-width: $md) {
+		max-width: 438px;
+	}
 
 	&__label {
 		font-weight: 600;
