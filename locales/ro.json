@@ -175,6 +175,26 @@
     "desc": "Descriere",
     "char": "Caract"
   },
+  "credit": {
+    "months": "luni",
+    "today": "Astăzi",
+    "monthly": "Lunar",
+    "total": "Total"
+  },
+  "month": {
+    "1": "ianuarie",
+    "2": "februarie",
+    "3": "martie",
+    "4": "aprilie",
+    "5": "mai",
+    "6": "iunie",
+    "7": "iulie",
+    "8": "august",
+    "9": "septembrie",
+    "10": "octombrie",
+    "11": "noiembrie",
+    "12": "decembrie"
+  },
   "privacy": {
     "description": [
       {

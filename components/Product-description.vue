@@ -1,36 +1,37 @@
 <template>
-  <div class="container">
-    <div class="prod-descr">
-      <div class="prod-area">
-        <div class="prod-descr-photo">
-          <ProductSlider :productSlider="product.fields.image" @update-lightbox="lightboxVisible = !lightboxVisible"/>
-        </div>
-      </div>
-      <div class="prod-descr-title">
-        <h1 class="title-head">{{ product.fields.name }}</h1>
-      </div>
+	<div class="container">
+		<div class="prod-descr">
+			<div class="prod-area">
+				<div class="prod-descr-photo">
+					<ProductSlider :productSlider="product.fields.image" @update-lightbox="lightboxVisible = !lightboxVisible"/>
+				</div>
+			</div>
+			<div class="prod-descr-title">
+				<h1 class="title-head">{{ product.fields.name }}</h1>
+			</div>
 
-      <p class="prod-descr-info">
-        {{ product.fields.shortDescription }}
-      </p>
-      <div class="prod-descr-price">
-        <span class="price-cur">{{ product.fields.price }} {{ t('product.currency') }}</span>
-      </div>
-      <div class="prod-descr-buy">
-        <button :disabled="!product.fields.stock" class="prod-descr-btn" @click="() => openModal()">
-          {{ product.fields.stock ? t('product.buy') : t('product.outOfStock') }}
-        </button>
-        <ModalsContainer/>
-      </div>
-    </div>
-    <Product-info :characteristics="characteristics" :description="description"/>
-  </div>
-  <VideoBanner v-if="product.fields.videoLink"
-               :video-url="product.fields.videoLink"/>
-  <ProductBanner v-if="!product.fields.videoLink"
-                 :images="product.fields.banner"/>
+			<p class="prod-descr-info">
+				{{ product.fields.shortDescription }}
+			</p>
+			<div class="prod-descr-price">
+				<span class="price-cur">{{ product.fields.price }}<span>MDL</span></span>
+				<Credit v-if="product.fields.price > 2000" :product-price="product.fields.price"/>
+			</div>
+			<div class="prod-descr-buy">
+				<button :disabled="!product.fields.stock" class="prod-descr-btn" @click="() => openModal()">
+					{{ product.fields.stock ? t('product.buy') : t('product.outOfStock') }}
+				</button>
+				<ModalsContainer/>
+			</div>
+		</div>
+		<Product-info :characteristics="characteristics" :description="description" productprice="productPrice"/>
+	</div>
+	<VideoBanner v-if="product.fields.videoLink"
+							 :video-url="product.fields.videoLink"/>
+	<ProductBanner v-if="!product.fields.videoLink"
+								 :images="product.fields.banner"/>
 
-  <FsLightbox :exitFullscreenOnClose="true" :sources="imageSources" :toggler="lightboxVisible" onclick=""/>
+	<FsLightbox :exitFullscreenOnClose="true" :sources="imageSources" :toggler="lightboxVisible"/>
 
 </template>
 <script lang="ts" setup>
@@ -43,19 +44,19 @@ import ProductInfo from "~/components/Product-info.vue";
 
 const {t} = useI18n();
 const {open, close} = useModal({
-    component: FeedbackModal,
-    attrs: {
-        onConfirm() {
-            close()
-        },
-    },
+	component: FeedbackModal,
+	attrs: {
+		onConfirm() {
+			close()
+		},
+	},
 })
 
 const props = defineProps({
-    product: {
-        type: Object,
-        required: true
-    }
+	product: {
+		type: Object,
+		required: true
+	}
 });
 
 const description = documentToHtmlString(props.product.fields.description);
@@ -64,172 +65,189 @@ const lightboxVisible = ref(false);
 const imageSources = Object.values(props.product.fields.image).map(image => image?.fields.file?.url);
 
 const openModal = () => {
-    open();
+	open();
 }
 </script>
 
 <style lang="scss">
 .prod-descr {
-  padding-top: 30px;
-  padding-bottom: 45px;
-  display: grid;
-  grid-template-areas:
+	padding-top: 30px;
+	padding-bottom: 45px;
+	display: grid;
+	grid-template-areas:
 			"photo"
 			"title"
 			"descr"
 			"price"
 			"buy";
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-column-gap: 0;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	grid-column-gap: 0;
 
-  @media screen and (min-width: $lg) {
-    grid-template-areas:
+	@media screen and (min-width: $lg) {
+		grid-template-areas:
 				"photo title"
 				"photo descr"
 				"photo price"
 				"photo buy"
 				"photo .";
-    grid-template-columns: 50% 1fr;
-    grid-template-rows: repeat(7, auto) 1fr;
-    grid-column-gap: 30px;
-  }
+		grid-template-columns: 50% 1fr;
+		grid-template-rows: repeat(7, auto) 1fr;
+		grid-column-gap: 30px;
+	}
 }
 
 .prod-area {
-  position: relative;
-  grid-area: photo;
-  min-width: 0;
+	position: relative;
+	grid-area: photo;
+	min-width: 0;
 
-  @media screen and (min-width: $lg) {
-    padding-left: calc(20% + 2rem);
-  }
+	@media screen and (min-width: $lg) {
+		padding-left: calc(20% + 2rem);
+	}
 }
 
 .prod-descr-photo {
-  max-width: 500px;
-  margin: 0 auto 10px;
-  top: auto;
+	max-width: 500px;
+	margin: 0 auto 10px;
+	top: auto;
 
-  @media screen and (min-width: $lg) {
-    max-width: none;
-    margin: 0;
-  }
+	@media screen and (min-width: $lg) {
+		max-width: none;
+		margin: 0;
+	}
 }
 
-
-
 .product-photo {
-  display: block;
+	display: block;
 }
 
 .prod-descr-title {
-  grid-area: title;
+	grid-area: title;
 
-  .title-head {
-    padding: 23px 0;
-    margin: 0;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: bold;
-    color: $black;
-    border-top: 1px solid $border;
+	.title-head {
+		padding: 23px 0;
+		margin: 0;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: bold;
+		color: $black;
+		border-top: 1px solid $border;
 
-    @media screen and (min-width: $md) {
-      padding: 0;
-      margin: 0 0 24px 0;
-      font-size: 24px;
-      line-height: 32px;
-      border-top: 0;
-    }
-  }
+		@media screen and (min-width: $md) {
+			padding: 0;
+			margin: 0 0 24px 0;
+			font-size: 24px;
+			line-height: 32px;
+			border-top: 0;
+		}
+	}
 }
 
 .prod-descr-price {
-  padding: 6px 0 11px 0;
-  //grid-area: price;
+	margin-bottom: 20px;
 
-  @media screen and (min-width: $md) {
-    padding: 0 0 11px 0;
-  }
+	@media screen and (min-width: $md) {
+		margin-bottom: 40px;
+	}
 
-  .price-cur {
-    margin: 0 12px 0 0;
-    font-size: 25px;
-    line-height: 29px;
-    display: inline-block;
-    font-style: normal;
-    font-weight: bold;
-    color: $black;
+	.price-cur {
+		font-size: 28px;
+		line-height: 29px;
+		display: inline-block;
+		font-style: normal;
+		font-weight: bold;
+		color: $black;
+		margin-right: 15px;
 
-    @media screen and (min-width: $md) {
-      margin: 0 12px 30px 0;
-      font-size: 38px;
-      line-height: 56px;
-    }
-  }
+		@media screen and (min-width: $md) {
+			font-size: 38px;
+			line-height: 56px;
+		}
+
+		> span {
+			font-size: 20px;
+			padding-left: 2px;
+			@media screen and (min-width: $md) {
+				font-size: 25px;
+				line-height: 56px;
+			}
+		}
+	}
+}
+
+.credit-btn {
+	font-size: 20px;
+	font-weight: 600;
+	color: #FFFFFF;
+	background: $btn-bg;
+	padding: 10px 15px;
+	border-radius: 5px;
+
+	&:hover {
+		background: $btn-hover;
+	}
 }
 
 .prod-descr-info {
-  grid-area: descr;
-  margin: 10px 0 15px 0;
+	grid-area: descr;
+	margin: 10px 0 15px 0;
 
-  span {
-    font-size: 13px;
+	span {
+		font-size: 13px;
 
-    @media screen and (min-width: $md) {
-      font-size: 16px;
-    }
-  }
+		@media screen and (min-width: $md) {
+			font-size: 16px;
+		}
+	}
 }
 
 .prod-descr-buy {
-  grid-area: buy;
-  border-radius: 10px;
-  display: block;
-  margin: 0;
-  padding: 23px 0;
-  background: none;
+	grid-area: buy;
+	border-radius: 10px;
+	display: block;
+	margin: 0;
+	background: none;
 
-  @media screen and (min-width: $md) {
-    display: grid;
-    grid-template-columns: 1fr minmax(220px, max-content);
-    grid-column-gap: 1rem;
-    align-items: center;
-    padding: 0;
-  }
+	@media screen and (min-width: $md) {
+		display: grid;
+		grid-template-columns: 1fr minmax(220px, max-content);
+		grid-column-gap: 1rem;
+		align-items: center;
+		padding: 0;
+	}
 
-  .prod-descr-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-    color: $default;
-    border-radius: 10px;
-    white-space: nowrap;
-    width: 100%;
-    height: 60px;
-    font-size: calc(16px * 1.5);
-    background: $btn-bg;
-    padding: 0 16px;
+	.prod-descr-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 400;
+		color: $default;
+		border-radius: 10px;
+		white-space: nowrap;
+		width: 100%;
+		height: 60px;
+		font-size: calc(16px * 1.5);
+		background: $btn-bg;
+		padding: 0 16px;
 
-    &:hover {
-      background: $btn-hover;
-    }
+		&:hover {
+			background: $btn-hover;
+		}
 
-    &[disabled] {
-      background: $disabled;
-    }
-  }
+		&[disabled] {
+			background: $disabled;
+		}
+	}
 }
 
 .fslightbox-source {
-  background: white;
+	background: white;
 }
 
 .video-banner-container {
-  margin-bottom: -1px;
-  position: relative;
+	margin-bottom: -1px;
+	position: relative;
 }
 
 </style>
