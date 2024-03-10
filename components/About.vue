@@ -13,8 +13,9 @@
     </div>
   </section>
 </template>
+
 <script setup>
-const { t } = useI18n();
+const {t} = useI18n();
 </script>
 <style lang="scss">
 .about-wrapper {
