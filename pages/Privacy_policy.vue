@@ -33,23 +33,23 @@ const {t} = useI18n();
 const route = useRoute();
 
 useHead({
-	title: t('links.privacy'),
-	meta: [
-		{name: 'description', content: t('meta.privacy')},
-		{property: 'og:title', content: t('links.privacy')},
-		{property: 'og:description', content: t('meta.privacy')},
-		{property: 'og:image', content: '/petkit.png'},
-		{property: 'og:url', content: `https://petkit.md${route.path}`}
-	],
+  title: t('links.privacy'),
+  meta: [
+    {name: 'description', content: t('meta.privacy')},
+    {property: 'og:title', content: t('links.privacy')},
+    {property: 'og:description', content: t('meta.privacy')},
+    {property: 'og:image', content: '/favicon.ico'},
+    {property: 'og:url', content: `https://petkit.md${route.path}`}
+  ],
 });
 </script>
 
 <style scoped>
 p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 a {
-    display: inline;
+  display: inline;
 }
 </style>

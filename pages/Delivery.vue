@@ -69,7 +69,7 @@ useHead({
     {name: 'description', content: t('meta.delivery')},
     {property: 'og:title', content: t('links.delivery')},
     {property: 'og:description', content: t('meta.delivery')},
-    {property: 'og:image', content: '/petkit.png'},
+    {property: 'og:image', content: '/favicon.ico'},
     {property: 'og:url', content: `https://petkit.md${route.path}`}
   ],
 });
@@ -122,6 +122,11 @@ useHead({
       margin-bottom: 5px;
       list-style-type: disc;
     }
+  }
+
+  a {
+    display: inline;
+    text-decoration: underline;
   }
 
   > div:last-child {
