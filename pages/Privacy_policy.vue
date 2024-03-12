@@ -19,7 +19,7 @@
       <p>{{ t('privacy.description.9.text') }}
         <strong><a href="www.petkit.md">www.petkit.md</a></strong>
         {{ t('privacy.description.9.text_2') }}
-        <strong><a href="tel:+37378876969">+373 78876969</a></strong>
+        <strong><a href="tel:+37378876969">+37378876969</a></strong>
       </p>
     </div>
   </section>

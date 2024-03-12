@@ -27,7 +27,7 @@
                   class="link"
                   target="_blank"
                   to="tel:+37378876969">
-                078876969
+                +37378876969
               </nuxt-link>
             </p>
           </div>
