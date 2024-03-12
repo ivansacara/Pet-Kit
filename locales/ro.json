@@ -103,10 +103,31 @@
     "title": "Livrare și plată:",
     "description": [
       {
-        "strong": "Vom livra comanda dumneavoastră în orice oraș sau localitate din Republica Moldova."
+        "text": "Comenzile sunt procesate între orele 9:00 și 16:00."
       },
       {
-        "text": "La plasarea comenzii, veți putea alege orice opțiune disponibilă de livrare în orașul dumneavoastră."
+        "text": "Operatorul nostru va lua legătura cu dumneavoastră și va discuta un moment convenabil pentru livrare."
+      },
+      {
+        "text": "Livrarea se efectuează în termen de 1-3 zile."
+      },
+      {
+        "text": "Livrarea se efectuează în timpul zilei de lucru: luni-vineri între 15:00 și 21:00."
+      },
+      {
+        "text": "Livrare expres în 2 ore, doar în Chișinău. Cost - 100 lei. Verificați posibilitatea livrării expres la adresa dvs. cu consultantul."
+      },
+      {
+        "text": "Livrare normală în Chișinău - 50 lei. Gratuit pentru comenzi de peste 500 lei."
+      },
+      {
+        "text": "Livrare normală în suburbiile Chișinăului - 150 lei. Gratuit pentru comenzi de peste 2000 lei."
+      },
+      {
+        "text": "Pentru livrarea în alte orașe din Republica Moldova, verificați cu consultantul."
+      },
+      {
+        "text": "Pentru a plasa o comandă telefonic, trebuie să contactați operatorul call-center, la numărul 078876969."
       }
     ],
     "paymentInfo": [
@@ -114,14 +135,31 @@
         "text": "Plată:"
       },
       {
-        "text": "Numerar la primirea comenzii. Card Bancar la primirea comenzii prin POS-terminal"
+        "text": "Cu numerar la primirea comenzii."
       },
       {
-        "text": "Pentru a plasa o comandă prin telefon, trebuie să contactați operatorul call-center la numărul",
-        "link": {
-          "text": "078876969",
-          "url": "+37378876969"
-        }
+        "text": "Cu cardul bancar la curier, prin terminal POS."
+      },
+      {
+        "text": "Plată prin transfer bancar (pentru persoane juridice)*"
+      },
+      {
+        "text": "La plasarea comenzii în câmpul informații suplimentare, specificați plata prin transfer bancar."
+      },
+      {
+        "text": "În cazul plății de către o persoană juridică, avem nevoie de datele dvs. pentru emiterea facturii și a documentelor de livrare."
+      },
+      {
+        "text": "Factura pentru plată vă va fi trimisă prin e-mail. Originalele documentelor necesare (aviz de expediție, factură și chitanță) vă vor fi furnizate împreună cu comanda."
+      },
+      {
+        "text": "*Important:"
+      },
+      {
+        "text": "Factura emisă este valabilă timp de 3 zile."
+      },
+      {
+        "text": "La plată prin transfer bancar sau prin plată fără numerar, livrarea comenzilor se efectuează doar după primirea banilor în cont!"
       }
     ],
     "banner": {
