@@ -83,7 +83,7 @@ export default defineNuxtConfig({
             const {data} = await axios.get(`\`https://cdn.contentful.com/spaces/${process.env.NUXT_PUBLIC_CONTENTFUL_SPACE}/environments/master/entries?access_token=${process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}&content_type=product\``)
             return data.items.map((item: any) => {
                 `/products/${item.fields.slug}`
-                console.log(item)
+                console.log(`/products/${item.fields.slug}`)
             })
         }
     },
