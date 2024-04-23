@@ -67,25 +67,11 @@ export default defineNuxtConfig({
     gtag: {
         id: process.env.NUXT_PUBLIC_GTM_ID
     },
-    // sitemap: {
-    //     autoI18n: true,
-    //     includeAppSources: true,
-    //     hostname: process.env.NUXT_PUBLIC_SITE_URL || 'https://petkit.md', // Замените на адрес вашего сайта
-    //     // Дополнительные параметры по вашему усмотрению
-    // },
     sitemap: {
         autoI18n: true,
-        hostname: process.env.NUXT_PUBLIC_SITE_URL || 'https://petkit.md', // Замените на адрес вашего сайта
         includeAppSources: true,
-        gzip: true,
-        routes: async () => {
-            const axios = require('axios');
-            const {data} = await axios.get(`\`https://cdn.contentful.com/spaces/${process.env.NUXT_PUBLIC_CONTENTFUL_SPACE}/environments/master/entries?access_token=${process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}&content_type=product\``)
-            return data.items.map((item: any) => {
-                `/products/${item.fields.slug}`
-                console.log(`/products/${item.fields.slug}`)
-            })
-        }
+        hostname: process.env.NUXT_PUBLIC_SITE_URL || 'https://petkit.md', // Замените на адрес вашего сайта
+        // Дополнительные параметры по вашему усмотрению
     },
     site: {
         url: process.env.NUXT_PUBLIC_SITE_URL,

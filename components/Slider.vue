@@ -45,7 +45,6 @@ const sliderItems = computed(() => {
           acc[key] = [];
         }
         acc[key].push(slideItem.fields.file.url, slideItem.fields.description);
-        // console.log(slideItem.fields.description)
         return acc;
       }, {})
   );
