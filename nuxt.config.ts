@@ -80,9 +80,10 @@ export default defineNuxtConfig({
         gzip: true,
         routes: async () => {
             const axios = require('axios');
-            const {data} = await axios.get('https://cdn.contentful.com/spaces/33x2fmup01q1/environments/master/entries?access_token=bwmGPE-nzjr7L5NZwTEcBMXcMAN_Lg8_hMfFt8VaBOA&content_type=product')
+            const {data} = await axios.get(`\`https://cdn.contentful.com/spaces/${process.env.NUXT_PUBLIC_CONTENTFUL_SPACE}/environments/master/entries?access_token=${process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}&content_type=product\``)
             return data.items.map((item: any) => {
                 `/products/${item.fields.slug}`
+                console.log(item)
             })
         }
     },
