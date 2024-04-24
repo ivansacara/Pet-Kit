@@ -71,6 +71,8 @@ export default defineNuxtConfig({
         autoI18n: true,
         includeAppSources: true,
         hostname: process.env.NUXT_PUBLIC_SITE_URL || 'https://petkit.md', // Замените на адрес вашего сайта
+        sources: ['/api/sitemap'],
+
         // Дополнительные параметры по вашему усмотрению
     },
     site: {
