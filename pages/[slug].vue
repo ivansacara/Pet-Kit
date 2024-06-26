@@ -1,41 +1,41 @@
 <template>
   <div class="container">
-    <Breadcrumbs :pageTitle="categoryName" />
+    <Breadcrumbs :pageTitle="categoryName"/>
     <div class="catalog">
       <div class="catalog-list">
         <nuxt-link
-          v-for="product in products.items"
-          :key="product.sys.id"
-          :to="localePath(`/product/${product.fields.slug}`)"
-          class="prod-wrap"
+            v-for="product in products.items"
+            :key="product.sys.id"
+            :to="localePath(`/product/${product.fields.slug}`)"
+            class="prod-wrap"
         >
-          <Product :product="product" @click="selectProduct(product)" />
+          <Product :product="product" @click="selectProduct(product)"/>
         </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { ref, computed } from 'vue';
-import { useRoute, useAsyncData } from 'nuxt/app';
+import {ref, computed} from 'vue';
+import {useRoute, useAsyncData} from 'nuxt/app';
 
-const { $client } = useNuxtApp();
+const {$client} = useNuxtApp();
 const route = useRoute();
-const { t } = useI18n();
+const {t} = useI18n();
 const localePath = useLocalePath();
 
 // Use ref for viewedProducts and initialize from localStorage if available
 const viewedProducts = ref(
-  JSON.parse(
-    typeof window !== 'undefined'
-      ? localStorage.getItem('viewedProducts')
-      : '[]'
-  ) || []
+    JSON.parse(
+        typeof window !== 'undefined'
+            ? localStorage.getItem('viewedProducts')
+            : '[]'
+    ) || []
 );
 
 const selectProduct = (product) => {
   const existingProductIndex = viewedProducts.value.findIndex(
-    (p) => p.id === product.sys.id
+      (p) => p.id === product.sys.id
   );
 
   if (existingProductIndex === -1) {
@@ -43,6 +43,7 @@ const selectProduct = (product) => {
       image: product.fields.image[0].fields.file.url,
       alt: product.fields.image[0].fields.title,
       price: product.fields.price,
+      oldPrice: product.fields.oldPrice,
       description: product.fields.shortDescription,
       slug: product.fields.slug,
       locale: product.sys.locale.split('-')[0],
@@ -56,20 +57,20 @@ const selectProduct = (product) => {
 
     if (typeof window !== 'undefined') {
       localStorage.setItem(
-        'viewedProducts',
-        JSON.stringify(viewedProducts.value)
+          'viewedProducts',
+          JSON.stringify(viewedProducts.value)
       );
     }
   }
 };
 
 // Fetching category data with SSR
-const { data: category } = await useAsyncData('category', () =>
-  $client.getEntries({
-    content_type: 'category',
-    'fields.slug': route.params.slug,
-    locale: t('locale'),
-  })
+const {data: category} = await useAsyncData('category', () =>
+    $client.getEntries({
+      content_type: 'category',
+      'fields.slug': route.params.slug,
+      locale: t('locale'),
+    })
 );
 
 // Fetching products data with SSR
@@ -81,7 +82,7 @@ const fetchProducts = async (categoryId) => {
   });
 };
 
-const { data: products } = await useAsyncData('products', () => {
+const {data: products} = await useAsyncData('products', () => {
   if (category.value.items.length) {
     const firstCategory = category.value.items[0];
     return fetchProducts(firstCategory.sys.id);
@@ -98,7 +99,7 @@ useHead(() => ({
       name: 'description',
       content: category.value.items[0]?.fields?.description,
     },
-    { property: 'og:title', content: category.value.items[0]?.fields.name },
+    {property: 'og:title', content: category.value.items[0]?.fields.name},
     {
       property: 'og:description',
       content: category.value.items[0]?.fields?.description,
@@ -107,7 +108,7 @@ useHead(() => ({
       property: 'og:image',
       content: category.value.items[0]?.fields?.image.fields?.file?.url,
     },
-    { property: 'og:url', content: `https://petkit.md${route.path}` },
+    {property: 'og:url', content: `https://petkit.md${route.path}`},
   ],
 }));
 

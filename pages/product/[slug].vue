@@ -37,6 +37,7 @@ const product = computed(() => {
       shortDescription: firstItem.fields.shortDescription,
       description: firstItem.fields.description,
       price: firstItem.fields.price,
+      oldPrice: firstItem.fields.oldPrice,
       image: firstItem.fields.image,
       characteristics: firstItem.fields.characteristics,
       banner: firstItem.fields.banner,
